@@ -4,5 +4,12 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
-  m_configObjects: {}
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Imports/Eliot AI/1_Tutorials And Demo/3_MOBA/Scenes/MOBA Demo.unity
+    guid: c8fe493feef815c4297429fbf6cd9d7a
+  m_configObjects:
+    addressableimportsettingslist: {fileID: 11400000, guid: 0fab936de7a736b4cb3ef0628a4d6457,
+      type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: 115ffe3a3b7910442854b0466b49cf30,
+      type: 2}
