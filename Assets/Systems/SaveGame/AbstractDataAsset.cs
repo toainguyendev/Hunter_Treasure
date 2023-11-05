@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public class AbstractDataAsset<DataModel> : ScriptableObject
+public abstract class AbstractDataAsset<DataModel> : ScriptableObject where DataModel : struct
 {
     [SerializeField] protected DataModel dataModel;
 
@@ -16,8 +16,7 @@ public class AbstractDataAsset<DataModel> : ScriptableObject
 
     public void SaveData()
     {
-        string filePath = Application.dataPath + fileName;
-
+        string filePath = Application.persistentDataPath + "/" +fileName;
         try
         {
             if (binaryFormat)
@@ -25,6 +24,7 @@ public class AbstractDataAsset<DataModel> : ScriptableObject
                 using (FileStream fileStream = new FileStream(filePath, FileMode.Open))
                 {
                     IFormatter formatter = new BinaryFormatter();
+
                     formatter.Serialize(fileStream, dataModel);
                 }
             }
@@ -41,22 +41,29 @@ public class AbstractDataAsset<DataModel> : ScriptableObject
 
     public void LoadData()
     {
-        string filePath = Application.dataPath + fileName;
+        string filePath = Application.persistentDataPath + "/" + fileName;
 
         try
         {
-            if (binaryFormat)
+            if (!File.Exists(filePath))
             {
-                using (FileStream fileStream = new FileStream(filePath, FileMode.Open))
-                {
-                    IFormatter formatter = new BinaryFormatter();
-                    dataModel = (DataModel)formatter.Deserialize(fileStream);
-                }
+                SaveData();
             }
             else
             {
-                string json = File.ReadAllText(filePath);
-                dataModel = JsonConvert.DeserializeObject<DataModel>(json);
+                if (binaryFormat)
+                {
+                    using (FileStream fileStream = new FileStream(filePath, FileMode.Open))
+                    {
+                        IFormatter formatter = new BinaryFormatter();
+                        dataModel = (DataModel)formatter.Deserialize(fileStream);
+                    }
+                }
+                else
+                {
+                    string json = File.ReadAllText(filePath);
+                    dataModel = JsonConvert.DeserializeObject<DataModel>(json);
+                }
             }
         }
         catch (Exception e)

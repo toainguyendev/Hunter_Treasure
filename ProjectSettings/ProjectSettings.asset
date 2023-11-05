@@ -156,7 +156,8 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Android: com.DefaultCompany.Hunter_Treasure
   buildNumber:
     Standalone: 0
     VisionOS: 0
@@ -730,6 +731,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
+    Android: ALL_LOG
     Standalone: ELIOT
   additionalCompilerArguments: {}
   platformArchitecture: {}

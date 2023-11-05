@@ -48,6 +48,7 @@
     "com.unity.modules.xr": "1.0.0",
     "com.littlebigfun.addressable-importer": "https://github.com/favoyang/unity-addressable-importer.git",
     "com.intothedev.objectpooling": "https://github.com/IntoTheDev/Object-Pooling-for-Unity.git",
-    "com.fluid.behavior-tree": "https://github.com/ashblue/fluid-behavior-tree.git#v2.2.3"
+    "com.fluid.behavior-tree": "https://github.com/ashblue/fluid-behavior-tree.git#v2.2.3",
+    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask"
   }
 }
