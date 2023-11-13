@@ -12,7 +12,6 @@ public class JoystickPlayerExample : MonoBehaviour
 
     private void Awake()
     {
-        ConsoleLog.LogError(Application.persistentDataPath);
         inventoryData.LoadData();
     }
 

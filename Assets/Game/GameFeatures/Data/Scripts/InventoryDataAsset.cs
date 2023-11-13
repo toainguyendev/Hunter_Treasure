@@ -1,8 +1,8 @@
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "InventoryDataAsset", menuName = "Hunter Treaser/Data/InventoryDataAsset")]
-public class InventoryDataAsset : AbstractDataAsset<InventoryDataModel>
+[CreateAssetMenu(fileName = "InventoryDataAsset", menuName = "HunterTreasure/Data/InventoryDataAsset")]
+public class InventoryDataAsset : BaseDataAsset<InventoryDataModel>
 {
     public int Coin => dataModel.coin;
 

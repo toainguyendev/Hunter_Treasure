@@ -5,7 +5,15 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-public abstract class AbstractDataAsset<DataModel> : ScriptableObject where DataModel : struct
+public abstract class BaseDataAsset : ScriptableObject
+{
+    public abstract bool IsDoneLoadData { get; }
+    public abstract void SaveData();
+    public abstract void LoadData();
+}
+
+
+public abstract class BaseDataAsset<DataModel> : BaseDataAsset where DataModel : struct, IDataModel<DataModel>
 {
     [SerializeField] protected DataModel dataModel;
 
@@ -14,9 +22,18 @@ public abstract class AbstractDataAsset<DataModel> : ScriptableObject where Data
     [SerializeField] private bool binaryFormat = false;
 
 
-    public void SaveData()
+    protected bool isDoneLoadData = false;
+
+    public override bool IsDoneLoadData => isDoneLoadData;
+    public override void SaveData()
     {
         string filePath = Application.persistentDataPath + "/" +fileName;
+        if(!File.Exists(filePath))
+        {
+            dataModel = new DataModel();
+            dataModel.SetDefaultData();
+        }
+
         try
         {
             if (binaryFormat)
@@ -39,7 +56,7 @@ public abstract class AbstractDataAsset<DataModel> : ScriptableObject where Data
         }
     }
 
-    public void LoadData()
+    public override void LoadData()
     {
         string filePath = Application.persistentDataPath + "/" + fileName;
 
@@ -69,6 +86,10 @@ public abstract class AbstractDataAsset<DataModel> : ScriptableObject where Data
         catch (Exception e)
         {
             ConsoleLog.LogError($"Save Game Service: Error: {e}");
+        }
+        finally
+        {
+            isDoneLoadData = true;
         }
     }
 }

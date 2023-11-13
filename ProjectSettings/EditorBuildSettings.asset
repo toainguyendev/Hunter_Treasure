@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Login.unity
     guid: e6f138e18f7929d4ebc974f3ef841038
+  - enabled: 0
+    path: Assets/Game/Scenes/LoadingScene.unity
+    guid: 02425609c08b6a142aa9f7d6f8831860
   m_configObjects:
     addressableimportsettingslist: {fileID: 11400000, guid: 0fab936de7a736b4cb3ef0628a4d6457,
       type: 2}

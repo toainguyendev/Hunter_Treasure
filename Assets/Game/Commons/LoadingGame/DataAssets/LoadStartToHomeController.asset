@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c97f09236a06249b7eb59d77f7339e, type: 3}
-  m_Name: InventoryDataAsset
+  m_Script: {fileID: 11500000, guid: 091da31b057e8794ebc01926b0a783af, type: 3}
+  m_Name: LoadStartToHomeController
   m_EditorClassIdentifier: 
-  dataModel:
-    coin: 0
-  fileName: inventory
-  binaryFormat: 0
+  importantDatas:
+  - {fileID: 11400000, guid: 46d07774f13739a4881b098ee2444e3d, type: 2}
