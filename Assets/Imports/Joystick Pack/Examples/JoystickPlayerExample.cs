@@ -8,6 +8,13 @@ public class JoystickPlayerExample : MonoBehaviour
     public VariableJoystick variableJoystick;
     public Rigidbody rb;
 
+    [SerializeField] InventoryDataAsset inventoryData;
+
+    private void Awake()
+    {
+        inventoryData.LoadData();
+    }
+
     public void FixedUpdate()
     {
         Vector3 direction = Vector3.forward * variableJoystick.Vertical + Vector3.right * variableJoystick.Horizontal;
