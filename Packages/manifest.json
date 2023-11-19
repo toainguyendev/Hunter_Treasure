@@ -1,12 +1,15 @@
 {
   "dependencies": {
+    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+    "com.fluid.behavior-tree": "https://github.com/ashblue/fluid-behavior-tree.git#v2.2.3",
+    "com.intothedev.objectpooling": "https://github.com/IntoTheDev/Object-Pooling-for-Unity.git",
+    "com.littlebigfun.addressable-importer": "https://github.com/favoyang/unity-addressable-importer.git",
     "com.unity.addressables": "1.21.19",
-    "com.unity.ai.navigation": "1.1.5",
     "com.unity.cinemachine": "2.9.7",
     "com.unity.collab-proxy": "2.1.0",
     "com.unity.feature.mobile": "1.0.0",
     "com.unity.ide.rider": "3.0.25",
-    "com.unity.ide.visualstudio": "2.0.21",
+    "com.unity.ide.visualstudio": "2.0.22",
     "com.unity.ide.vscode": "1.2.5",
     "com.unity.nuget.newtonsoft-json": "3.2.1",
     "com.unity.render-pipelines.universal": "14.0.9",
@@ -45,10 +48,6 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.littlebigfun.addressable-importer": "https://github.com/favoyang/unity-addressable-importer.git",
-    "com.intothedev.objectpooling": "https://github.com/IntoTheDev/Object-Pooling-for-Unity.git",
-    "com.fluid.behavior-tree": "https://github.com/ashblue/fluid-behavior-tree.git#v2.2.3",
-    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask"
+    "com.unity.modules.xr": "1.0.0"
   }
 }
