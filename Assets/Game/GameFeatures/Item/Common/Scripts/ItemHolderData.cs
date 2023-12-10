@@ -20,6 +20,6 @@ public class ItemHolder
 [CreateAssetMenu(fileName = "ItemHolderData", menuName = "HunterTreasure/Item/ItemHolderData", order = 1)]
 public class ItemHolderData : ScriptableObject
 {
-    // private properties List<ItemHolder> itemHolders
     [SerializeField] private List<ItemHolder> itemHolders;
+
 }

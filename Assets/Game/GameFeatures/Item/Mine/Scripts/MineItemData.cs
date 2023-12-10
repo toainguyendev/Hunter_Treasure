@@ -18,19 +18,19 @@ public struct MineItemDataStruct
 public class MineItemData : ItemBaseData
 {
     // List MineItemDataStruct
-    [SerializeField] private List<MineItemDataStruct> mineItemDataStructs;
+    [SerializeField] private List<MineItemDataStruct> mineItemDatas;
 
     // public method getMineItemDataStructs at index with try catch
     public MineItemDataStruct GetMineItemDataStructs(int index)
     {
         try
         {
-            return mineItemDataStructs[index];
+            return mineItemDatas[index];
         }
         catch
         {
             ConsoleLog.LogError($"MineItemDataStructs index {index} not found, returning index 0");
-            return mineItemDataStructs[0];
+            return mineItemDatas[0];
         }
     }
 }

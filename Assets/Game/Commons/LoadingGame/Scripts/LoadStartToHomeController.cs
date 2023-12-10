@@ -12,14 +12,27 @@ public class LoadStartToHomeController : BaseLoadGameController
     [SerializeField] private List<BaseDataAsset> importantDatas;
     private AsyncOperationHandle<SceneInstance> loadHandle;
 
+    private bool isDoneLoadTempScene = false;
     protected override async UniTask OnBeforeLoad()
     {
         await base.OnBeforeLoad();
+        loadHandle = Addressables.LoadSceneAsync(LoadSceneController.SCENE_LOADING, LoadSceneMode.Additive);
+
+        loadHandle.Completed += (handle) =>
+        {
+            if (handle.Status == AsyncOperationStatus.Succeeded)
+            {
+                SceneManager.UnloadSceneAsync(LoadSceneController.SCENE_START);
+                isDoneLoadTempScene = true;
+            }
+        };
     }
 
     protected override async UniTask OnLoad()
     {
         await base.OnLoad();
+
+        await UniTask.WaitUntil(() => isDoneLoadTempScene);
 
         ConsoleLog.Log("Start load data");
         await LoadDataAsset();
@@ -30,13 +43,14 @@ public class LoadStartToHomeController : BaseLoadGameController
     protected override async UniTask OnAfterLoad()
     {
         await base.OnAfterLoad();
-        loadHandle = Addressables.LoadSceneAsync(LoadSceneController.SCENE_HOME, LoadSceneMode.Additive);
 
-        loadHandle.Completed += (handle) =>
+        AsyncOperationHandle<SceneInstance> loadHomeHandle = Addressables.LoadSceneAsync(LoadSceneController.SCENE_HOME, LoadSceneMode.Additive);
+
+        loadHomeHandle.Completed += (handle) =>
         {
-            if(handle.Status == AsyncOperationStatus.Succeeded)
+            if (handle.Status == AsyncOperationStatus.Succeeded)
             {
-                SceneManager.UnloadSceneAsync(LoadSceneController.SCENE_START);
+                Addressables.UnloadSceneAsync(loadHandle);
             }
         };
     }

@@ -5,8 +5,6 @@ using UnityEngine;
 
 public abstract class BaseLoadGameController : ScriptableObject
 {
-    [SerializeField] protected List<UniTask> tasksWhenLoadGame;
-
     protected virtual async UniTask OnBeforeLoad()
     {
     }
