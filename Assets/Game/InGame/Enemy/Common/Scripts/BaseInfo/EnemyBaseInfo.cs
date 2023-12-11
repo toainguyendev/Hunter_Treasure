@@ -1,10 +1,10 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ExplorerBaseInfo", menuName = "HunterTreasure/Explorer/Player/ExplorerBaseInfo")]
-public class ExplorerBaseInfo
-    : ScriptableObject
+
+[CreateAssetMenu(fileName = "EnemyBaseInfo", menuName = "HunterTreasure/Enemy/EnemyBaseInfo")]
+public class EnemyBaseInfo : ScriptableObject
 {
-    // private properties: Name, HP, Attack, Rate Attack, Defense, Attack Range, Move Speed
+    // serialize field private properties for name, hp, attack, rate attack, defense, attack range, move speed
     [SerializeField] private string _name;
     [SerializeField] private int _hp;
     [SerializeField] private int _attack;
@@ -12,8 +12,8 @@ public class ExplorerBaseInfo
     [SerializeField] private int _defense;
     [SerializeField] private float _attackRange;
     [SerializeField] private float _moveSpeed;
-    [SerializeField] private float jumpVelocity;
-
+    [SerializeField, Range(0, 360)] private float _angleSight;
+    [SerializeField] private float _distanceSight;
 
     // public getters and setters for private properties
     public string Name { get => _name; set => _name = value; }
@@ -23,5 +23,6 @@ public class ExplorerBaseInfo
     public int Defense { get => _defense; set => _defense = value; }
     public float AttackRange { get => _attackRange; set => _attackRange = value; }
     public float MoveSpeed { get => _moveSpeed; set => _moveSpeed = value; }
-    public float JumpVelocity { get => jumpVelocity; set => jumpVelocity = value; }
+    public float AngleSight { get => _angleSight; set => _angleSight = value; }
+    public float DistanceSight { get => _distanceSight; set => _distanceSight = value; }
 }

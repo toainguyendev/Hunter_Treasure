@@ -1,46 +1,52 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class FieldOfView : MonoBehaviour
 {
-    public float radius;
-    [Range(0, 360)]
-    public float angle;
+    // enemy config
+    [SerializeField] private EnemyCommonConfig _enemyConfig;
+    [SerializeField] private EnemyBaseInfo _enemyBaseInfo;
+    [SerializeField] private LayerMask targetMask;
+    [SerializeField] private LayerMask obstructionMask;
 
+    // temp -> move to a config
     public GameObject playerRef;
 
-    public LayerMask targetMask;
-    public LayerMask obstructionMask;
+    private bool canSeePlayer;
+    public bool CanSeePlayer { get => canSeePlayer; }
 
-    public bool canSeePlayer;
+    //public method get distance sight, angle sight
+    public float DistanceSight { get => _enemyBaseInfo.DistanceSight; }
+    public float AngleSight { get => _enemyBaseInfo.AngleSight; }
+
+
+    private float lastTimeCheck;
 
     private void Start()
     {
-        StartCoroutine(FOVRoutine());
+        lastTimeCheck = float.MinValue;
     }
 
-    private IEnumerator FOVRoutine()
+    private void Update()
     {
-        WaitForSeconds wait = new WaitForSeconds(0.2f);
-
-        while (true)
+        // call function FieldOfView check
+        if(Time.time > lastTimeCheck + _enemyConfig.WaitTimeCheckSight)
         {
-            yield return wait;
+            lastTimeCheck = Time.time;
             FieldOfViewCheck();
         }
     }
 
     private void FieldOfViewCheck()
     {
-        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, radius, targetMask);
+        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, _enemyBaseInfo.DistanceSight, targetMask);
 
         if (rangeChecks.Length != 0)
         {
             Transform target = rangeChecks[0].transform;
             Vector3 directionToTarget = (target.position - transform.position).normalized;
 
-            if (Vector3.Angle(transform.forward, directionToTarget) < angle / 2)
+            if (Vector3.Angle(transform.forward, directionToTarget) < _enemyBaseInfo.AngleSight / 2)
             {
                 float distanceToTarget = Vector3.Distance(transform.position, target.position);
 
