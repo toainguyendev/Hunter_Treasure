@@ -15,4 +15,6 @@ MonoBehaviour:
   itemName: 
   description: 
   icon: {fileID: 0}
-  mineItemDataStructs: []
+  mineItemDatas:
+  - range: 0
+    damage: 0

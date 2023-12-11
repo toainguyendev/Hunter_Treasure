@@ -12,4 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd031439adf5ee9419fa1f33f8b1c19e, type: 3}
   m_Name: TreasureHolderData
   m_EditorClassIdentifier: 
-  treasureDatas: []
+  treasureDatas:
+  - treasureType: 0
+    treasureName: 
+    description: 
+    prefabRef:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    avatarRef:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
