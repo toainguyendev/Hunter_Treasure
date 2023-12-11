@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using SuperMaxim.Messaging;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -13,6 +14,7 @@ public class LoadStartToHomeController : BaseLoadGameController
     private AsyncOperationHandle<SceneInstance> loadHandle;
 
     private bool isDoneLoadTempScene = false;
+    private float percentLoading = 0;
     protected override async UniTask OnBeforeLoad()
     {
         await base.OnBeforeLoad();
@@ -58,9 +60,14 @@ public class LoadStartToHomeController : BaseLoadGameController
 
     private async UniTask LoadDataAsset()
     {
+        float percentOneStep = 1f / importantDatas.Count;
         foreach (var data in importantDatas)
         {
             data.LoadData();
+
+            percentLoading += percentOneStep;
+            Messenger.Default.Publish<LoadingProgressPayload>(new LoadingProgressPayload {progress = percentLoading});
+
             await UniTask.WaitUntil(() => data.IsDoneLoadData);
         }
     }

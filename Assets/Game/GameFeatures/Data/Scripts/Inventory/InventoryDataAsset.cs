@@ -1,6 +1,12 @@
 using UnityEngine;
 
 
+public enum InventoryItemType
+{
+    Coin,
+    Diamond,
+}
+
 [CreateAssetMenu(fileName = "InventoryDataAsset", menuName = "HunterTreasure/Data/InventoryDataAsset")]
 public class InventoryDataAsset : BaseDataAsset<InventoryDataModel>
 {
