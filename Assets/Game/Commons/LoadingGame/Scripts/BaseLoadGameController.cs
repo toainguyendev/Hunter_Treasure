@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class BaseLoadGameController : ScriptableObject
 {
+    protected bool isDoneLoadTempScene = false;
+
     protected virtual async UniTask OnBeforeLoad()
     {
     }

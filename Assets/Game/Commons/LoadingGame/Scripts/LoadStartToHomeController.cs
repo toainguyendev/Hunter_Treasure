@@ -13,7 +13,6 @@ public class LoadStartToHomeController : BaseLoadGameController
     [SerializeField] private List<BaseDataAsset> importantDatas;
     private AsyncOperationHandle<SceneInstance> loadHandle;
 
-    private bool isDoneLoadTempScene = false;
     private float percentLoading = 0;
     protected override async UniTask OnBeforeLoad()
     {
@@ -69,6 +68,9 @@ public class LoadStartToHomeController : BaseLoadGameController
             Messenger.Default.Publish<LoadingProgressPayload>(new LoadingProgressPayload {progress = percentLoading});
 
             await UniTask.WaitUntil(() => data.IsDoneLoadData);
+
+            // TODO: remove this line
+            await UniTask.Delay(1000);
         }
     }
 }

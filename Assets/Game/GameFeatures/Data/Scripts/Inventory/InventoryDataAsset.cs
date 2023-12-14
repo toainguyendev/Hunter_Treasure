@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public enum InventoryItemType
+public enum CurrencyType
 {
     Coin,
     Diamond,
