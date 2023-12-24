@@ -15,7 +15,7 @@ MonoBehaviour:
   _name: Bishop
   _hp: 2
   _attack: 0
-  _rateAttack: 0
+  _rateAttack: 0.5
   _defense: 0
   _attackRange: 0
   _moveSpeed: 5
