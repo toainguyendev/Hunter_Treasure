@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class BishopSkillResilentSpirit
-    : SkillBase, ISkill
+public class BishopSkillResilentSpirit : MonoBehaviour, ISkill
 {
     [SerializeField] protected HealthBase _healthBase;
 

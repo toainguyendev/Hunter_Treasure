@@ -1,4 +1,5 @@
 using Cysharp.Threading.Tasks;
+using SuperMaxim.Messaging;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -34,14 +35,28 @@ public class LoadHomeToGameController : BaseLoadGameController
 
         await UniTask.WaitUntil(() => isDoneLoadTempScene);
 
-        // Setup scene with RuntimeGlobalData
+        await UniTask.Delay(1000);
 
+        Messenger.Default.Publish(new LoadingProgressPayload() { progress = 1f });
+
+        // Setup scene with RuntimeGlobalData
+        ConsoleLog.Log($"Setup scene with RuntimeGlobalData");
 
     }
 
     protected override async UniTask OnAfterLoad()
     {
         await base.OnAfterLoad();
+
+        AsyncOperationHandle<SceneInstance> loadSceneGameHandler = Addressables.LoadSceneAsync(LoadSceneController.SCENE_GAME, LoadSceneMode.Additive);
+
+        loadSceneGameHandler.Completed += (handle) =>
+        {
+            if (handle.Status == AsyncOperationStatus.Succeeded)
+            {
+                Addressables.UnloadSceneAsync(loadHandle);
+            }
+        };
     }
 
 

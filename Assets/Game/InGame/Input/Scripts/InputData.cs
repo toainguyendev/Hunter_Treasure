@@ -11,6 +11,12 @@ public class InputData : ScriptableObject
     // private properties input jump
     private bool _jump;
 
+    // private properties input attack
+    private bool _attack;
+
+    // private properties input skill
+    private bool _skill;
+
     // public getter setter input horizontal, if value < 0 -> horizontal = -1, if value > 0 -> horizontal = 1, else horizontal = 0
     public float Horizontal
     {
@@ -57,5 +63,17 @@ public class InputData : ScriptableObject
     {
         get => _jump;
         set => _jump = value;
+    }
+
+    public bool NormalAttack
+    {
+        get => _attack;
+        set => _attack = value;
+    }
+
+    public bool Skill
+    {
+        get => _skill;
+        set => _skill = value;
     }
 }

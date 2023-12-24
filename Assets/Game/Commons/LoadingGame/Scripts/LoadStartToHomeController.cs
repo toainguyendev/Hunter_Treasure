@@ -17,6 +17,7 @@ public class LoadStartToHomeController : BaseLoadGameController
     protected override async UniTask OnBeforeLoad()
     {
         await base.OnBeforeLoad();
+        percentLoading = 0f;
         loadHandle = Addressables.LoadSceneAsync(LoadSceneController.SCENE_LOADING, LoadSceneMode.Additive);
 
         loadHandle.Completed += (handle) =>
@@ -35,9 +36,7 @@ public class LoadStartToHomeController : BaseLoadGameController
 
         await UniTask.WaitUntil(() => isDoneLoadTempScene);
 
-        ConsoleLog.Log("Start load data");
         await LoadDataAsset();
-        ConsoleLog.Log("Done load data");
     }
 
 
@@ -70,7 +69,8 @@ public class LoadStartToHomeController : BaseLoadGameController
             await UniTask.WaitUntil(() => data.IsDoneLoadData);
 
             // TODO: remove this line
-            await UniTask.Delay(1000);
+            await UniTask.Delay(2000);
+            ConsoleLog.Log($"Load data {data.name} done");
         }
     }
 }

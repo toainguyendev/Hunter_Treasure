@@ -314,6 +314,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingStartToHomeController: {fileID: 11400000, guid: 31f1673cfb398334d92c11ccc5ba577c,
     type: 2}
+  loadingHomeToGameController: {fileID: 11400000, guid: eaabcdd98ab300447b124bcfcb043f23,
+    type: 2}
 --- !u!114 &1471519282
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterController))]
 public class MoveBase : MonoBehaviour
 {
     // Character controller 

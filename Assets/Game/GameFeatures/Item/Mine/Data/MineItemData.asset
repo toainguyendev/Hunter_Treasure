@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b771a7d81f612d645bbe8ef247329585, type: 3}
   m_Name: MineItemData
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Mine
   description: 
   icon: {fileID: 0}
   mineItemDatas:
-  - range: 0
-    damage: 0
+  - range: 5
+    damage: 15

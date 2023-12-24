@@ -5,10 +5,10 @@ using UnityEngine;
 public struct DataStartGamePlay
 {
     private int levelId;
-    private Explorer explorer;
+    private ExplorerType explorer;
     private List<KeyValuePair<ItemType, int>> itemsType;
 
-    public DataStartGamePlay(int levelId, Explorer explorer, List<KeyValuePair<ItemType, int>> itemsType)
+    public DataStartGamePlay(int levelId, ExplorerType explorer, List<KeyValuePair<ItemType, int>> itemsType)
     {
         this.levelId = levelId;
         this.explorer = explorer;
@@ -17,7 +17,7 @@ public struct DataStartGamePlay
 
     // public getters and setters for private properties
     public int LevelId { get => levelId; set => levelId = value; }
-    public Explorer Explorer { get => explorer; set => explorer = value; }
+    public ExplorerType Explorer { get => explorer; set => explorer = value; }
     public List<KeyValuePair<ItemType, int>> ItemsType { get => itemsType; set => itemsType = value; }
 }
 
@@ -27,13 +27,13 @@ public struct DataEndGame
 
     // info explorer
     private int levelId;
-    private Explorer explorer;
+    private ExplorerType explorer;
     private List<KeyValuePair<ItemType, int>> itemsType;
 
     // reward
     private List<KeyValuePair<CurrencyType, int>> currenciesType;
 
-    public DataEndGame(bool isWin, int levelId, Explorer explorer, List<KeyValuePair<ItemType, int>> itemsType, List<KeyValuePair<CurrencyType, int>> currenciesType)
+    public DataEndGame(bool isWin, int levelId, ExplorerType explorer, List<KeyValuePair<ItemType, int>> itemsType, List<KeyValuePair<CurrencyType, int>> currenciesType)
     {
         this.isWin = isWin;
         this.levelId = levelId;
@@ -45,7 +45,7 @@ public struct DataEndGame
     // public getters and setters for private properties    
     public bool IsWin { get => isWin; set => isWin = value; }
     public int LevelId { get => levelId; set => levelId = value; }
-    public Explorer Explorer { get => explorer; set => explorer = value; }
+    public ExplorerType Explorer { get => explorer; set => explorer = value; }
     public List<KeyValuePair<ItemType, int>> ItemsType { get => itemsType; set => itemsType = value; }
     public List<KeyValuePair<CurrencyType, int>> CurrenciesType { get => currenciesType; set => currenciesType = value; }
 }
