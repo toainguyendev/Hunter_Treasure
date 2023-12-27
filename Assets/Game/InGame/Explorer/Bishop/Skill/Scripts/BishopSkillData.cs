@@ -4,13 +4,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "BishopSkillData", menuName = "HunterTreasure/Explorer/Bishop/Skill/BishopSkillData")]
 public class BishopSkillData : SkillData
 {
-    // private properties: Bonus Attack, Bonus HP, Bonus Rate Attack
-    [SerializeField] private int _bonusAttack;
-    [SerializeField] private int _bonusHP;
-    [SerializeField] private float _bonusRateAttack;
+    [SerializeField] private float _damagePerSecond;
+    [SerializeField] private float _timeRemain;
+    [SerializeField] private float _damageRage;
 
-    // public getters for private properties
-    public int BonusAttack => _bonusAttack;
-    public int BonusHP => _bonusHP;
-    public float BonusRateAttack => _bonusRateAttack;
+
+    // public getter for above properties
+    public float DamagePerSecond => _damagePerSecond;
+    public float TimeRemain => _timeRemain;
+
+    public float DamageRange => _damageRage;
 }

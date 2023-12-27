@@ -16,10 +16,10 @@ MonoBehaviour:
   _icon: {fileID: 21300000, guid: 38eaf78a9b93da248aaa09d4a3f4c948, type: 3}
   _description: When activated, Bishop's determination becomes more resilient than
     ever, enhancing both attack, defense, and attack speed.
-  _cooldownTime: 25
-  _maintanceTime: 8
+  _cooldownTime: 5
+  _maintanceTime: 2
   _castingTime: 0
   _canBeInterrupted: 0
-  _bonusAttack: 10
-  _bonusHP: 150
-  _bonusRateAttack: 20
+  _damagePerSecond: 0
+  _timeRemain: 0
+  _damageRage: 1.5

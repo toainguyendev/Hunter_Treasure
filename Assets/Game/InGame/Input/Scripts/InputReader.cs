@@ -10,6 +10,6 @@ public class InputReader : MonoBehaviour
         _inputData.Vertical = Input.GetAxis("Vertical");
         _inputData.Jump = Input.GetButtonDown("Jump");
         _inputData.NormalAttack = Input.GetKeyDown(KeyCode.J);
-        _inputData.Skill = Input.GetKeyDown(KeyCode.Space);
+        _inputData.Skill = Input.GetKeyDown(KeyCode.K);
     }
 }

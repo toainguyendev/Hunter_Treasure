@@ -4,40 +4,20 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class MoveBase : MonoBehaviour
 {
-    // Character controller 
+    [Header("Component")]
     [SerializeField] protected CharacterController _characterController;
+    [SerializeField] protected ExplorerAnimationBase _animationController;
 
-    // Input data
+
+    [Space(12), Header("Data")]
     [SerializeField] protected InputData _inputData;
-
-    // Base info
     [SerializeField] protected ExplorerBaseInfo explorerBaseInfo;
 
 
     private float yVelocity = 0;
     private bool hasJump = false;
-    private void Update()
-    {
-        if (_inputData.Jump && _characterController.isGrounded)
-        {
-            Jump();
-            hasJump = true;
-        }
 
-        // Move
-        Move();
-
-        // Rotate to move
-        RotateToMove();
-
-        if (hasJump)
-        {
-            _inputData.Jump = false;
-            hasJump = false;
-        }
-    }
-
-    protected virtual void Move()
+    public virtual void Move()
     {
         if(_characterController.isGrounded && !hasJump)
         {
@@ -50,10 +30,15 @@ public class MoveBase : MonoBehaviour
 
         Vector3 move = new Vector3(_inputData.Horizontal, yVelocity, _inputData.Vertical);
         _characterController.Move(move * explorerBaseInfo.MoveSpeed * Time.deltaTime);
+
+        if(_inputData.Horizontal != 0 || _inputData.Vertical != 0)
+        {
+            _animationController.PlayRun();
+        }
     }
 
     // Rotate player to direction of move
-    protected void RotateToMove()
+    public void RotateToMove()
     {
         if (_inputData.Horizontal != 0 || _inputData.Vertical != 0)
         {
@@ -63,9 +48,21 @@ public class MoveBase : MonoBehaviour
     }
 
     // Jump player
-    protected void Jump()
+    public void Jump()
     {
-        yVelocity = explorerBaseInfo.JumpVelocity;
+        if (_characterController.isGrounded)
+        {
+            yVelocity = explorerBaseInfo.JumpVelocity;
+            hasJump = true;
+        }
     }
 
+    public void ResetJumpInput()
+    {
+        if (hasJump)
+        {
+            _inputData.Jump = false;
+            hasJump = false;
+        }
+    }
 }

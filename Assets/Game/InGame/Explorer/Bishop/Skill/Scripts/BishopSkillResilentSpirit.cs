@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class BishopSkillResilentSpirit : MonoBehaviour, ISkill
 {
-    [SerializeField] protected HealthBase _healthBase;
+    [Header("Component")]
+    [SerializeField] private ExplorerAnimationBase _animationController;
 
     [Space(12), Header("Data")]
     [SerializeField] protected BishopSkillData _skillData;
@@ -27,8 +28,10 @@ public class BishopSkillResilentSpirit : MonoBehaviour, ISkill
     #region PRIVATE PROPERTIES
     private bool skillPerforming = false;
 
-    private float countDownTime = 0f;
+    private float countDownTimeRemainSkill = 0f;
+    private float countDownTimeTriggerSkill = 0f;
     #endregion
+
 
     public void Interrupt()
     {
@@ -37,31 +40,60 @@ public class BishopSkillResilentSpirit : MonoBehaviour, ISkill
 
     public void Trigger()
     {
-        // add bonus hp, attack, attackrate for explorer
-        _healthBase.Heal(_skillData.BonusHP);
-        _playerBaseInfo.Attack += _skillData.BonusAttack;
-        _playerBaseInfo.RateAttack += _skillData.BonusRateAttack;
-
+        if(countDownTimeTriggerSkill > 0)
+        {
+            ConsoleLog.Log($"Skill is in cooldown {countDownTimeTriggerSkill}");
+            return;
+        }
         // Setup trigger skill
         skillPerforming = true;
-        countDownTime = _skillData.MaintanceTime;
+        countDownTimeRemainSkill = _skillData.MaintanceTime;
+        countDownTimeTriggerSkill = _skillData.CooldownTime;
+    }
+
+    private void Awake()
+    {
+        countDownTimeTriggerSkill = float.MinValue;
+    }
+
+    private void FixedUpdate()
+    {
+        if (skillPerforming)
+        {
+            // Detect enemy around player and damage them
+            Vector3 castOrigin = transform.position;
+            Collider[] hitColliders = Physics.OverlapSphere(castOrigin, _skillData.DamageRange);
+            for (int i = 0; i < hitColliders.Length; i++)
+            {
+                if (hitColliders[i].CompareTag("Enemy"))
+                {
+                    ConsoleLog.Log($"Hit enemy with damage {_skillData.DamagePerSecond * Time.fixedDeltaTime}");
+                }
+            }
+            // Perform skill animation
+            _animationController.PlayRotateSkill();
+        }
     }
 
     private void Update()
     {
         if (skillPerforming)
         {
-            countDownTime -= Time.deltaTime;
-
-            if (countDownTime < 0)
+            countDownTimeRemainSkill -= Time.deltaTime;
+            if (countDownTimeRemainSkill < 0)
             {
-                // remove bonus attack, attackrate for explorer
-                _playerBaseInfo.Attack -= _skillData.BonusAttack;
-                _playerBaseInfo.RateAttack -= _skillData.BonusRateAttack;
-
+                _animationController.PlayIdle();
                 // Reset trigger skill
                 skillPerforming = false;
-                countDownTime = 0f;
+                countDownTimeRemainSkill = 0f;
+            }
+        }
+        else
+        {
+            countDownTimeTriggerSkill -= Time.deltaTime;
+            if (countDownTimeTriggerSkill < 0)
+            {
+                countDownTimeTriggerSkill = -1f;
             }
         }
     }

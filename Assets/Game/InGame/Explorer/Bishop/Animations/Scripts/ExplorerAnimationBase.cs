@@ -1,22 +1,31 @@
 using Animancer;
+using System;
 using UnityEngine;
 
 public class ExplorerAnimationBase : MonoBehaviour
 {
     [Space(12), Header("Component")]
-    [SerializeField] private ExplorerStateManagement _stateManagement;
     [SerializeField] private AnimancerComponent _animancer;
 
     [Space(12), Header("Animation Clips")]
     [SerializeField] private ClipTransition _idle;
     [SerializeField] private ClipTransition _run;
     [SerializeField] private ClipTransition _normalAttack;
+    [SerializeField] private ClipTransition _rotateSkill;
 
     private void OnEnable()
     {
         _normalAttack.Events.OnEnd = OnNormalAttackEnd;
         _run.Events.OnEnd = OnRunEnd;
+        _rotateSkill.Events.OnEnd = OnRotateSkillEnd;
 
+        _animancer.Play(_idle);
+    }
+
+
+    #region ON ANIMATION END
+    private void OnRotateSkillEnd()
+    {
         _animancer.Play(_idle);
     }
 
@@ -28,21 +37,29 @@ public class ExplorerAnimationBase : MonoBehaviour
     private void OnNormalAttackEnd()
     {
         _animancer.Play(_idle);
-        _stateManagement.IsAttack = false;
     }
+    #endregion
 
-    private void Update()
+
+    #region TRIGGER ANIMATION
+    public void PlayIdle()
     {
-        if(_stateManagement.ExplorerState == ExplorerState.NormalAttack)
-        {
-            _animancer.Stop(_run);
-            _animancer.Play(_normalAttack);
-            _stateManagement.IsAttack = true;
-        }
-
-        if(_stateManagement.ExplorerState == ExplorerState.Run)
-        {
-            _animancer.Play(_run);
-        }
+        _animancer.Play(_idle);
     }
+
+    public void PlayRun()
+    {
+        _animancer.Play(_run);
+    }
+
+    public void PlayNormalAttack()
+    {
+        _animancer.Play(_normalAttack);
+    }
+
+    public void PlayRotateSkill()
+    {
+        _animancer.Play(_rotateSkill);
+    }
+    #endregion
 }
