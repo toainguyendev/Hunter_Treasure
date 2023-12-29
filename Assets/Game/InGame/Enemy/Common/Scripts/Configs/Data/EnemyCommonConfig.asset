@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: EnemyCommonConfig
   m_EditorClassIdentifier: 
   _waitTimeCheckSight: 0.2
+  _speedRotate: 1000

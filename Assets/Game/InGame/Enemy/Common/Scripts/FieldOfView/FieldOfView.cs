@@ -8,6 +8,9 @@ public class FieldOfView : MonoBehaviour
     [SerializeField] private LayerMask targetMask;
     [SerializeField] private LayerMask obstructionMask;
 
+    [Space(12), Header("Components")]
+    [SerializeField] private EnemyStateManagement enemyStateManagement;
+
     // temp -> move to a config
     public GameObject playerRef;
 
@@ -52,11 +55,12 @@ public class FieldOfView : MonoBehaviour
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                 {
                     canSeePlayer = true;
-                    ConsoleLog.Log("Can see player");
+                    enemyStateManagement.IsSeeingPlayer = true;
                 }
                 else
                 {
                     canSeePlayer = false;
+                    enemyStateManagement.IsSeeingPlayer = false;
                 }
             }
             else
