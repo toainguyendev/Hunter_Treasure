@@ -12,5 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091da31b057e8794ebc01926b0a783af, type: 3}
   m_Name: LoadStartToHomeController
   m_EditorClassIdentifier: 
+  _preloadGameObjects:
+  - m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   importantDatas:
   - {fileID: 11400000, guid: 46d07774f13739a4881b098ee2444e3d, type: 2}
