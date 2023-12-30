@@ -1,8 +1,7 @@
 using Animancer;
-using System;
 using UnityEngine;
 
-public class ExplorerAnimationBase : MonoBehaviour
+public class EnemyAnimationControllerBase : MonoBehaviour
 {
     [Space(12), Header("Component")]
     [SerializeField] private AnimancerComponent _animancer;
@@ -11,24 +10,17 @@ public class ExplorerAnimationBase : MonoBehaviour
     [SerializeField] private ClipTransition _idle;
     [SerializeField] private ClipTransition _run;
     [SerializeField] private ClipTransition _normalAttack;
-    [SerializeField] private ClipTransition _rotateSkill;
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         _normalAttack.Events.OnEnd = OnNormalAttackEnd;
         _run.Events.OnEnd = OnRunEnd;
-        _rotateSkill.Events.OnEnd = OnRotateSkillEnd;
 
         _animancer.Play(_idle);
     }
 
 
     #region ON ANIMATION END
-    private void OnRotateSkillEnd()
-    {
-        _animancer.Play(_idle);
-    }
-
     private void OnRunEnd()
     {
         _animancer.Play(_idle);
@@ -55,11 +47,6 @@ public class ExplorerAnimationBase : MonoBehaviour
     public void PlayNormalAttack()
     {
         _animancer.Play(_normalAttack);
-    }
-
-    public void PlayRotateSkill()
-    {
-        _animancer.Play(_rotateSkill);
     }
     #endregion
 }

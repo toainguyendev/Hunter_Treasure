@@ -979,7 +979,7 @@ PrefabInstance:
     - target: {fileID: 3350962061650545582, guid: 22419857bed4b6f4b9cd582ef0bd6b43,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: RockGolem
       objectReference: {fileID: 0}
     - target: {fileID: 3350962061650545583, guid: 22419857bed4b6f4b9cd582ef0bd6b43,
         type: 3}
@@ -1052,8 +1052,96 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3350962062530131635, guid: 22419857bed4b6f4b9cd582ef0bd6b43,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22419857bed4b6f4b9cd582ef0bd6b43, type: 3}
+--- !u!1 &3350962061904406803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3350962061650545582, guid: 22419857bed4b6f4b9cd582ef0bd6b43,
+    type: 3}
+  m_PrefabInstance: {fileID: 3350962061904406802}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3350962061904406804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350962061904406803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2741c657379a3054bb00a5a9e6458c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3350962061904406805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350962061904406803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 782bf67ade015aa4da5c74a5473cdfe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3350962061904406806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350962061904406803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703a32ab84a8ae94d98c184c371525a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyBaseInfo: {fileID: 11400000, guid: 1e42ac7fef8fe054f8749f3370681b0d, type: 2}
+--- !u!114 &3350962061904406807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350962061904406803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a90b1ed989fd22f478eeccfaad56bdcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animancer: {fileID: 0}
+  _idle:
+    _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 0}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  _run:
+    _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 0}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  _normalAttack:
+    _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 0}
+    _Speed: 1
+    _NormalizedStartTime: NaN
 --- !u!1001 &5216530617801620813
 PrefabInstance:
   m_ObjectHideFlags: 0
