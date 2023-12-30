@@ -26,7 +26,7 @@ public class UIManager : MonoSingleton<UIManager>
         if (!_modals.ContainsKey(modalType))
         {
             // create modal
-            ModalBase modal = Instantiate(_holderDataModel.GetModalPrefab(modalType));
+            ModalBase modal = Instantiate(_holderDataModel.GetModalPrefab(modalType), transform);
 
             // add modal to dictionary
             _modals.Add(modalType, modal);
