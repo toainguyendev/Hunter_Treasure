@@ -3,7 +3,6 @@ using UnityEngine.AI;
 
 public class TrackTarget : MonoBehaviour
 {
-    [SerializeField] private Transform playerTransform;
     [SerializeField] private NavMeshAgent navmeshAgent;
 
     [Space(12), Header("Components")]
@@ -12,8 +11,11 @@ public class TrackTarget : MonoBehaviour
     [Space(12), Header("Config")]
     [SerializeField] private EnemyCommonConfig enemyCommonConfig;
 
-    private Vector3 _originPos;
+    [Space(12), Header("Data")]
+    [SerializeField] private CommonMapData commonMapData;
 
+    private Vector3 _originPos;
+    private float _countDownTimeForgetPlayer = 0f;
     private void Awake()
     {
         _originPos = transform.position;
@@ -22,14 +24,19 @@ public class TrackTarget : MonoBehaviour
 
     private void Update()
     {
-        if(enemyStateManagement.IsSeeingPlayer)
+        if (!commonMapData.IsCompleteCreateExplorer)
+            return;
+
+        if (enemyStateManagement.IsSeeingPlayer)
         {
-            navmeshAgent.SetDestination(playerTransform.position);
+            _countDownTimeForgetPlayer = enemyCommonConfig.TimeForgotPlayer;
+            navmeshAgent.SetDestination(commonMapData.ExplorerTransform.position);
             navmeshAgent.angularSpeed = enemyCommonConfig.SpeedRotate;
         }
-        else
+        else if(_countDownTimeForgetPlayer <= 0f)
         {
             navmeshAgent.SetDestination(_originPos);
         }
+        _countDownTimeForgetPlayer -= Time.deltaTime;
     }
 }

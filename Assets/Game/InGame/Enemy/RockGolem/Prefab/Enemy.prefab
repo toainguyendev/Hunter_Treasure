@@ -77,7 +77,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   enemyStateManagement: {fileID: 531045249}
-  playerRef: {fileID: 0}
+  commonMapData: {fileID: 11400000, guid: 1022409149635ba43bde99304f77138c, type: 2}
 --- !u!114 &3350962061650545618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,10 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83814389088d9ee418c111310cb8decf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
   navmeshAgent: {fileID: 531045250}
   enemyStateManagement: {fileID: 531045249}
   enemyCommonConfig: {fileID: 11400000, guid: 86ac82135ef13664e8e0b81d4067312b, type: 2}
+  commonMapData: {fileID: 11400000, guid: 1022409149635ba43bde99304f77138c, type: 2}
 --- !u!114 &531045249
 MonoBehaviour:
   m_ObjectHideFlags: 0

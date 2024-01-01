@@ -11,8 +11,8 @@ public class FieldOfView : MonoBehaviour
     [Space(12), Header("Components")]
     [SerializeField] private EnemyStateManagement enemyStateManagement;
 
-    // temp -> move to a config
-    public GameObject playerRef;
+    [Space(12), Header("Data")]
+    [SerializeField] private CommonMapData commonMapData;
 
     private bool canSeePlayer;
     public bool CanSeePlayer { get => canSeePlayer; }
@@ -20,7 +20,7 @@ public class FieldOfView : MonoBehaviour
     //public method get distance sight, angle sight
     public float DistanceSight { get => _enemyBaseInfo.DistanceSight; }
     public float AngleSight { get => _enemyBaseInfo.AngleSight; }
-
+    public Transform PlayerTransform { get => commonMapData.ExplorerTransform; }
 
     private float lastTimeCheck;
 
@@ -66,7 +66,9 @@ public class FieldOfView : MonoBehaviour
             else
                 canSeePlayer = false;
         }
-        else if (canSeePlayer)
+        else
+        {
             canSeePlayer = false;
+        }
     }
 }

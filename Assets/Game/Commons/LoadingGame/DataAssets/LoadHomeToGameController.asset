@@ -15,3 +15,5 @@ MonoBehaviour:
   _preloadGameObjects: []
   runtimeGlobalData: {fileID: 11400000, guid: 5319794b66f61b54995908eb53177898, type: 2}
   explorerManager: {fileID: 11400000, guid: 8afc6c24e7ae0a5478519c21fffcb226, type: 2}
+  levelConfig: {fileID: 11400000, guid: 7a712d99d99ae0d4d80e91af6b2cc88c, type: 2}
+  commonMapData: {fileID: 11400000, guid: 1022409149635ba43bde99304f77138c, type: 2}

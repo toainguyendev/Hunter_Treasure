@@ -7,10 +7,12 @@ using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "LoadHomeToGameController", menuName = "HunterTreasure/LoadGame/LoadHomeToGameController")]
-public class LoadHomeToGameController : BaseLoadGameController
+public sealed class LoadHomeToGameController : BaseLoadGameController
 {
     [SerializeField] private RuntimeGlobalData runtimeGlobalData;
     [SerializeField] private ExplorerManager explorerManager;
+    [SerializeField] private LevelConfigs levelConfig;
+    [SerializeField] private CommonMapData commonMapData;
 
 
     private AsyncOperationHandle<SceneInstance> loadHandle;
@@ -32,23 +34,18 @@ public class LoadHomeToGameController : BaseLoadGameController
     {
         await base.OnLoad();
 
-        // Load scene game
-        loadSceneGameHandler = Addressables.LoadSceneAsync(LoadSceneController.SCENE_GAME, LoadSceneMode.Additive);
-        await UniTask.WaitUntil(() => loadSceneGameHandler.IsDone);
-        if(loadSceneGameHandler.Status == AsyncOperationStatus.Succeeded)
-        {
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName(LoadSceneController.SCENE_GAME));
-        }
+        await LoadSceneGame();
 
-        // instantiate explorer
-        GameObject explorerInstance = await explorerManager.GetExplorer(runtimeGlobalData.DataStartGamePlay.Explorer);
+        // setup scene game
+        await CreateMap();
 
-        await UniTask.Delay(4000);
+        await CreateExplorer();
+
+        await SetupUI();
 
         Messenger.Default.Publish(new LoadingProgressPayload() { progress = 1f });
 
-        // Setup scene with RuntimeGlobalData
-        ConsoleLog.Log($"Setup scene with RuntimeGlobalData");
+        // unload loading scene
         if (loadSceneGameHandler.Status == AsyncOperationStatus.Succeeded)
         {
             await Addressables.UnloadSceneAsync(loadHandle);
@@ -58,9 +55,65 @@ public class LoadHomeToGameController : BaseLoadGameController
     protected override async UniTask OnAfterLoad()
     {
         await base.OnAfterLoad();
+    }
 
-        
+    private async UniTask LoadSceneGame()
+    {
+        // Load scene game
+        loadSceneGameHandler = Addressables.LoadSceneAsync(LoadSceneController.SCENE_GAME, LoadSceneMode.Additive);
+        await UniTask.WaitUntil(() => loadSceneGameHandler.IsDone);
+        if (loadSceneGameHandler.Status == AsyncOperationStatus.Succeeded)
+        {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(LoadSceneController.SCENE_GAME));
+        }
+    }
+
+    private async UniTask CreateMap()
+    {
+        LevelData levelData = levelConfig.GetLevelData(runtimeGlobalData.DataStartGamePlay.LevelId);
+        AsyncOperationHandle<GameObject> handle = Addressables.InstantiateAsync(levelData.prefabRef);
+
+        await UniTask.WaitUntil(() => handle.IsDone);
+        if (handle.Status == AsyncOperationStatus.Succeeded)
+        {
+            GameObject mapInstance = handle.Result;
+            mapInstance.transform.position = Vector3.zero;
+        }
+    }
+
+    private async UniTask CreateExplorer()
+    {
+        await UniTask.WaitUntil(() => commonMapData.IsDoneAssignData);
+        AssetReferenceT<GameObject> explorerRef = explorerManager.GetExplorer(runtimeGlobalData.DataStartGamePlay.Explorer);
+
+        // instantiate explorer with addressable
+        AsyncOperationHandle<GameObject> loadHandle = Addressables.InstantiateAsync(explorerRef);
+
+        await UniTask.WaitUntil(() => loadHandle.IsDone);
+        if (loadHandle.Status == AsyncOperationStatus.Succeeded)
+        {
+            var explorerInstance = loadHandle.Result;
+            explorerInstance = loadHandle.Result;
+            explorerInstance.SetActive(false);
+
+            // setup position
+            explorerInstance.transform.position = commonMapData.PlayerSpawnPosition;
+
+            explorerInstance.SetActive(true);
+
+            commonMapData.ExplorerTransform = explorerInstance.transform;
+            commonMapData.IsCompleteCreateExplorer = true;
+        }
+    }
+
+    private async UniTask SetupMapData()
+    {
+
     }
 
 
+    private async UniTask SetupUI()
+    {
+
+    }
 }

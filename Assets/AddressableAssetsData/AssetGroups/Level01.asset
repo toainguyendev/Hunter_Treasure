@@ -10,20 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Global
+  m_Name: Level01
   m_EditorClassIdentifier: 
-  m_GroupName: Global
+  m_GroupName: Level01
   m_Data:
     m_SerializedData: []
-  m_GUID: 102bdcb86a2dd334d871597f41a2ff5f
+  m_GUID: 9b12d552d95118644b50468e08f2f70e
   m_SerializeEntries:
-  - m_GUID: 5319794b66f61b54995908eb53177898
-    m_Address: Assets/Game/Commons/RuntimeData/RuntimeGlobalData.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 7a712d99d99ae0d4d80e91af6b2cc88c
-    m_Address: Assets/Game/InGame/Level/Common/Data/LevelConfigs.asset
+  - m_GUID: e52235f1d83637842b91c93e3f02c714
+    m_Address: Assets/Game/InGame/Level/Level01/Prefabs/Level1_Map.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -31,5 +26,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: d2b448d03fe04bc4a8ecbb5bf5c6aa5c, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: e360565f37146724681e3705b83755dd, type: 2}
-    - {fileID: 11400000, guid: 4e1b839b67d1992408b65cc569b95fa6, type: 2}
+    - {fileID: 11400000, guid: a8ac50862a6ed8244afc0de8dd9ad8d3, type: 2}
+    - {fileID: 11400000, guid: f2e3a9954b5e9ed4093476a4783d0e6b, type: 2}
