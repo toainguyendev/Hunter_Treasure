@@ -8,7 +8,7 @@ public struct DataStartGamePlay
     private ExplorerType explorer;
     private List<KeyValuePair<ItemType, int>> itemsType;
 
-    public DataStartGamePlay(int levelId, ExplorerType explorer, List<KeyValuePair<ItemType, int>> itemsType)
+    public DataStartGamePlay(int levelId, ExplorerType explorer, List<KeyValuePair<ItemType, int>> itemsType = null)
     {
         this.levelId = levelId;
         this.explorer = explorer;

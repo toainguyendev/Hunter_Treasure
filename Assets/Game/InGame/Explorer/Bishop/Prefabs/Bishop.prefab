@@ -44,13 +44,14 @@ GameObject:
   - component: {fileID: 5216530617635840906}
   - component: {fileID: 975281865}
   - component: {fileID: 975281866}
-  - component: {fileID: 975281870}
   - component: {fileID: 975281871}
   - component: {fileID: 975281872}
   - component: {fileID: 975281873}
+  - component: {fileID: 5216530617801620824}
+  - component: {fileID: 5216530617801620825}
   m_Layer: 6
   m_Name: Bishop
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _characterController: {fileID: 5216530617635840901}
+  _animationController: {fileID: 975281866}
   _inputData: {fileID: 11400000, guid: 06d5b38a51730bc49aebee7f475e7e14, type: 2}
   explorerBaseInfo: {fileID: 11400000, guid: e3d1a2eab274d7148bf4f38444382622, type: 2}
 --- !u!114 &975281865
@@ -131,7 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea0dc2ed5a14df4a817968c1c17152f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateManagement: {fileID: 975281870}
   _animancer: {fileID: 975281865}
   _idle:
     _FadeDuration: 0.25
@@ -149,7 +150,7 @@ MonoBehaviour:
       _Callbacks: []
       _Names: []
     _Clip: {fileID: 1827226128182048838, guid: 7d4f9e9da55a3bd4f958a63308a522a1, type: 3}
-    _Speed: 6.06
+    _Speed: 1
     _NormalizedStartTime: NaN
   _normalAttack:
     _FadeDuration: 0.25
@@ -160,19 +161,15 @@ MonoBehaviour:
     _Clip: {fileID: 1827226128182048838, guid: db509ad77f9b4f84a8eb1989f589b24c, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
---- !u!114 &975281870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5216530617635840904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9796d4dc7b71dae41b91c127285da64f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inputData: {fileID: 11400000, guid: 06d5b38a51730bc49aebee7f475e7e14, type: 2}
+  _rotateSkill:
+    _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 1827226128182048838, guid: b267a2c210dbd1d4badc3f270df6d12d, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: NaN
 --- !u!114 &975281871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b50fae960f356094aa7f55e1b5938dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBase: {fileID: 975281871}
+  _animationController: {fileID: 0}
   _skillData: {fileID: 11400000, guid: 6e8db4ebbeaeb3d4da3bf54b772a4e22, type: 2}
   _playerBaseInfo: {fileID: 11400000, guid: e3d1a2eab274d7148bf4f38444382622, type: 2}
 --- !u!114 &975281873
@@ -216,6 +213,41 @@ MonoBehaviour:
   _attackPoint: {fileID: 1851524778}
   _explorerBaseInfo: {fileID: 11400000, guid: e3d1a2eab274d7148bf4f38444382622, type: 2}
   _inputData: {fileID: 11400000, guid: 06d5b38a51730bc49aebee7f475e7e14, type: 2}
+  _animationController: {fileID: 975281866}
+--- !u!114 &5216530617801620824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5216530617635840904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a895e08f520c539419c9696e705c5d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputData: {fileID: 11400000, guid: 06d5b38a51730bc49aebee7f475e7e14, type: 2}
+  _explorerBaseInfo: {fileID: 11400000, guid: e3d1a2eab274d7148bf4f38444382622, type: 2}
+  _animationController: {fileID: 975281866}
+  _normalAttack: {fileID: 975281873}
+  _characterController: {fileID: 5216530617635840901}
+  _moveController: {fileID: 5216530617635840906}
+  _skillController: {fileID: 5216530617801620825}
+--- !u!114 &5216530617801620825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5216530617635840904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50fae960f356094aa7f55e1b5938dae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationController: {fileID: 975281866}
+  _skillData: {fileID: 11400000, guid: 6e8db4ebbeaeb3d4da3bf54b772a4e22, type: 2}
+  _playerBaseInfo: {fileID: 11400000, guid: e3d1a2eab274d7148bf4f38444382622, type: 2}
 --- !u!1001 &5216530617444643029
 PrefabInstance:
   m_ObjectHideFlags: 0

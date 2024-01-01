@@ -15,6 +15,7 @@ public class HomeScreen : MonoBehaviour
     public void OnClickPlay()
     {
         // Pass data
+        runtimeGlobalData.DataStartGamePlay = new DataStartGamePlay(1, ExplorerType.Bishop);
         
 
         // Load scene

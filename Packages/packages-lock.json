@@ -7,13 +7,6 @@
       "dependencies": {},
       "hash": "5cc97c7f0085624b6ef57853d70b404440060cef"
     },
-    "com.fluid.behavior-tree": {
-      "version": "https://github.com/ashblue/fluid-behavior-tree.git#v2.2.3",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "5d2f47a41d69c10f499c522b078088891458bc7d"
-    },
     "com.intothedev.objectpooling": {
       "version": "https://github.com/IntoTheDev/Object-Pooling-for-Unity.git",
       "depth": 0,
