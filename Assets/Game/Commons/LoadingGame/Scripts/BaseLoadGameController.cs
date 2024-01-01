@@ -1,10 +1,11 @@
 
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public abstract class BaseLoadGameController : ScriptableObject
 {
-    protected bool isDoneLoadTempScene = false;
+    [SerializeField] protected AssetReferenceT<GameObject>[] _preloadGameObjects;
 
     protected virtual async UniTask OnBeforeLoad()
     {

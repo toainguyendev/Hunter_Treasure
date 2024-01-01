@@ -19,22 +19,16 @@ public class LoadStartToHomeController : BaseLoadGameController
         await base.OnBeforeLoad();
         percentLoading = 0f;
         loadHandle = Addressables.LoadSceneAsync(LoadSceneController.SCENE_LOADING, LoadSceneMode.Additive);
-
-        loadHandle.Completed += (handle) =>
+        await UniTask.WaitUntil(() => loadHandle.IsDone);
+        if (loadHandle.Status == AsyncOperationStatus.Succeeded)
         {
-            if (handle.Status == AsyncOperationStatus.Succeeded)
-            {
-                SceneManager.UnloadSceneAsync(LoadSceneController.SCENE_START);
-                isDoneLoadTempScene = true;
-            }
-        };
+            await SceneManager.UnloadSceneAsync(LoadSceneController.SCENE_START);
+        }
     }
 
     protected override async UniTask OnLoad()
     {
         await base.OnLoad();
-
-        await UniTask.WaitUntil(() => isDoneLoadTempScene);
 
         await LoadDataAsset();
     }

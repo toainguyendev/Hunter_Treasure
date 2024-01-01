@@ -1,6 +1,8 @@
+using Cysharp.Threading.Tasks;
 using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public enum ExplorerType
 {
@@ -26,18 +28,10 @@ public class ExplorerManager : ScriptableObject
 
 
     // method to instantiate explorer with addressable, disable the instance and return that instance
-    public GameObject GetExplorer(ExplorerType explorer)
+    public AssetReferenceT<GameObject> GetExplorer(ExplorerType explorer)
     {
         // find explorer holder data with explorer type
         ExplorerHolderData explorerHolderData = Array.Find(_explorerHolderDatas, x => x.explorer == explorer);
-
-        // instantiate explorer with addressable
-        GameObject explorerInstance = Addressables.InstantiateAsync(explorerHolderData.explorerPrefab).Result;
-
-        // disable explorer instance
-        explorerInstance.SetActive(false);
-
-        // return explorer instance
-        return explorerInstance;
+        return explorerHolderData.explorerPrefab;
     }
 }
