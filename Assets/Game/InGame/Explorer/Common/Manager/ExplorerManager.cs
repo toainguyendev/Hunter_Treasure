@@ -17,6 +17,7 @@ public struct ExplorerHolderData
 {
     public ExplorerType explorer;
     public AssetReferenceT<GameObject> explorerPrefab;
+    public ExplorerBaseInfo explorerBaseInfo;
 }
 
 
