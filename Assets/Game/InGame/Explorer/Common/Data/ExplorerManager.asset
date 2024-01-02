@@ -19,4 +19,9 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+    explorerDisplayPrefab:
+      m_AssetGUID: 4a0b15205fc551b439dfcd5cf46e09c3
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
     explorerBaseInfo: {fileID: 11400000, guid: e3d1a2eab274d7148bf4f38444382622, type: 2}

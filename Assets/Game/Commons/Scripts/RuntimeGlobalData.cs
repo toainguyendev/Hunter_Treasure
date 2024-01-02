@@ -50,13 +50,39 @@ public struct DataEndGame
     public List<KeyValuePair<CurrencyType, int>> CurrenciesType { get => currenciesType; set => currenciesType = value; }
 }
 
+public struct DataInHome
+{
+    public ExplorerType explorer;
+
+    DataInHome(ExplorerType explorer = ExplorerType.None)
+    {
+        this.explorer = explorer;
+    }
+}
+
 [CreateAssetMenu(fileName = "RuntimeGlobalData", menuName = "HunterTreasure/Global/RuntimeGlobalData")]
 public class RuntimeGlobalData : ScriptableObject
 {
     private DataStartGamePlay dataStartGamePlay;
     private DataEndGame dataEndGame;
+    private DataInHome dataInHome;
 
     // public getters and setters for private properties
     public DataStartGamePlay DataStartGamePlay { get => dataStartGamePlay; set => dataStartGamePlay = value; }
     public DataEndGame DataEndGame { get => dataEndGame; set => dataEndGame = value; }
+    public DataInHome DataInHome { get => dataInHome; set => dataInHome = value; }
+
+    private void OnEnable()
+    {
+        dataStartGamePlay = new DataStartGamePlay();
+        dataEndGame = new DataEndGame();
+        dataInHome = new DataInHome();
+    }
+
+    #region DataInHome
+    public void SetChoseExplorer(ExplorerType explorer)
+    {
+        dataInHome.explorer = explorer;
+    }
+    #endregion
 }
