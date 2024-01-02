@@ -1,5 +1,6 @@
-using TMPro;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
 
 public class HomeScreen : ModalBase
@@ -11,8 +12,12 @@ public class HomeScreen : ModalBase
     [SerializeField] private Button itemsButton;
     [SerializeField] private Button explorersButton;
 
+    [Space(12)]
+    [SerializeField] private Transform holderExplorer;
+
     [Space(10), Header("Data")]
     [SerializeField] private RuntimeGlobalData runtimeGlobalData;
+    [SerializeField] private ExplorerManager explorerManager; 
 
     private void Awake()
     {
@@ -59,6 +64,16 @@ public class HomeScreen : ModalBase
 
     protected override void OnShow()
     {
+        if(runtimeGlobalData.DataInHome.explorer == ExplorerType.None)
+            runtimeGlobalData.SetChoseExplorer(ExplorerType.Bishop);
+
+        var refExplorer = explorerManager.GetExplorerDisplay(runtimeGlobalData.DataInHome.explorer);
+        Addressables.InstantiateAsync(refExplorer).Completed += (AsyncOperationHandle<GameObject> obj) =>
+        {
+            obj.Result.transform.SetParent(holderExplorer);
+            obj.Result.transform.localPosition = Vector3.zero;
+            obj.Result.transform.localScale = Vector3.one;
+        };
     }
 
     protected override void OnAnimationEnd()

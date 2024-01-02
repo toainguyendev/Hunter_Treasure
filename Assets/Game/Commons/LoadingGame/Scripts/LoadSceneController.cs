@@ -30,7 +30,6 @@ public class LoadSceneController : MonoSingleton<LoadSceneController>
 
     public async void LoadHomeToGame()
     {
-        ConsoleLog.Log("On Click Play: LoadHomeToGame");
         await loadingHomeToGameController.LoadGame();
     }
 

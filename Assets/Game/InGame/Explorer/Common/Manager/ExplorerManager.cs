@@ -17,6 +17,7 @@ public struct ExplorerHolderData
 {
     public ExplorerType explorer;
     public AssetReferenceT<GameObject> explorerPrefab;
+    public AssetReferenceT<GameObject> explorerDisplayPrefab;
     public ExplorerBaseInfo explorerBaseInfo;
 }
 
@@ -34,5 +35,13 @@ public class ExplorerManager : ScriptableObject
         // find explorer holder data with explorer type
         ExplorerHolderData explorerHolderData = Array.Find(_explorerHolderDatas, x => x.explorer == explorer);
         return explorerHolderData.explorerPrefab;
+    }
+
+    // method to instantiate explorer display with addressable, disable the instance and return that instance
+    public AssetReferenceT<GameObject> GetExplorerDisplay(ExplorerType explorer)
+    {
+        // find explorer holder data with explorer type
+        ExplorerHolderData explorerHolderData = Array.Find(_explorerHolderDatas, x => x.explorer == explorer);
+        return explorerHolderData.explorerDisplayPrefab;
     }
 }
