@@ -19,9 +19,12 @@ public abstract class BaseDataAsset<DataModel> : BaseDataAsset where DataModel :
 
     [Space(12)]
     [SerializeField] private string fileName = string.Empty;
+
+#if !PRODUCTION
     [SerializeField] private bool binaryFormat = false;
-
-
+#else
+    [SerializeField] private bool binaryFormat = true;
+#endif
     protected bool isDoneLoadData = false;
 
     public override bool IsDoneLoadData => isDoneLoadData;

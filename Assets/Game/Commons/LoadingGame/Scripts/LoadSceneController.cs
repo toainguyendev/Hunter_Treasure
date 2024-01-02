@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceProviders;
 
 public class LoadSceneController : MonoSingleton<LoadSceneController>
 {
@@ -10,6 +12,10 @@ public class LoadSceneController : MonoSingleton<LoadSceneController>
     public static string SCENE_HOME = "Home";
     public static string SCENE_GAME = "Game";
     public static string SCENE_REWARD = "Reward";
+
+    public static AsyncOperationHandle<SceneInstance> loadingSceneHandler;
+    public static AsyncOperationHandle<SceneInstance> homeHandler;
+    public static AsyncOperationHandle<SceneInstance> loadGameHandle;
 
     protected override void Awake()
     {
@@ -24,6 +30,7 @@ public class LoadSceneController : MonoSingleton<LoadSceneController>
 
     public async void LoadHomeToGame()
     {
+        ConsoleLog.Log("On Click Play: LoadHomeToGame");
         await loadingHomeToGameController.LoadGame();
     }
 
