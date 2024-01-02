@@ -5,7 +5,7 @@ public abstract class ModalBase : MonoBehaviour
     // abstract method OnClose, OnShow, AnimationEnd
     protected abstract void OnClose();
     protected abstract void OnShow();
-    protected abstract void AnimationEnd();
+    protected abstract void OnAnimationEnd();
 
     // method show modal
     public virtual void Show()

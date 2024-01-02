@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: LoadGameAsset
+  m_EditorClassIdentifier: 
+  m_GroupName: LoadGameAsset
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 060c20b359da8e54db56307ee2158c4c
+  m_SerializeEntries:
+  - m_GUID: eaabcdd98ab300447b124bcfcb043f23
+    m_Address: Assets/Game/Commons/LoadingGame/DataAssets/LoadHomeToGameController.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 31f1673cfb398334d92c11ccc5ba577c
+    m_Address: Assets/Game/Commons/LoadingGame/DataAssets/LoadStartToHomeController.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: d2b448d03fe04bc4a8ecbb5bf5c6aa5c, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7cf01c0498d6d80488782019c7f4edaa, type: 2}
+    - {fileID: 11400000, guid: 6ab3f6758d1ba1e4eba2999512ee2505, type: 2}

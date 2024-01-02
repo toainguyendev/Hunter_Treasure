@@ -16,6 +16,7 @@ public enum ModalType
 public class UIManager : MonoSingleton<UIManager>
 {
     [SerializeField] private HolderDataModel _holderDataModel;
+
     // dictionary for modal
     private Dictionary<ModalType, ModalBase> _modals = new Dictionary<ModalType, ModalBase>();
 

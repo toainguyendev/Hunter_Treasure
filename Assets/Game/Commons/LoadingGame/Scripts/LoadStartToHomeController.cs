@@ -4,23 +4,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
-using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "LoadStartToHomeController", menuName = "HunterTreasure/LoadGame/LoadStartToHomeController")]
 public class LoadStartToHomeController : BaseLoadGameController
 {
     [SerializeField] private List<BaseDataAsset> importantDatas;
-    private AsyncOperationHandle<SceneInstance> loadHandle;
 
     private float percentLoading = 0;
     protected override async UniTask OnBeforeLoad()
     {
         await base.OnBeforeLoad();
         percentLoading = 0f;
-        loadHandle = Addressables.LoadSceneAsync(LoadSceneController.SCENE_LOADING, LoadSceneMode.Additive);
-        await UniTask.WaitUntil(() => loadHandle.IsDone);
-        if (loadHandle.Status == AsyncOperationStatus.Succeeded)
+
+        // Load scene loading
+        LoadSceneController.loadingSceneHandler = Addressables.LoadSceneAsync(LoadSceneController.SCENE_LOADING, LoadSceneMode.Additive);
+        await UniTask.WaitUntil(() => LoadSceneController.loadingSceneHandler.IsDone);
+        if (LoadSceneController.loadingSceneHandler.Status == AsyncOperationStatus.Succeeded)
         {
             await SceneManager.UnloadSceneAsync(LoadSceneController.SCENE_START);
         }
@@ -31,6 +31,10 @@ public class LoadStartToHomeController : BaseLoadGameController
         await base.OnLoad();
 
         await LoadDataAsset();
+
+        await LoadSceneHome();
+
+        SetupUI();
     }
 
 
@@ -38,15 +42,7 @@ public class LoadStartToHomeController : BaseLoadGameController
     {
         await base.OnAfterLoad();
 
-        AsyncOperationHandle<SceneInstance> loadHomeHandle = Addressables.LoadSceneAsync(LoadSceneController.SCENE_HOME, LoadSceneMode.Additive);
-
-        loadHomeHandle.Completed += (handle) =>
-        {
-            if (handle.Status == AsyncOperationStatus.Succeeded)
-            {
-                Addressables.UnloadSceneAsync(loadHandle);
-            }
-        };
+        await UnloadLoadingScene();
     }
 
 
@@ -65,6 +61,29 @@ public class LoadStartToHomeController : BaseLoadGameController
             // TODO: remove this line
             await UniTask.Delay(2000);
             ConsoleLog.Log($"Load data {data.name} done");
+        }
+    }
+
+    private void SetupUI()
+    {
+        UIManager.Instance.ShowModal(ModalType.HOME);
+    }
+
+    private async UniTask LoadSceneHome()
+    {
+        LoadSceneController.homeHandler = Addressables.LoadSceneAsync(LoadSceneController.SCENE_HOME, LoadSceneMode.Additive);
+        await UniTask.WaitUntil(() => LoadSceneController.homeHandler.IsDone);
+        if (LoadSceneController.homeHandler.Status == AsyncOperationStatus.Succeeded)
+        {
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(LoadSceneController.SCENE_HOME));
+        }
+    }
+
+    private async UniTask UnloadLoadingScene()
+    {
+        if (LoadSceneController.homeHandler.Status == AsyncOperationStatus.Succeeded)
+        {
+            await Addressables.UnloadSceneAsync(LoadSceneController.loadingSceneHandler);
         }
     }
 }
