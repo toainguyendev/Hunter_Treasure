@@ -41,6 +41,10 @@ public class ExplorerManager : ScriptableObject
         return explorerHolderData.explorerPrefab;
     }
 
+    public ExplorerBaseInfo[] GetAllExplorerBaseInfo() { 
+        return Array.ConvertAll(_explorerHolderDatas, x => x.explorerBaseInfo);
+    }
+
     // method to instantiate explorer display with addressable, disable the instance and return that instance
     public AssetReferenceT<GameObject> GetExplorerDisplay(ExplorerType explorer)
     {

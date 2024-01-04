@@ -20,3 +20,5 @@ MonoBehaviour:
   _attackRange: 0
   _moveSpeed: 5
   jumpVelocity: 3
+  imageThumbnail: {fileID: 21300010, guid: 92aed355811f74647a8a12fc00cbe8c5, type: 3}
+  skillData: {fileID: 11400000, guid: 6e8db4ebbeaeb3d4da3bf54b772a4e22, type: 2}
