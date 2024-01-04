@@ -19,6 +19,7 @@ public struct ExplorerHolderData
     public AssetReferenceT<GameObject> explorerPrefab;
     public AssetReferenceT<GameObject> explorerDisplayPrefab;
     public ExplorerBaseInfo explorerBaseInfo;
+    public Sprite avatar;
 }
 
 
@@ -27,6 +28,9 @@ public class ExplorerManager : ScriptableObject
 {
     // List Explorer holder data
     [SerializeField] private ExplorerHolderData[] _explorerHolderDatas;
+
+    // getter for explorer holder data
+    public ExplorerHolderData[] ExplorerHolderDatas { get => _explorerHolderDatas; }
 
 
     // method to instantiate explorer with addressable, disable the instance and return that instance

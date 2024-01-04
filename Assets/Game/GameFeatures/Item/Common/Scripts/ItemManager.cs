@@ -3,6 +3,7 @@ using UnityEngine;
 
 public enum ItemType
 {
+    None,
     Mine,
     Trap,
     Potion,

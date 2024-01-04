@@ -71,6 +71,19 @@ public class UIManager : MonoSingleton<UIManager>
         }
     }
 
+    public void DestroyModal(ModalType modalType)
+    {
+        // if modal is exist in dictionary
+        if (_modals.ContainsKey(modalType))
+        {
+            // destroy modal
+            Destroy(_modals[modalType].gameObject);
+
+            // remove modal from dictionary
+            _modals.Remove(modalType);
+        }
+    }
+
     // destroy all modal
     public void DestroyAllModal()
     {
