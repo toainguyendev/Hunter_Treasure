@@ -22,4 +22,16 @@ public class ItemHolderData : ScriptableObject
 {
     [SerializeField] private List<ItemHolder> itemHolders;
 
+    public List<ItemHolder> ItemHolders => itemHolders;
+
+    // method find item holder with itemtype
+    public ItemHolder GetItemHolder(ItemType itemType)
+    {
+        for (int i = 0; i < itemHolders.Count; i++)
+        {
+            if (itemHolders[i].ItemType == itemType)
+                return itemHolders[i];
+        }
+        return null;
+    }
 }

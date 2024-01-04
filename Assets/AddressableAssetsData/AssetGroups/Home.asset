@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: SceneGame
+  m_Name: Home
   m_EditorClassIdentifier: 
-  m_GroupName: SceneGame
+  m_GroupName: Home
   m_Data:
     m_SerializedData: []
-  m_GUID: c3e704f7f715eeb41b0bb4c921b0c1af
+  m_GUID: 2c1496642181fbe4c9f5e3b5425317bf
   m_SerializeEntries:
-  - m_GUID: 02425609c08b6a142aa9f7d6f8831860
-    m_Address: LoadingScene
+  - m_GUID: 4a0b15205fc551b439dfcd5cf46e09c3
+    m_Address: Assets/Game/InGame/Explorer/Bishop/Prefabs/Bishop_Display_Model.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 9cf0da7612c0c524087cc9b8b16c4e0f
-    m_Address: Home
+  - m_GUID: 17829293b793cb142bb4313cc0079ba4
+    m_Address: Assets/Game/UI/SelectExplorerAndItemScreen/Prefabs/btnChooseExplorer.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ecd833ff5a223e846a9f9c9177ca0bb7
-    m_Address: Game
+  - m_GUID: b2f1cd0343b3a4d42858696ed1e9e854
+    m_Address: Assets/Game/UI/SelectExplorerAndItemScreen/Prefabs/btnChooseItem.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -36,5 +36,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: d2b448d03fe04bc4a8ecbb5bf5c6aa5c, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 38a9146637a42a14ab6f9a72199aa89d, type: 2}
-    - {fileID: 11400000, guid: eaf73e6d4f7284c4eb4c45888eaf490d, type: 2}
+    - {fileID: 11400000, guid: ff38b33c00eb4eb439e75c4347ff2d1a, type: 2}
+    - {fileID: 11400000, guid: 2d31b64af31c061499a5db49022ce342, type: 2}
