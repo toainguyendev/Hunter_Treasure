@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 531045253}
   - component: {fileID: 531045250}
   - component: {fileID: 3350962061904406804}
-  - component: {fileID: 3350962061904406805}
   - component: {fileID: 3350962061904406806}
   - component: {fileID: 3350962061904406807}
   m_Layer: 0
@@ -92,7 +91,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   navmeshAgent: {fileID: 531045250}
   enemyStateManagement: {fileID: 531045249}
+  enemyAnimationController: {fileID: 3350962061904406807}
   enemyCommonConfig: {fileID: 11400000, guid: 86ac82135ef13664e8e0b81d4067312b, type: 2}
+  enemyBaseInfo: {fileID: 11400000, guid: 1e42ac7fef8fe054f8749f3370681b0d, type: 2}
   commonMapData: {fileID: 11400000, guid: 1022409149635ba43bde99304f77138c, type: 2}
 --- !u!114 &531045249
 MonoBehaviour:
@@ -156,18 +157,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2741c657379a3054bb00a5a9e6458c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3350962061904406805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3350962061650545582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 782bf67ade015aa4da5c74a5473cdfe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  enemyStateManagement: {fileID: 531045249}
+  enemyAnimationController: {fileID: 3350962061904406807}
+  commonMapData: {fileID: 11400000, guid: 1022409149635ba43bde99304f77138c, type: 2}
+  enemyBaseInfo: {fileID: 11400000, guid: 1e42ac7fef8fe054f8749f3370681b0d, type: 2}
 --- !u!114 &3350962061904406806
 MonoBehaviour:
   m_ObjectHideFlags: 0

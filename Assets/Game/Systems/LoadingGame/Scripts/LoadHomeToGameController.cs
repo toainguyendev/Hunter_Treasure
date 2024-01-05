@@ -31,7 +31,8 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
 
         await LoadSceneGame();
 
-        // setup scene game
+        ResetData();
+
         await CreateMap();
 
         await CreateExplorer();
@@ -110,5 +111,10 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
     private async UniTask SetupUI()
     {
 
+    }
+
+    private void ResetData()
+    {
+        commonMapData.ResetData();
     }
 }

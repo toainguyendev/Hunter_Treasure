@@ -17,7 +17,7 @@ MonoBehaviour:
   _attack: 50
   _rateAttack: 1
   _defense: 150
-  _attackRange: 2
+  _attackRange: 3
   _moveSpeed: 60
   _angleSight: 360
   _distanceSight: 10
