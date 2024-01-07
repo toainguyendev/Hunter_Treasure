@@ -82,7 +82,7 @@ public class MapItem : MonoBehaviour
         TMP_Text treasureDescription = this.infomationPopupInstance.transform.Find("ttTreasureDescription").gameObject.GetComponent<TMP_Text>();
         mapName.text = this.levelData.levelName;
         story.text = this.levelData.story;
-        treasureImage.sprite = this.levelData.treasureData.avatarRef.Asset as Sprite;
+        treasureImage.sprite = this.levelData.treasureData.avatar;
         treasureDescription.text = this.levelData.treasureData.description;
     }
 
@@ -96,7 +96,7 @@ public class MapItem : MonoBehaviour
         this.levelData = levelData;
         this.mapName.text = levelData.levelName;
         this.mapThumbnail.sprite = levelData.mapThumbnail;
-        Sprite spriteTemp = levelData.treasureData.avatarRef.LoadAsset<Sprite>().Result;
+        Sprite spriteTemp = levelData.treasureData.avatar;
     }
 
 
