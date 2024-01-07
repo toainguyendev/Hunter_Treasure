@@ -16,6 +16,7 @@ public struct LevelData
 {
     public string levelName;
     public string story;
+    public Sprite mapThumbnail;
 
     public AssetReferenceT<GameObject> mapPrefabRef;
 
@@ -40,5 +41,10 @@ public class LevelConfigs : ScriptableObject
             ConsoleLog.LogError($"LevelConfigs.GetLevelData: {e.Message}");
             return levelDatas[0];
         }
+    }
+
+    public LevelData[] getLevelDatas()
+    {
+        return levelDatas;
     }
 }
