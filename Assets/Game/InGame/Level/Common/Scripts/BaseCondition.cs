@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BaseConditionWin : MonoBehaviour
+public class BaseCondition : MonoBehaviour
 {
     protected bool _isPassCondition = false;
 

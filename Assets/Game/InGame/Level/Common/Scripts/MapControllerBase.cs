@@ -6,7 +6,7 @@ public class MapControllerBase : MonoBehaviour
     [SerializeField] private Transform _spawnExplorerPos;
 
     [Space(10)]
-    [SerializeField] private BaseConditionWin[] _conditionWins;
+    [SerializeField] private BaseCondition[] _conditionWins;
 
     [Header("Data")]
     [SerializeField] private CommonMapData commonMapData;
