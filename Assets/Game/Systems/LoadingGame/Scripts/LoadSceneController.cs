@@ -11,7 +11,7 @@ public class LoadSceneController : MonoSingleton<LoadSceneController>
     public static string SCENE_LOADING = "LoadingScene";
     public static string SCENE_HOME = "Home";
     public static string SCENE_GAME = "Game";
-    public static string SCENE_REWARD = "Reward";
+    public static string SCENE_REWARD = "Result";
 
     public static AsyncOperationHandle<SceneInstance> loadingSceneHandler;
     public static AsyncOperationHandle<SceneInstance> homeHandler;
