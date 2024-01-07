@@ -8,7 +8,7 @@ public struct TreasureData
     public string treasureName;
     public string description;
     public AssetReferenceT<GameObject> treasurePrefabRef;
-    public AssetReferenceT<Sprite> avatarRef;
+    public Sprite avatar;
 }
 
 [Serializable]
