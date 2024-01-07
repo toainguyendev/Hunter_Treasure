@@ -32,16 +32,6 @@ public class MapItem : MonoBehaviour
         transform.GetComponent<EventTrigger>().triggers.Add(entry2);
 
     }
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void OnCursorEnter()
     {
@@ -75,6 +65,8 @@ public class MapItem : MonoBehaviour
         Debug.Log(itemPos);
         Debug.Log(popupPos);
         this.infomationPopupInstance = Instantiate(this.infomationPopup, popupPos, Quaternion.identity, transform);
+        var rectTransform = this.infomationPopupInstance.GetComponent<RectTransform>();
+        rectTransform.localPosition = new Vector3(rectTransform.position.x, rectTransform.position.y, -1);
     }
 
     public void OnCursorExit()
