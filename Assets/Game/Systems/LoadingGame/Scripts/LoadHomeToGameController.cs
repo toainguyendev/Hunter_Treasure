@@ -31,7 +31,8 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
 
         await LoadSceneGame();
 
-        // setup scene game
+        ResetData();
+
         await CreateMap();
 
         await CreateExplorer();
@@ -66,7 +67,7 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
     private async UniTask CreateMap()
     {
         LevelData levelData = levelConfig.GetLevelData(runtimeGlobalData.DataStartGamePlay.LevelId);
-        AsyncOperationHandle<GameObject> handle = Addressables.InstantiateAsync(levelData.prefabRef);
+        AsyncOperationHandle<GameObject> handle = Addressables.InstantiateAsync(levelData.mapPrefabRef);
 
         await UniTask.WaitUntil(() => handle.IsDone);
         if (handle.Status == AsyncOperationStatus.Succeeded)
@@ -110,5 +111,10 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
     private async UniTask SetupUI()
     {
 
+    }
+
+    private void ResetData()
+    {
+        commonMapData.ResetData();
     }
 }

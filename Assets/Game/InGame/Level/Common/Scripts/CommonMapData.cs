@@ -32,4 +32,10 @@ public class CommonMapData : ScriptableObject
         get => isCompleteCreateExplorer;
         set => isCompleteCreateExplorer = value;
     }
+
+    public void ResetData()
+    {
+        isDoneAssignData = false;
+        isCompleteCreateExplorer = false;
+    }
 }

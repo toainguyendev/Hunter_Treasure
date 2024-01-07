@@ -73,6 +73,7 @@ public class HomeScreen : ModalBase
             obj.Result.transform.SetParent(holderExplorer);
             obj.Result.transform.localPosition = Vector3.zero;
             obj.Result.transform.localScale = Vector3.one;
+            obj.Result.transform.localRotation = Quaternion.identity;
         };
     }
 

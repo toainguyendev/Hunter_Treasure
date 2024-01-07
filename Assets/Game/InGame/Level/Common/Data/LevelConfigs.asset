@@ -14,9 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelDatas:
   - levelName: Level 01
-    story: Nothing
-    prefabRef:
+    story: This is a story
+    mapPrefabRef:
       m_AssetGUID: e52235f1d83637842b91c93e3f02c714
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+    treasureData:
+      treasureName: 
+      description: 
+      treasurePrefabRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
+      avatarRef:
+        m_AssetGUID: 
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0

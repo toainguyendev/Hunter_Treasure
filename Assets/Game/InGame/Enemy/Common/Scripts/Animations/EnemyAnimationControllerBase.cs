@@ -1,4 +1,5 @@
 using Animancer;
+using System;
 using UnityEngine;
 
 public class EnemyAnimationControllerBase : MonoBehaviour
@@ -10,6 +11,9 @@ public class EnemyAnimationControllerBase : MonoBehaviour
     [SerializeField] private ClipTransition _idle;
     [SerializeField] private ClipTransition _run;
     [SerializeField] private ClipTransition _normalAttack;
+
+    public Action OnDoneAttack;
+
 
     protected virtual void OnEnable()
     {
@@ -29,6 +33,7 @@ public class EnemyAnimationControllerBase : MonoBehaviour
     private void OnNormalAttackEnd()
     {
         _animancer.Play(_idle);
+        OnDoneAttack?.Invoke();
     }
     #endregion
 
