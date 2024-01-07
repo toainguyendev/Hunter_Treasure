@@ -23,13 +23,8 @@ public class ListExplorerScreen : MonoBehaviour
 
     private void Awake()
     {
-        // Get all explorer base info
         explorerBaseInfos = explorerManager.GetAllExplorerBaseInfo();
-        // Display all explorer base info
-        //foreach (ExplorerBaseInfo explorerBaseInfo in explorerBaseInfos)
-        //{
-        //    DisplayExplorer(explorerBaseInfo);
-        //}
+
         Debug.Log(explorerBaseInfos.Length);
         DisplayExplorer(explorerBaseInfos[0]);
 

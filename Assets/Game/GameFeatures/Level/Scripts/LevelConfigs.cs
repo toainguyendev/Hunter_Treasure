@@ -30,4 +30,9 @@ public class LevelConfigs : ScriptableObject
             return levelDatas[0];
         }
     }
+
+    public LevelData[] getLevelDatas()
+    {
+        return levelDatas;
+    }
 }
