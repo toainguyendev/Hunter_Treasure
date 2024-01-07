@@ -28,6 +28,10 @@ public class HealthBase : MonoBehaviour, IHealth
         }
     }
 
+    private void Awake()
+    {
+        CurrentHP = explorerBaseInfo.HP;
+    }
 
     public void Heal(float healAmount)
     {
