@@ -16,7 +16,17 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: c3e704f7f715eeb41b0bb4c921b0c1af
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 0a0c35b4c2d71c24baa3053e6eacdbb4
+    m_Address: Assets/Game/UI/SelectMapScreen/textures/treasure2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5a5cda56e28774c41b1f1b4c26f60fb4
+    m_Address: Assets/Game/UI/SelectMapScreen/textures/pngegg.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d2b448d03fe04bc4a8ecbb5bf5c6aa5c, type: 2}
   m_SchemaSet:

@@ -33,6 +33,11 @@ public class MapItem : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        this.treasure.sprite = this.levelData.treasureData.avatarRef.Asset as Sprite;
+    }
+
     public void OnCursorEnter()
     {
         ConsoleLog.Log("OnMouseEnter");
@@ -44,29 +49,41 @@ public class MapItem : MonoBehaviour
         Vector2 windowPos = Camera.main.WorldToScreenPoint(transform.position);
 
         Vector2 itemPos = transform.position;
+        Debug.Log(itemPos);
         Vector2 popupPos = new Vector2();
         if (itemPos.x < 0)
         {
-            popupPos.x = itemPos.x +250 /10;
+            popupPos.x =  400;
         }
         else
         {
-            popupPos.x = itemPos.x - 250 / 10;
-        } 
-        if (itemPos.y < 0)
+            popupPos.x =  -400 ;
+        }
+        if (itemPos.y > -15 && itemPos.y < 15)
         {
-            popupPos.y = itemPos.y + 350 /10;
+            popupPos.y = 0;
+        }
+        else if (itemPos.y < 0)
+        {
+            popupPos.y =  200;
         }
         else
         {
-            popupPos.y = itemPos.y - 350 / 10;
+            popupPos.y =  -200;
         }
         popupPos = transform.InverseTransformDirection(popupPos);
-        Debug.Log(itemPos);
         Debug.Log(popupPos);
         this.infomationPopupInstance = Instantiate(this.infomationPopup, popupPos, Quaternion.identity, transform);
         var rectTransform = this.infomationPopupInstance.GetComponent<RectTransform>();
-        rectTransform.localPosition = new Vector3(rectTransform.position.x, rectTransform.position.y, -1);
+        rectTransform.localPosition = new Vector3(popupPos.x, popupPos.y, 0);
+        TMP_Text mapName = this.infomationPopupInstance.transform.Find("ttMapName").gameObject.GetComponent<TMP_Text>();
+        TMP_Text story = this.infomationPopupInstance.transform.Find("ttStory").gameObject.GetComponent<TMP_Text>();
+        Image treasureImage = this.infomationPopupInstance.transform.Find("ttTreasureImage").gameObject.GetComponent<Image>();
+        TMP_Text treasureDescription = this.infomationPopupInstance.transform.Find("ttTreasureDescription").gameObject.GetComponent<TMP_Text>();
+        mapName.text = this.levelData.levelName;
+        story.text = this.levelData.story;
+        treasureImage.sprite = this.levelData.treasureData.avatarRef.Asset as Sprite;
+        treasureDescription.text = this.levelData.treasureData.description;
     }
 
     public void OnCursorExit()
@@ -77,6 +94,9 @@ public class MapItem : MonoBehaviour
     public void setLevelData(LevelData levelData)
     {
         this.levelData = levelData;
+        this.mapName.text = levelData.levelName;
+        this.mapThumbnail.sprite = levelData.mapThumbnail;
+        Sprite spriteTemp = levelData.treasureData.avatarRef.LoadAsset<Sprite>().Result;
     }
 
 

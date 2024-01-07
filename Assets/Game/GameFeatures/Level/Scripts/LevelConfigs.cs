@@ -16,6 +16,7 @@ public struct LevelData
 {
     public string levelName;
     public string story;
+    public Sprite mapThumbnail;
 
     public AssetReferenceT<GameObject> mapPrefabRef;
 

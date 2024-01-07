@@ -8,14 +8,7 @@ public class SelectMapScreen : ModalBase
 {
 
     [Header("UI Elements")]
-    [SerializeField] private Button playButton;
-    [SerializeField] private Button settingButton;
-    [SerializeField] private Button shopButton;
-    [SerializeField] private Button itemsButton;
-    [SerializeField] private Button explorersButton;
-
-    [Space(12)]
-    [SerializeField] private Transform holderExplorer;
+    [SerializeField] private GameObject[] levelObjects;
 
     [Space(10), Header("Data")]
     // Start is called before the first frame update
@@ -42,23 +35,11 @@ public class SelectMapScreen : ModalBase
     {
         levelDatas = levelDataManager.getLevelDatas();
 
-        Debug.Log(levelDatas.Length);
-        //DisplayExplorer(explorerBaseInfos[0]);
-
-        //for (int i = 0; i < explorerBaseInfos.Length; i++)
-        //{
-        //    GameObject explorerItemInstance = Instantiate(explorerItem, listExplorerContainer.transform);
-        //    Image characterImage = explorerItemInstance.GetComponentInChildren<Image>();
-        //    TMP_Text characterTitle = explorerItemInstance.GetComponentInChildren<TMP_Text>();
-        //    int index = i;
-        //    explorerItemInstance.GetComponent<Button>()?.onClick.AddListener(() => {
-        //        currentExplorerIndex = index;
-        //        Debug.Log("Current explorer index: " + currentExplorerIndex);
-        //        DisplayExplorer(explorerBaseInfos[currentExplorerIndex]);
-        //    });
-        //    characterImage.sprite = explorerBaseInfos[i].ImageThumbnail;
-        //    characterTitle.text = explorerBaseInfos[i].Name;
-        //}
+        for (int i = 0; i < levelDatas.Length && i< levelObjects.Length; i++)
+        {
+            GameObject level = levelObjects[i];
+            level.GetComponent<MapItem>().setLevelData(levelDatas[i]);
+        }
 
     }
 }
