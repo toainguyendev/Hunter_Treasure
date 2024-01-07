@@ -13,7 +13,8 @@ public class ExplorerBaseInfo
     [SerializeField] private float _attackRange;
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float jumpVelocity;
-
+    [SerializeField] private Sprite imageThumbnail;
+    [SerializeField] private SkillData skillData;
 
     // public getters and setters for private properties
     public string Name { get => _name; set => _name = value; }
@@ -24,4 +25,6 @@ public class ExplorerBaseInfo
     public float AttackRange { get => _attackRange; set => _attackRange = value; }
     public float MoveSpeed { get => _moveSpeed; set => _moveSpeed = value; }
     public float JumpVelocity { get => jumpVelocity; set => jumpVelocity = value; }
+    public Sprite ImageThumbnail { get => imageThumbnail; set => imageThumbnail = value; }
+    public SkillData SkillData { get => skillData; set => skillData = value; }
 }

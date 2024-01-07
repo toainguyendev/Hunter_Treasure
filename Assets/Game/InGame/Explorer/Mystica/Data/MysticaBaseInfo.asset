@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dccef44a90393fa4b915ef8e50a493be, type: 3}
+  m_Name: MysticaBaseInfo
+  m_EditorClassIdentifier: 
+  _name: Mystica
+  _hp: 100
+  _attack: 10
+  _rateAttack: 11
+  _defense: 12
+  _attackRange: 13
+  _moveSpeed: 14
+  jumpVelocity: 15
+  imageThumbnail: {fileID: 21300004, guid: 194d122d9d8b4e24dbab431b3e0209c2, type: 3}
+  skillData: {fileID: 11400000, guid: 6e8db4ebbeaeb3d4da3bf54b772a4e22, type: 2}

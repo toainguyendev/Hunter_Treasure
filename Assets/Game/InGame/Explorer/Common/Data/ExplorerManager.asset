@@ -25,3 +25,30 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     explorerBaseInfo: {fileID: 11400000, guid: e3d1a2eab274d7148bf4f38444382622, type: 2}
+    avatar: {fileID: 0}
+  - explorer: 2
+    explorerPrefab:
+      m_AssetGUID: b2cc388a0d27da24381f3b2b9e6d546a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    explorerDisplayPrefab:
+      m_AssetGUID: 4a0b15205fc551b439dfcd5cf46e09c3
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    explorerBaseInfo: {fileID: 11400000, guid: 8cfb5e2e8647721448c818ac41ff100c, type: 2}
+    avatar: {fileID: 0}
+  - explorer: 3
+    explorerPrefab:
+      m_AssetGUID: b2cc388a0d27da24381f3b2b9e6d546a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    explorerDisplayPrefab:
+      m_AssetGUID: 4a0b15205fc551b439dfcd5cf46e09c3
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    explorerBaseInfo: {fileID: 11400000, guid: 9563b80c70337224fb7e8dcbd454050d, type: 2}
+    avatar: {fileID: 0}
