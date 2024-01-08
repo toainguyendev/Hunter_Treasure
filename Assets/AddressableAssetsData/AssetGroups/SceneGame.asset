@@ -37,6 +37,21 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9a3d2a156de7a7e4b997397ce2a56f6a
+    m_Address: Assets/Game/InGame/Explorer/Mystica/Prefabs/Mystica.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d6ac35ef59cb28a4aa49881de03e529e
+    m_Address: Assets/Game/InGame/Explorer/Mystica/Prefabs/Mystica_Display_Model.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 859c3def7b0fdca4ba4a59bb97a3cb47
+    m_Address: Assets/Game/InGame/Explorer/Barbarian/Models/Barbarian.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d2b448d03fe04bc4a8ecbb5bf5c6aa5c, type: 2}
   m_SchemaSet:
