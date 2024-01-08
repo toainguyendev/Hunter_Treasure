@@ -30,7 +30,7 @@ Transform:
   m_Children:
   - {fileID: 212757755222557187}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &622781715422374453
 GameObject:
@@ -62,7 +62,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 212757755222557187}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &2123081355000281319
 Light:
@@ -159,7 +159,7 @@ Transform:
   m_Children:
   - {fileID: 4473770889212284002}
   m_Father: {fileID: 6332653469905272892}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &434580683063011180
 MeshFilter:
@@ -221,16 +221,8 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2785175211523428769}
   m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 3.95, y: 0.3, z: 4.02}
+  serializedVersion: 2
+  m_Size: {x: 4, y: 0.1, z: 4}
   m_Center: {x: 0.04, y: 0.15, z: 0}

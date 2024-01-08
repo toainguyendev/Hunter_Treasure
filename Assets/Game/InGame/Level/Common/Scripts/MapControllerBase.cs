@@ -18,7 +18,7 @@ public class MapControllerBase : MonoBehaviour
 
     private void SetupGlobalMapData()
     {
-        commonMapData.PlayerSpawnPosition = _spawnExplorerPos.position;
+        commonMapData.PlayerSpawnPosition = _spawnExplorerPos.localPosition;
 
         commonMapData.IsDoneAssignData = true;
     }
