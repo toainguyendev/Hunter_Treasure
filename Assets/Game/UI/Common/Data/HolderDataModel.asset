@@ -16,3 +16,16 @@ MonoBehaviour:
   - modalType: 0
     modalPrefab: {fileID: 6034121576919019497, guid: 8202e028a912049419bc93a87a1b1335,
       type: 3}
+  - modalType: 3
+    modalPrefab: {fileID: 4619913816789665219, guid: 1cfb8aaa66ce4854f8060fe95f7ceb73,
+      type: 3}
+  - modalType: 4
+    modalPrefab: {fileID: 5416886500313546882, guid: ce7726c721702e044bf358a089d3eb8f,
+      type: 3}
+  - modalType: 2
+    modalPrefab: {fileID: 812888565, guid: 27ad8e99f46ab294b9efbd5d5f0c0752, type: 3}
+  - modalType: 5
+    modalPrefab: {fileID: 2092379843, guid: ee9bca1db6221ca48b310b3b53f77d14, type: 3}
+  - modalType: 1
+    modalPrefab: {fileID: 6034121576919019497, guid: 8202e028a912049419bc93a87a1b1335,
+      type: 3}
