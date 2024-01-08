@@ -35,7 +35,7 @@ public class MapItem : MonoBehaviour
 
     private void Update()
     {
-        this.treasure.sprite = this.levelData.treasureData.avatarRef.Asset as Sprite;
+        //this.treasure.sprite = this.levelData.treasureData.avatarRef.Asset as Sprite;
     }
 
     public void OnCursorEnter()
