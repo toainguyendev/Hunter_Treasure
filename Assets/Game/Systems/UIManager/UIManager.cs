@@ -20,6 +20,7 @@ public class UIManager : MonoSingleton<UIManager>
     // dictionary for modal
     private Dictionary<ModalType, ModalBase> _modals = new Dictionary<ModalType, ModalBase>();
 
+    private ModalBase _currentModalOpened;
     // method show modal
     public void ShowModal(ModalType modalType)
     {
@@ -35,6 +36,9 @@ public class UIManager : MonoSingleton<UIManager>
 
         // show modal
         _modals[modalType].Show();
+
+        _currentModalOpened?.Close();
+        _currentModalOpened = _modals[modalType];
     }
 
     public void CloseModal(ModalType modalType)

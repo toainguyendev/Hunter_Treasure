@@ -1,19 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
-public class WeaponsScreen : MonoBehaviour
+public class WeaponsScreen : ModalBase
 {
-	// Start is called before the first frame update
-	void Start()
-	{
+    [Header("UI Elements")]
+    [SerializeField] private Button btnBack;
 
-	}
 
-	// Update is called once per frame
-	void Update()
-	{
+    private void Awake()
+    {
+        btnBack.onClick.AddListener(() =>
+        {
+            UIManager.Instance.ShowModal(ModalType.HOME);
+        });
+    }
 
-	}
+    private void OnDestroy()
+    {
+        btnBack.onClick.RemoveAllListeners();
+    }
 
+
+    protected override void OnAnimationEnd()
+    {
+    }
+
+    protected override void OnClose()
+    {
+    }
+
+    protected override void OnShow()
+    {
+    }
 }

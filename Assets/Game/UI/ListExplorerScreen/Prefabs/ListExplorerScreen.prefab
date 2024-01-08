@@ -526,6 +526,7 @@ MonoBehaviour:
   explorerManager: {fileID: 11400000, guid: 8afc6c24e7ae0a5478519c21fffcb226, type: 2}
   explorerName: {fileID: 6157429631043819004}
   explorerImage: {fileID: 8674862196905525868}
+  btnBack: {fileID: 9040657330790145678}
   explorerItem: {fileID: 6064113285791826073, guid: 5c97c20405c3c01478856e9560f273e0,
     type: 3}
   listExplorerContainer: {fileID: 8154012236906405970}
@@ -717,11 +718,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1525222188b2774e88e3e5600d82713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explorerDetail: {fileID: 0}
-  skillImange: {fileID: 0}
-  skillDescription: {fileID: 0}
-  skillTab: {fileID: 0}
-  detailTab: {fileID: 0}
+  explorerDetail: {fileID: 1866159584686119689}
+  skillImange: {fileID: 2304553613047615009}
+  skillDescription: {fileID: 317495273912541264}
+  skillTab: {fileID: 871411522582597989}
+  detailTab: {fileID: 8827734567544009703}
+  listtExplorerScreen: {fileID: 4619913816789665219}
 --- !u!1 &3894186165057380028
 GameObject:
   m_ObjectHideFlags: 0
