@@ -45,9 +45,6 @@ public class HealthBase : MonoBehaviour, IHealth
 
     public void TakeDamage(float damage)
     {
-        if (damage > 0)
-            return;
-
         CurrentHP -= damage;
         Messenger.Default.Publish(new ExplorerHealthPayload() { maxHP = explorerBaseInfo.HP, currentHP = CurrentHP });
     }

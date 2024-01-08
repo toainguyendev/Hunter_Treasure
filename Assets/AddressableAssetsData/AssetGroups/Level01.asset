@@ -16,12 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 9b12d552d95118644b50468e08f2f70e
-  m_SerializeEntries:
-  - m_GUID: e52235f1d83637842b91c93e3f02c714
-    m_Address: Assets/Game/InGame/Level/Level01/Prefabs/Level1_Map.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: d2b448d03fe04bc4a8ecbb5bf5c6aa5c, type: 2}
   m_SchemaSet:
