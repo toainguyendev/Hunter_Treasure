@@ -76,7 +76,7 @@ public class SelectionScreen : ModalBase
                 if (obj.Status == AsyncOperationStatus.Succeeded)
                 {
                     var buttonChooseExplorer = obj.Result.GetComponent<ButtonChooseExplorer>();
-                    buttonChooseExplorer.Setup(explorerHolderData.explorer, explorerHolderData.avatar, explorerHolderData.explorerBaseInfo.Name);
+                    buttonChooseExplorer.Setup(explorerHolderData.explorer, explorerHolderData.explorerBaseInfo.ImageThumbnail, explorerHolderData.explorerBaseInfo.Name);
 
                     // set parent for button choose explorer
                     buttonChooseExplorer.transform.SetParent(holderExplorerListButton);

@@ -37,7 +37,7 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
 
         await CreateExplorer();
 
-        await SetupUI();
+        SetupUI();
 
         Messenger.Default.Publish(new LoadingProgressPayload() { progress = 1f });
 
@@ -80,7 +80,7 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
     private async UniTask CreateExplorer()
     {
         await UniTask.WaitUntil(() => commonMapData.IsDoneAssignData);
-        AssetReferenceT<GameObject> explorerRef = explorerManager.GetExplorer(runtimeGlobalData.DataStartGamePlay.Explorer);
+        AssetReferenceT<GameObject> explorerRef = explorerManager.GetExplorerModelRef(runtimeGlobalData.DataStartGamePlay.Explorer);
 
         // instantiate explorer with addressable
         AsyncOperationHandle<GameObject> loadHandle = Addressables.InstantiateAsync(explorerRef);
@@ -99,18 +99,15 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
 
             commonMapData.ExplorerTransform = explorerInstance.transform;
             commonMapData.IsCompleteCreateExplorer = true;
+
+            // Set camera follow explorer
+            CameraController.Instance.SetTarget(explorerInstance.transform);
         }
     }
 
-    private async UniTask SetupMapData()
+    private void SetupUI()
     {
-
-    }
-
-
-    private async UniTask SetupUI()
-    {
-
+        InGameUI.Instance.SetupUI();
     }
 
     private void ResetData()
