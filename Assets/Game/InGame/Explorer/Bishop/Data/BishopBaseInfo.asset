@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BishopBaseInfo
   m_EditorClassIdentifier: 
   _name: Bishop
-  _hp: 2
+  _hp: 1500
   _attack: 0
   _rateAttack: 0.5
   _defense: 0

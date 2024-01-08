@@ -23,13 +23,13 @@ public class MapControllerBase : MonoBehaviour
         commonMapData.IsDoneAssignData = true;
     }
 
-    private void Update()
-    {
-        if (CheckAllConditionWin())
-        {
-            ConsoleLog.Log("Win");
-        }
-    }
+    //private void Update()
+    //{
+    //    if (CheckAllConditionWin())
+    //    {
+    //        ConsoleLog.Log("Win");
+    //    }
+    //}
 
     private bool CheckAllConditionWin()
     {

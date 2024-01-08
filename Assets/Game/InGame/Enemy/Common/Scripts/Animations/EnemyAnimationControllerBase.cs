@@ -11,6 +11,7 @@ public class EnemyAnimationControllerBase : MonoBehaviour
     [SerializeField] private ClipTransition _idle;
     [SerializeField] private ClipTransition _run;
     [SerializeField] private ClipTransition _normalAttack;
+    [SerializeField] private ClipTransition _dead;
 
     public Action OnDoneAttack;
 
@@ -52,6 +53,12 @@ public class EnemyAnimationControllerBase : MonoBehaviour
     public void PlayNormalAttack()
     {
         _animancer.Play(_normalAttack);
+    }
+
+    public void PlayDead(Action onDead = null)
+    {
+        _animancer.Play(_dead);
+        _dead.Events.OnEnd = () => onDead?.Invoke();
     }
     #endregion
 }
