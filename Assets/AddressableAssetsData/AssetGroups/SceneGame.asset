@@ -32,11 +32,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cb87fe692553eeb479415892763514c8
-    m_Address: Assets/Game/UI/HomeScreen/ScriptableObjects/Weapons/New weapon.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1597ff0d336061d4487628772b604dde
     m_Address: Assets/Game/InGame/Level/Level01/Prefabs/Level3.prefab
     m_ReadOnly: 0
