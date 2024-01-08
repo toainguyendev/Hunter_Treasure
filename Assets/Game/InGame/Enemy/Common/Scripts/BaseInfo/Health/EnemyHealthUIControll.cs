@@ -15,16 +15,7 @@ public class EnemyHealthUIControll : MonoBehaviour
         _maxHealth = maxHealth;
         _currentHealth = maxHealth;
 
-        UpdateUI();
-    }
-
-    public void UpdateHealth(float damage)
-    {
-        _currentHealth -= damage;
-        if (_currentHealth <= 0)
-        {
-            Destroy(gameObject);
-        }
+        UpdateUI(_currentHealth);
     }
 
     // create method to make health bar opposite to camera
@@ -33,7 +24,7 @@ public class EnemyHealthUIControll : MonoBehaviour
         transform.LookAt(Camera.main.transform);
     }
 
-    private void UpdateUI()
+    public void UpdateUI(float currentHealth)
     {
         _healthBar.maxValue = _maxHealth;
         _healthBar.DOValue(_currentHealth, 0.5f);

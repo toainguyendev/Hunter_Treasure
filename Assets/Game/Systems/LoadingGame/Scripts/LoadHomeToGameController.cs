@@ -99,6 +99,9 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
 
             commonMapData.ExplorerTransform = explorerInstance.transform;
             commonMapData.IsCompleteCreateExplorer = true;
+
+            // Set camera follow explorer
+            CameraController.Instance.SetTarget(explorerInstance.transform);
         }
     }
 
