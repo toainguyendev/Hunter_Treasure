@@ -1,8 +1,6 @@
-using Cysharp.Threading.Tasks;
 using System;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 
 public enum ExplorerType
 {
@@ -19,7 +17,6 @@ public struct ExplorerHolderData
     public AssetReferenceT<GameObject> explorerPrefab;
     public AssetReferenceT<GameObject> explorerDisplayPrefab;
     public ExplorerBaseInfo explorerBaseInfo;
-    public Sprite avatar;
 }
 
 
@@ -34,7 +31,7 @@ public class ExplorerManager : ScriptableObject
 
 
     // method to instantiate explorer with addressable, disable the instance and return that instance
-    public AssetReferenceT<GameObject> GetExplorer(ExplorerType explorer)
+    public AssetReferenceT<GameObject> GetExplorerModelRef(ExplorerType explorer)
     {
         // find explorer holder data with explorer type
         ExplorerHolderData explorerHolderData = Array.Find(_explorerHolderDatas, x => x.explorer == explorer);
@@ -51,5 +48,12 @@ public class ExplorerManager : ScriptableObject
         // find explorer holder data with explorer type
         ExplorerHolderData explorerHolderData = Array.Find(_explorerHolderDatas, x => x.explorer == explorer);
         return explorerHolderData.explorerDisplayPrefab;
+    }
+
+    public ExplorerBaseInfo GetExplorerBaseInfo(ExplorerType explorerType)
+    {
+        // find explorer holder data with explorer type
+        ExplorerHolderData explorerHolderData = Array.Find(_explorerHolderDatas, x => x.explorer == explorerType);
+        return explorerHolderData.explorerBaseInfo;
     }
 }

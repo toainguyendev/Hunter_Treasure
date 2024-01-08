@@ -27,6 +27,7 @@ public class CommonMapData : ScriptableObject
         get => explorerTransform;
         set => explorerTransform = value;
     }
+
     public bool IsCompleteCreateExplorer
     {
         get => isCompleteCreateExplorer;
