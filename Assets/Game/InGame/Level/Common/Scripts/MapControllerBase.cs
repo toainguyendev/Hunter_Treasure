@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MapControllerBase : MonoBehaviour
 {
@@ -36,4 +37,5 @@ public class MapControllerBase : MonoBehaviour
 
         return true;
     }
+
 }
