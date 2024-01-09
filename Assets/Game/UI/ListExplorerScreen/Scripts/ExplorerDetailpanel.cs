@@ -12,7 +12,7 @@ public class ExplorerDetailPanel : MonoBehaviour
     [SerializeField] private GameObject detailTab;
 
     [Space(12)]
-    [SerializeField] private ListExplorerScreen listtExplorerScreen;
+    [SerializeField] private ListExplorerScreen listExplorerScreen;
 
     private ExplorerBaseInfo currentExplorerBaseInfo;
 
@@ -20,7 +20,7 @@ public class ExplorerDetailPanel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentExplorerBaseInfo = listtExplorerScreen.GetCurrentExplorerBaseInfo();
+        currentExplorerBaseInfo = listExplorerScreen.GetCurrentExplorerBaseInfo();
         DisplayDetail(currentExplorerBaseInfo);
         DisplaySkill(currentExplorerBaseInfo);
     }

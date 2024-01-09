@@ -25,30 +25,30 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     explorerBaseInfo: {fileID: 11400000, guid: e3d1a2eab274d7148bf4f38444382622, type: 2}
-    avatar: {fileID: 0}
+    avatar: {fileID: 21300000, guid: fc5e1bb9ab8211d4684900ce5d001ff5, type: 3}
   - explorer: 2
     explorerPrefab:
-      m_AssetGUID: b2cc388a0d27da24381f3b2b9e6d546a
+      m_AssetGUID: 9a3d2a156de7a7e4b997397ce2a56f6a
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     explorerDisplayPrefab:
-      m_AssetGUID: 4a0b15205fc551b439dfcd5cf46e09c3
+      m_AssetGUID: d6ac35ef59cb28a4aa49881de03e529e
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     explorerBaseInfo: {fileID: 11400000, guid: 8cfb5e2e8647721448c818ac41ff100c, type: 2}
-    avatar: {fileID: 0}
+    avatar: {fileID: 21300000, guid: 5bbdf56590b39304bbf427b318451a27, type: 3}
   - explorer: 3
     explorerPrefab:
-      m_AssetGUID: b2cc388a0d27da24381f3b2b9e6d546a
+      m_AssetGUID: 859c3def7b0fdca4ba4a59bb97a3cb47
       m_SubObjectName: 
       m_SubObjectType: 
-      m_EditorAssetChanged: 0
+      m_EditorAssetChanged: 1
     explorerDisplayPrefab:
-      m_AssetGUID: 4a0b15205fc551b439dfcd5cf46e09c3
+      m_AssetGUID: 859c3def7b0fdca4ba4a59bb97a3cb47
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    explorerBaseInfo: {fileID: 11400000, guid: 9563b80c70337224fb7e8dcbd454050d, type: 2}
-    avatar: {fileID: 0}
+    explorerBaseInfo: {fileID: 11400000, guid: de5cab482ea0339488a9acb587871aeb, type: 2}
+    avatar: {fileID: 21300000, guid: 9eb1e46a6dc02ae4db7ad2e11fab1721, type: 3}
