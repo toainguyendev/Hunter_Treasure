@@ -30,16 +30,15 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
         await base.OnLoad();
 
         await LoadSceneGame();
-        ConsoleLog.Log("Load Game: 1");
+        Messenger.Default.Publish(new LoadingProgressPayload() { progress = 0.2f });
         ResetData();
-        ConsoleLog.Log("Load Game: 2");
+        Messenger.Default.Publish(new LoadingProgressPayload() { progress = 0.4f });
 
         await CreateMap();
-        ConsoleLog.Log("Load Game: 3");
+        Messenger.Default.Publish(new LoadingProgressPayload() { progress = 0.6f });
         await CreateExplorer();
-        ConsoleLog.Log("Load Game: 4");
+        Messenger.Default.Publish(new LoadingProgressPayload() { progress = 0.8f });
         SetupUI();
-        ConsoleLog.Log("Load Game: 5");
         Messenger.Default.Publish(new LoadingProgressPayload() { progress = 1f });
 
         // unload loading scene
