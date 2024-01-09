@@ -12,7 +12,6 @@ public class ListExplorerScreen : ModalBase
     [Space(12), Header("UI")]
     [SerializeField] private TMP_Text explorerName;
     [SerializeField] private Transform holderExplorer;
-    [SerializeField] private Image explorerImage;
     [SerializeField] private Button btnBack;
 
     [Header("Explorer Sidebar List")]
@@ -28,7 +27,6 @@ public class ListExplorerScreen : ModalBase
     {
         explorerHolderDatas = explorerManager.ExplorerHolderDatas;
 
-        Debug.Log(explorerHolderDatas.Length);
         DisplayExplorer(explorerHolderDatas[0]);
 
         for (int i = 0; i < explorerHolderDatas.Length; i++)
@@ -39,9 +37,8 @@ public class ListExplorerScreen : ModalBase
             int index = i;
             explorerItemInstance.GetComponent<Button>()?.onClick.AddListener(() => {
                 currentExplorerIndex = index;
-                Debug.Log("Current explorer index: " + currentExplorerIndex);
                 DisplayExplorer(explorerHolderDatas[currentExplorerIndex]);
-                });
+            });
             characterImage.sprite = explorerHolderDatas[i].explorerBaseInfo.ImageThumbnail;
             characterTitle.text = explorerHolderDatas[i].explorerBaseInfo.Name;
         }
