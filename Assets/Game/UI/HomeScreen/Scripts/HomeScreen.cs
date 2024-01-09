@@ -45,7 +45,8 @@ public class HomeScreen : ModalBase
 
     private void OnClickSetting()
     {
-        UIManager.Instance.ShowModal(ModalType.SETTING);
+        ConsoleLog.Log("Click setting");
+        //UIManager.Instance.ShowModal(ModalType.SETTING);
     }
 
     // Load SceneGame when click button

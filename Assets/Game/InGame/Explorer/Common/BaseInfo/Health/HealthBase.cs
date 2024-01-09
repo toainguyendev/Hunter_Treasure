@@ -1,3 +1,4 @@
+using SuperMaxim.Messaging;
 using UnityEngine;
 
 public class HealthBase : MonoBehaviour, IHealth
@@ -38,11 +39,13 @@ public class HealthBase : MonoBehaviour, IHealth
         if(healAmount > 0)
         {
             _currentHP += healAmount;
+            Messenger.Default.Publish(new ExplorerHealthPayload() { maxHP = explorerBaseInfo.HP, currentHP = CurrentHP });
         }
     }
 
     public void TakeDamage(float damage)
     {
         CurrentHP -= damage;
+        Messenger.Default.Publish(new ExplorerHealthPayload() { maxHP = explorerBaseInfo.HP, currentHP = CurrentHP });
     }
 }

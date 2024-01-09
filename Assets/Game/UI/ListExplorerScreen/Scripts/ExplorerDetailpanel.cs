@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,16 +11,16 @@ public class ExplorerDetailPanel : MonoBehaviour
     [SerializeField] private GameObject skillTab;
     [SerializeField] private GameObject detailTab;
 
+    [Space(12)]
+    [SerializeField] private ListExplorerScreen listtExplorerScreen;
+
     private ExplorerBaseInfo currentExplorerBaseInfo;
-    void Start()
-    {
-        
-    }
+
 
     // Update is called once per frame
     void Update()
     {
-        currentExplorerBaseInfo = GameObject.Find("ListExplorerScreen").GetComponent<ListExplorerScreen>()?.GetCurrentExplorerBaseInfo();
+        currentExplorerBaseInfo = listtExplorerScreen.GetCurrentExplorerBaseInfo();
         DisplayDetail(currentExplorerBaseInfo);
         DisplaySkill(currentExplorerBaseInfo);
     }

@@ -18,7 +18,7 @@ MonoBehaviour:
       long story This is a story, long story This is a story, long story '
     mapThumbnail: {fileID: 21300000, guid: 2012b20a800a09d45ab9a91be5c3eaa8, type: 3}
     mapPrefabRef:
-      m_AssetGUID: e52235f1d83637842b91c93e3f02c714
+      m_AssetGUID: 1597ff0d336061d4487628772b604dde
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
@@ -30,11 +30,7 @@ MonoBehaviour:
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0
-      avatarRef:
-        m_AssetGUID: 0a0c35b4c2d71c24baa3053e6eacdbb4
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
+      avatar: {fileID: 0}
   - levelName: Level 02
     story: This is a story
     mapThumbnail: {fileID: 21300000, guid: 2012b20a800a09d45ab9a91be5c3eaa8, type: 3}
@@ -51,11 +47,7 @@ MonoBehaviour:
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0
-      avatarRef:
-        m_AssetGUID: 5a5cda56e28774c41b1f1b4c26f60fb4
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
+      avatar: {fileID: 0}
   - levelName: Level 03
     story: This is a story
     mapThumbnail: {fileID: 21300000, guid: 2012b20a800a09d45ab9a91be5c3eaa8, type: 3}
@@ -72,11 +64,7 @@ MonoBehaviour:
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0
-      avatarRef:
-        m_AssetGUID: 0a0c35b4c2d71c24baa3053e6eacdbb4
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
+      avatar: {fileID: 0}
   - levelName: Level 04
     story: This is a story
     mapThumbnail: {fileID: 21300000, guid: 2012b20a800a09d45ab9a91be5c3eaa8, type: 3}
@@ -93,11 +81,7 @@ MonoBehaviour:
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0
-      avatarRef:
-        m_AssetGUID: 5a5cda56e28774c41b1f1b4c26f60fb4
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
+      avatar: {fileID: 0}
   - levelName: Level 05
     story: This is a story
     mapThumbnail: {fileID: 21300000, guid: 2012b20a800a09d45ab9a91be5c3eaa8, type: 3}
@@ -114,8 +98,4 @@ MonoBehaviour:
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0
-      avatarRef:
-        m_AssetGUID: 0a0c35b4c2d71c24baa3053e6eacdbb4
-        m_SubObjectName: 
-        m_SubObjectType: 
-        m_EditorAssetChanged: 0
+      avatar: {fileID: 0}

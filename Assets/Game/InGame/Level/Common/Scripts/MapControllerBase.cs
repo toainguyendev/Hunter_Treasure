@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MapControllerBase : MonoBehaviour
 {
@@ -18,18 +19,11 @@ public class MapControllerBase : MonoBehaviour
 
     private void SetupGlobalMapData()
     {
-        commonMapData.PlayerSpawnPosition = _spawnExplorerPos.position;
+        commonMapData.PlayerSpawnPosition = _spawnExplorerPos.localPosition;
 
         commonMapData.IsDoneAssignData = true;
     }
 
-    private void Update()
-    {
-        if (CheckAllConditionWin())
-        {
-            ConsoleLog.Log("Win");
-        }
-    }
 
     private bool CheckAllConditionWin()
     {
@@ -43,4 +37,5 @@ public class MapControllerBase : MonoBehaviour
 
         return true;
     }
+
 }

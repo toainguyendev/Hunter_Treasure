@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
-public class ListExplorerScreen : MonoBehaviour
+public class ListExplorerScreen : ModalBase
 {
     // Start is called before the first frame update
     [Header("Explorer Manager")]
     [SerializeField] private ExplorerManager explorerManager;
-    [Header("Explorer Display Data")]
+
+    [Space(12), Header("UI")]
     [SerializeField] private TMP_Text explorerName;
     [SerializeField] private Transform holderExplorer;
+    [SerializeField] private Image explorerImage;
+    [SerializeField] private Button btnBack;
 
     [Header("Explorer Sidebar List")]
     [SerializeField] private GameObject explorerItem;
@@ -45,6 +46,10 @@ public class ListExplorerScreen : MonoBehaviour
             characterTitle.text = explorerHolderDatas[i].explorerBaseInfo.Name;
         }
 
+        btnBack.onClick.AddListener(() =>
+        {
+            UIManager.Instance.ShowModal(ModalType.HOME);
+        });
     }
 
     public void DisplayExplorer(ExplorerHolderData _explorer)
@@ -86,4 +91,20 @@ public class ListExplorerScreen : MonoBehaviour
         return explorerHolderDatas[currentExplorerIndex].explorerBaseInfo;
     }
 
+    protected override void OnClose()
+    {
+    }
+
+    protected override void OnShow()
+    {
+    }
+
+    protected override void OnAnimationEnd()
+    {
+    }
+
+    private void OnDestroy()
+    {
+        btnBack.onClick.RemoveAllListeners();
+    }
 }
