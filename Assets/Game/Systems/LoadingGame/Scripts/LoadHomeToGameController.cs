@@ -73,13 +73,13 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
         if (handle.Status == AsyncOperationStatus.Succeeded)
         {
             GameObject mapInstance = handle.Result;
-            mapInstance.transform.position = Vector3.zero;
+            //mapInstance.transform.position = Vector3.zero;
         }
     }
 
     private async UniTask CreateExplorer()
     {
-        await UniTask.WaitUntil(() => commonMapData.IsDoneAssignData);
+        await UniTask.WaitUntil(() => commonMapData.IsDoneSetupMap);
         AssetReferenceT<GameObject> explorerRef = explorerManager.GetExplorerModelRef(runtimeGlobalData.DataStartGamePlay.Explorer);
 
         // instantiate explorer with addressable
@@ -98,10 +98,11 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
             explorerInstance.SetActive(true);
 
             commonMapData.ExplorerTransform = explorerInstance.transform;
-            commonMapData.IsCompleteCreateExplorer = true;
 
             // Set camera follow explorer
             CameraController.Instance.SetTarget(explorerInstance.transform);
+
+            commonMapData.IsCompleteCreateExplorer = true;
         }
     }
 

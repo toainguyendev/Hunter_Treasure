@@ -12,16 +12,28 @@ public class MapControllerBase : MonoBehaviour
     [Header("Data")]
     [SerializeField] private CommonMapData commonMapData;
 
+    [Header("Navmesh")]
+    [SerializeField] private NavMeshData _navMeshSurface;
+
     private void Awake()
+    {
+        SetupGlobalMapData();
+    }
+
+    private void OnEnable()
     {
         SetupGlobalMapData();
     }
 
     private void SetupGlobalMapData()
     {
-        commonMapData.PlayerSpawnPosition = _spawnExplorerPos.localPosition;
+        commonMapData.PlayerSpawnPosition = _spawnExplorerPos.position;
 
-        commonMapData.IsDoneAssignData = true;
+        // setup navmesh data for GameScene
+        NavMesh.RemoveAllNavMeshData();
+        NavMesh.AddNavMeshData(_navMeshSurface);
+
+        commonMapData.IsDoneSetupMap = true;
     }
 
 
