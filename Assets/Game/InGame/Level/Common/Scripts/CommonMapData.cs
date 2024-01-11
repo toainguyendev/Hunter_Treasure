@@ -17,7 +17,7 @@ public class CommonMapData : ScriptableObject
         get => playerSpawnPosition;
         set => playerSpawnPosition = value;
     }
-    public bool IsDoneAssignData
+    public bool IsDoneSetupMap
     {
         get => isDoneAssignData;
         set => isDoneAssignData = value;
