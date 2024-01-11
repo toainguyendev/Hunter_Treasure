@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: ItemHolderData
   m_EditorClassIdentifier: 
   itemHolders:
-  - itemType: 0
+  - itemType: 1
     itemData: {fileID: 11400000, guid: 923cd0b29f435be4693b757a1a4e5067, type: 2}
     itemPrefab:
-      m_AssetGUID: 
+      m_AssetGUID: 3a73e26f88957b343af0490c9403c8f0
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0

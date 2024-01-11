@@ -13,8 +13,8 @@ public class ScriptableObjectChanger : MonoBehaviour
 
 	private void Awake()
 	{
-		GenerateWeaponList();
-		weaponDisplay.DisplayItem((Weapon)serializableObjects[0]);
+		//GenerateWeaponList();
+		//weaponDisplay.DisplayItem((Weapon)serializableObjects[0]);
 		
 	}
 
@@ -28,14 +28,10 @@ public class ScriptableObjectChanger : MonoBehaviour
 			// Lấy thành phần WeaponItem từ đối tượng mới tạo
 			WeaponIcon weaponIcon = weaponItemObject.GetComponent<WeaponIcon>();
 
-			
-
 			// Kiểm tra xem thành phần có tồn tại không
 			if (weaponIcon != null)
 			{
-				Debug.Log(weaponIcon.ToString());
-				// Thiết lập thông tin cho WeaponItem từ mảng thông tin
-				weaponIcon.DisplayItem((Weapon)info, weaponDisplay);
+				//weaponIcon.DisplayItem((Weapon)info, weaponDisplay);
 			}
 			else
 			{

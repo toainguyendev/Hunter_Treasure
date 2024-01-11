@@ -8,21 +8,27 @@ public class WeaponDisplay : MonoBehaviour
 {
 
 	[SerializeField] private TMP_Text level;
-	[SerializeField] private TMP_Text name;
+	[SerializeField] private TMP_Text itemName;
 	[SerializeField] private TMP_Text range;
-	[SerializeField] private TMP_Text firepower;
-	[SerializeField] private TMP_Text influence_range;
-	[SerializeField] private Image image;
-
-
-	public void DisplayItem(Weapon _weapon)
+	[SerializeField] private TMP_Text damage;
+	[SerializeField] private TMP_Text description;
+	[SerializeField] private Transform itemHolder;
+	//[SerializeField] private Image image;
+	public void DisplayItem(ItemBaseData item)
 	{
-		level.text = "Level \n" + _weapon.level;
-		name.text = _weapon.name;
-		range.text = "" + _weapon.range + "/10";
-		firepower.text = "" + _weapon.firepower + "/10";
-		influence_range.text = "" + _weapon.influence_range + "/10";
-		image.sprite = _weapon.image;
+		level.text = "Level \n" + item.Level;
+		itemName.text = item.Name;
+		range.text = "" + item.Range + "/10";
+		damage.text = "" + item.Damage + "/10";
+		description.text = item.Description;
+
+		//show item prefeb
+		GameObject obj = Instantiate(item.ItemPrefab, itemHolder);
+		obj.SetActive(true);
+		obj.transform.SetParent(itemHolder);
+		obj.transform.localPosition = Vector3.zero;
+		obj.transform.localScale = Vector3.one * 1000;
+		obj.transform.localRotation = Quaternion.Euler(90, 180, 0);
 	}
 
 }
