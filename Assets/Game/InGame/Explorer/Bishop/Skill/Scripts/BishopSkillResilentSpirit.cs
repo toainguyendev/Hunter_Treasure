@@ -67,7 +67,7 @@ public class BishopSkillResilentSpirit : SkillBase, ISkill
             {
                 if (hitColliders[i].CompareTag("Enemy"))
                 {
-                    ConsoleLog.Log($"Hit enemy with damage {_skillData.DamagePerSecond * Time.fixedDeltaTime}");
+                    hitColliders[i].GetComponent<EnemyHealthBase>().TakeDamage(_skillData.DamagePerSecond * Time.fixedDeltaTime);
                 }
             }
             // Perform skill animation

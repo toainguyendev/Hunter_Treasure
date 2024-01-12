@@ -26,7 +26,7 @@ public class EnemyNormalAttack : MonoBehaviour
 
     private void Update()
     {
-        if(!commonMapData.IsCompleteCreateExplorer || !commonMapData.IsDoneSetupMap)
+        if (!commonMapData.IsCompleteCreateExplorer || !commonMapData.IsDoneSetupMap || enemyStateManagement.IsDead)
             return;
 
         bool isPlayerInAttackRange = Vector3.Distance(transform.position, commonMapData.ExplorerTransform.position) <= enemyBaseInfo.AttackRange;

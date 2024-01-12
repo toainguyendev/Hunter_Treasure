@@ -20,6 +20,5 @@ MonoBehaviour:
   _maintanceTime: 2
   _castingTime: 0
   _canBeInterrupted: 0
-  _damagePerSecond: 0
-  _timeRemain: 0
-  _damageRage: 1.5
+  _damagePerSecond: 100
+  _damageRange: 3
