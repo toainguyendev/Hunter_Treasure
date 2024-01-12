@@ -83,6 +83,7 @@ GameObject:
   - component: {fileID: 5799913877276531400}
   - component: {fileID: 5544884809960061442}
   - component: {fileID: -6554244459933555727}
+  - component: {fileID: 443883909217397054}
   m_Layer: 0
   m_Name: GruntPolyart
   m_TagString: Enemy
@@ -242,6 +243,7 @@ MonoBehaviour:
   _enemyBaseInfo: {fileID: 11400000, guid: a7a90b3cc5c83e24f9a78bed7499731d, type: 2}
   _enemyHealthUIControll: {fileID: 6717366351956110531}
   _enemyAnimationControllerBase: {fileID: 5544884809960061442}
+  _enemyStateManagement: {fileID: 2284398491663632206}
 --- !u!114 &5544884809960061442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animancer: {fileID: 150011988777758064}
+  _enemyStateManagement: {fileID: 2284398491663632206}
   _idle:
     _FadeDuration: 0.25
     _Events:
@@ -313,6 +316,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &443883909217397054
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388476414}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.85, z: 0}
 --- !u!1 &408409025
 GameObject:
   m_ObjectHideFlags: 0

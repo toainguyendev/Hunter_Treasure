@@ -27,6 +27,7 @@ public class EnemyHealthUIControll : MonoBehaviour
     public void UpdateUI(float currentHealth)
     {
         _healthBar.maxValue = _maxHealth;
+        _currentHealth = currentHealth;
         _healthBar.DOValue(_currentHealth, 0.5f);
     }
 }

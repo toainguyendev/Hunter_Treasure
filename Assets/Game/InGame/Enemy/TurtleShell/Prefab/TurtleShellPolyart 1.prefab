@@ -1100,6 +1100,7 @@ MonoBehaviour:
   _enemyBaseInfo: {fileID: 11400000, guid: 99eb6afa7f1d1da47a04d95f29d2e0fb, type: 2}
   _enemyHealthUIControll: {fileID: 5410820981239205362}
   _enemyAnimationControllerBase: {fileID: -5122107383237756657}
+  _enemyStateManagement: {fileID: -3254743061061454779}
 --- !u!114 &8617227913610958744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1129,6 +1130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animancer: {fileID: 4247681976513115944}
+  _enemyStateManagement: {fileID: -3254743061061454779}
   _idle:
     _FadeDuration: 0.25
     _Events:
@@ -1417,21 +1419,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6127944435609694814, guid: 692a0929ab07ab3499898308610d4802,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6127944435609694814, guid: 692a0929ab07ab3499898308610d4802,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6127944435609694814, guid: 692a0929ab07ab3499898308610d4802,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6127944435609694814, guid: 692a0929ab07ab3499898308610d4802,
         type: 3}
