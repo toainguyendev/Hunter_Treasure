@@ -32,6 +32,7 @@ public class NormalAttack : MonoBehaviour
             {
                 if (collider.CompareTag("Enemy"))
                 {
+                    ConsoleLog.LogError("Hit enemy");
                     collider.GetComponent<EnemyHealthBase>().TakeDamage(_explorerBaseInfo.Attack);
                 }
             }
