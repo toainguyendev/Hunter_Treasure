@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 975281865}
   - component: {fileID: 975281866}
   - component: {fileID: 975281871}
-  - component: {fileID: 975281872}
   - component: {fileID: 975281873}
   - component: {fileID: 5216530617801620824}
   - component: {fileID: 5216530617801620825}
@@ -161,13 +160,13 @@ MonoBehaviour:
     _Clip: {fileID: 1827226128182048838, guid: db509ad77f9b4f84a8eb1989f589b24c, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
-  _rotateSkill:
+  _skill:
     _FadeDuration: 0.25
     _Events:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 1827226128182048838, guid: b267a2c210dbd1d4badc3f270df6d12d, type: 3}
+    _Clip: {fileID: 1827226128182048838, guid: 5729b70d60fdcac45bd03f32c0b8dbea, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
 --- !u!114 &975281871
@@ -183,21 +182,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explorerBaseInfo: {fileID: 11400000, guid: e3d1a2eab274d7148bf4f38444382622, type: 2}
---- !u!114 &975281872
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5216530617635840904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b50fae960f356094aa7f55e1b5938dae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animationController: {fileID: 975281866}
-  _skillData: {fileID: 11400000, guid: 6e8db4ebbeaeb3d4da3bf54b772a4e22, type: 2}
-  _playerBaseInfo: {fileID: 11400000, guid: e3d1a2eab274d7148bf4f38444382622, type: 2}
 --- !u!114 &975281873
 MonoBehaviour:
   m_ObjectHideFlags: 0
