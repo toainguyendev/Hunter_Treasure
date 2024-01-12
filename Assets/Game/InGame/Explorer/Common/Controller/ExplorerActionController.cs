@@ -11,7 +11,7 @@ public class ExplorerActionController : MonoBehaviour
     [SerializeField] private NormalAttack _normalAttack;
     [SerializeField] private CharacterController _characterController;
     [SerializeField] private MoveBase _moveController;
-    [SerializeField] private BishopSkillResilentSpirit _skillController;
+    [SerializeField] private SkillBase _skillController;
 
 
     #region CALL BACK FUNCTION
