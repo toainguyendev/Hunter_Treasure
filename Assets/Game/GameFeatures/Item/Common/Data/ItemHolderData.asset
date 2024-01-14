@@ -20,3 +20,17 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+  - itemType: 2
+    itemData: {fileID: 11400000, guid: 942f90c341dfe7142ada7d3a1109ee31, type: 2}
+    itemPrefab:
+      m_AssetGUID: df8b2e05e6bc70e4eb740280ce078f7f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - itemType: 7
+    itemData: {fileID: 11400000, guid: 7650236d94b9970488aec6ad4a8ce13e, type: 2}
+    itemPrefab:
+      m_AssetGUID: fb5a9652227c545d98a413cd73b80b69
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0

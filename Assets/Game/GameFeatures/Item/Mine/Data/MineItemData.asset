@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MineItemData
   m_EditorClassIdentifier: 
   itemName: Mine
-  description: Mine use to kill monster.
+  description: Mine are used to kill monster.
   icon: {fileID: 21300000, guid: 2d365da8b606eea41bd8e25d6f4df66c, type: 3}
   level: 1
   range: 5

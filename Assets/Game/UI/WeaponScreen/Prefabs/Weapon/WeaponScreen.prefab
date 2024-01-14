@@ -799,6 +799,9 @@ MonoBehaviour:
   itemHolderData: {fileID: 11400000, guid: a150c7887d7441e428876ccb703ac3e7, type: 2}
   btnBack: {fileID: 6473078407256472136}
   weaponDisplay: {fileID: 1228513143}
+  weaponItemPrefab: {fileID: 8482444052260381257, guid: b74679113f2127a42867626abec1c1d2,
+    type: 3}
+  weaponList: {fileID: 7138885198582185569}
 --- !u!1 &2134794238091261198
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,9 +1405,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: {fileID: 3477609654937428807}
-  itemName: {fileID: 0}
-  range: {fileID: 6399676396114014740}
-  damage: {fileID: 0}
+  itemName: {fileID: 5013092452142723586}
+  range: {fileID: 1885287772693470871}
+  damage: {fileID: 6399676396114014740}
+  description: {fileID: 3216957492860846602}
+  itemHolder: {fileID: 753899791243092043}
 --- !u!1 &4380778489078548131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1744,10 +1749,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 753899791243092043}
-  - component: {fileID: 3102903325929363682}
-  - component: {fileID: 3149188187907366845}
   m_Layer: 5
-  m_Name: WeaponImage
+  m_Name: WeaponHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1772,44 +1775,6 @@ RectTransform:
   m_AnchoredPosition: {x: 301.78, y: -67.291016}
   m_SizeDelta: {x: 310.1803, y: 310.1803}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &3102903325929363682
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5330280666791087237}
-  m_CullTransparentMesh: 1
---- !u!114 &3149188187907366845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5330280666791087237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5999721591113303394
 GameObject:
   m_ObjectHideFlags: 0

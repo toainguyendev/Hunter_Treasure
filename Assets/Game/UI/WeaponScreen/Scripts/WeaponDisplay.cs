@@ -22,9 +22,15 @@ public class WeaponDisplay : MonoBehaviour
 		damage.text = "" + item.Damage + "/10";
 		description.text = item.Description;
 
-		//show item prefeb
+		//hide prev item
+		foreach (Transform child in itemHolder)
+		{
+			Destroy(child.gameObject);
+		}
+
+		//show item prefab
 		GameObject obj = Instantiate(item.ItemPrefab, itemHolder);
-		obj.SetActive(true);
+		//obj.SetActive(true);
 		obj.transform.SetParent(itemHolder);
 		obj.transform.localPosition = Vector3.zero;
 		obj.transform.localScale = Vector3.one * 1000;
