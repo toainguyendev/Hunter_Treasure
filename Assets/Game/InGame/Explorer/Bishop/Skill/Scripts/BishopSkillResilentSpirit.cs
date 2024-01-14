@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BishopSkillResilentSpirit : MonoBehaviour, ISkill
+public class BishopSkillResilentSpirit : SkillBase, ISkill
 {
     [Header("Component")]
     [SerializeField] private ExplorerAnimationBase _animationController;
@@ -9,21 +9,21 @@ public class BishopSkillResilentSpirit : MonoBehaviour, ISkill
     [SerializeField] protected BishopSkillData _skillData;
     [SerializeField] protected ExplorerBaseInfo _playerBaseInfo;
 
-    public string Name => _skillData.Name;
+    public override string Name => _skillData.Name;
 
-    public bool IsDonePerform => !skillPerforming;
+    public override bool IsDonePerform => !skillPerforming;
 
-    public Sprite Icon => _skillData.Icon;
+    public override Sprite Icon => _skillData.Icon;
 
-    public string Description => _skillData.Description;
+    public override string Description => _skillData.Description;
 
-    public float CooldownTime => _skillData.CooldownTime;
+    public override float CooldownTime => _skillData.CooldownTime;
 
-    public float MaintanceTime => _skillData.MaintanceTime;
+    public override float MaintanceTime => _skillData.MaintanceTime;
 
-    public float CastingTime => _skillData.CastingTime;
+    public override float CastingTime => _skillData.CastingTime;
 
-    public bool CanBeInterrupted => _skillData.CanBeInterrupted;
+    public override bool CanBeInterrupted => _skillData.CanBeInterrupted;
 
     #region PRIVATE PROPERTIES
     private bool skillPerforming = false;
@@ -33,12 +33,12 @@ public class BishopSkillResilentSpirit : MonoBehaviour, ISkill
     #endregion
 
 
-    public void Interrupt()
+    public override void Interrupt()
     {
         ConsoleLog.Log("Cannot interrupt skill: " + Name);
     }
 
-    public void Trigger()
+    public override void Trigger()
     {
         if(countDownTimeTriggerSkill > 0)
         {
@@ -67,7 +67,7 @@ public class BishopSkillResilentSpirit : MonoBehaviour, ISkill
             {
                 if (hitColliders[i].CompareTag("Enemy"))
                 {
-                    ConsoleLog.Log($"Hit enemy with damage {_skillData.DamagePerSecond * Time.fixedDeltaTime}");
+                    hitColliders[i].GetComponent<EnemyHealthBase>().TakeDamage(_skillData.DamagePerSecond * Time.fixedDeltaTime);
                 }
             }
             // Perform skill animation

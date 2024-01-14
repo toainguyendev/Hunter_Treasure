@@ -52,7 +52,7 @@ GameObject:
   - component: {fileID: 3350962061904406807}
   m_Layer: 0
   m_Name: RockGolem
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,6 +209,7 @@ MonoBehaviour:
   _enemyBaseInfo: {fileID: 11400000, guid: 1e42ac7fef8fe054f8749f3370681b0d, type: 2}
   _enemyHealthUIControll: {fileID: 2586958454772501344}
   _enemyAnimationControllerBase: {fileID: 3350962061904406807}
+  _enemyStateManagement: {fileID: 531045249}
 --- !u!114 &3350962061904406807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animancer: {fileID: 3350962061650545581}
+  _enemyStateManagement: {fileID: 531045249}
   _idle:
     _FadeDuration: 0.25
     _Events:
@@ -419,6 +421,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6127944435609694814, guid: 692a0929ab07ab3499898308610d4802,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127944435609694814, guid: 692a0929ab07ab3499898308610d4802,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127944435609694814, guid: 692a0929ab07ab3499898308610d4802,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6127944435609694814, guid: 692a0929ab07ab3499898308610d4802,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -460,7 +477,7 @@ PrefabInstance:
     - target: {fileID: 6127944435609694814, guid: 692a0929ab07ab3499898308610d4802,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -26.3
       objectReference: {fileID: 0}
     - target: {fileID: 6127944435609694814, guid: 692a0929ab07ab3499898308610d4802,
         type: 3}

@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Bishop
   _hp: 1500
-  _attack: 0
+  _attack: 80
   _rateAttack: 0.5
-  _defense: 0
-  _attackRange: 0
+  _defense: 10
+  _attackRange: 3
   _moveSpeed: 5
-  jumpVelocity: 3
+  jumpVelocity: 2.5
   imageThumbnail: {fileID: 21300000, guid: fc5e1bb9ab8211d4684900ce5d001ff5, type: 3}
   skillData: {fileID: 11400000, guid: 6e8db4ebbeaeb3d4da3bf54b772a4e22, type: 2}

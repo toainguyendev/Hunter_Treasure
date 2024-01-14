@@ -402,9 +402,10 @@ GameObject:
   - component: {fileID: -8547581935714063980}
   - component: {fileID: -61685655631844906}
   - component: {fileID: -4172170221629835269}
+  - component: {fileID: 5187318988664424657}
   m_Layer: 0
   m_Name: SlimePolyart
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -583,6 +584,7 @@ MonoBehaviour:
   _enemyBaseInfo: {fileID: 11400000, guid: 4a77f767395d15d4ca03e53f71cfed6d, type: 2}
   _enemyHealthUIControll: {fileID: 6513943853276212998}
   _enemyAnimationControllerBase: {fileID: -4172170221629835269}
+  _enemyStateManagement: {fileID: -4813234425968639588}
 --- !u!114 &-4172170221629835269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,6 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animancer: {fileID: -464094024232342372}
+  _enemyStateManagement: {fileID: -4813234425968639588}
   _idle:
     _FadeDuration: 0.25
     _Events:
@@ -632,6 +635,20 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 35bb20ecf5de4fdd8dcd8e28e4053f3d, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
+--- !u!136 &5187318988664424657
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153141402127884706}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!1 &7446019047767849115
 GameObject:
   m_ObjectHideFlags: 0
