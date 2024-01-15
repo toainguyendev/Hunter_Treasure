@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BarbarianBaseInfo
   m_EditorClassIdentifier: 
   _name: Barbarien
-  _hp: 20
+  _hp: 1500
   _attack: 50
   _rateAttack: 0.5
   _defense: 1
