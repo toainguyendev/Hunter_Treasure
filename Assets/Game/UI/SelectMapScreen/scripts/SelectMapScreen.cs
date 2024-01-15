@@ -18,17 +18,14 @@ public class SelectMapScreen : ModalBase
 
     protected override void OnAnimationEnd()
     {
-        throw new System.NotImplementedException();
     }
 
     protected override void OnClose()
     {
-        throw new System.NotImplementedException();
     }
 
     protected override void OnShow()
     {
-        throw new System.NotImplementedException();
     }
 
     private void Awake()
