@@ -20,7 +20,7 @@ MonoBehaviour:
   _castingTime: 0
   _canBeInterrupted: 0
   _damagePerSecond: 50
-  _rangeHeight: 10
+  _rangeHeight: 15
   _rangeWidth: 2
   _skillPrefab:
     m_AssetGUID: 78dc14f9b052e1a49a24e62b3a99e9ee

@@ -47,8 +47,8 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 859c3def7b0fdca4ba4a59bb97a3cb47
-    m_Address: Assets/Game/InGame/Explorer/Barbarian/Models/Barbarian.fbx
+  - m_GUID: 527e88e525c49dd48a89283ccbb7603c
+    m_Address: Assets/Game/InGame/Explorer/Barbarian/Prefabs/Barbarian.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
@@ -76,6 +76,11 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8cfb5e2e8647721448c818ac41ff100c
     m_Address: Assets/Game/InGame/Explorer/Mystica/Data/MysticaBaseInfo.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aa69c6c3f06fb1b4a9ef165e08aa609b
+    m_Address: Assets/Game/InGame/Explorer/Barbarian/Skill/Prefabs/LavaSkill.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
