@@ -4,6 +4,7 @@ public class EnemyStateManagement : MonoBehaviour
 {
     private bool _isSeeingPlayer;
     private bool _isAttackingPlayer;
+    private bool _isDead;
 
     public bool IsSeeingPlayer
     {
@@ -19,6 +20,14 @@ public class EnemyStateManagement : MonoBehaviour
         set
         {
             _isAttackingPlayer = value;
+        }
+    }
+    public bool IsDead
+    {
+        get => _isDead;
+        set
+        {
+            _isDead = value;
         }
     }
 }

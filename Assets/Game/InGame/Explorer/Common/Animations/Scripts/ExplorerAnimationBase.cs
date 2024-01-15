@@ -10,13 +10,13 @@ public class ExplorerAnimationBase : MonoBehaviour
     [SerializeField] private ClipTransition _idle;
     [SerializeField] private ClipTransition _run;
     [SerializeField] private ClipTransition _normalAttack;
-    [SerializeField] private ClipTransition _rotateSkill;
+    [SerializeField] private ClipTransition _skill;
 
     protected virtual void OnEnable()
     {
         _normalAttack.Events.OnEnd = OnNormalAttackEnd;
         _run.Events.OnEnd = OnRunEnd;
-        _rotateSkill.Events.OnEnd = OnRotateSkillEnd;
+        _skill.Events.OnEnd = OnRotateSkillEnd;
 
         _animancer.Play(_idle);
     }
@@ -58,7 +58,7 @@ public class ExplorerAnimationBase : MonoBehaviour
 
     public void PlayRotateSkill()
     {
-        _animancer.Play(_rotateSkill);
+        _animancer.Play(_skill);
     }
     #endregion
 }

@@ -23,10 +23,9 @@ public class TrackTarget : MonoBehaviour
         _originPos = transform.position;
     }
 
-
     private void Update()
     {
-        if (!commonMapData.IsCompleteCreateExplorer)
+        if (!commonMapData.IsCompleteCreateExplorer || !commonMapData.IsDoneSetupMap)
             return;
 
        

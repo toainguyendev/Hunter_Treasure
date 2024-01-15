@@ -41,17 +41,19 @@ public class FieldOfView : MonoBehaviour
 
     private void FieldOfViewCheck()
     {
-        Collider[] rangeChecks = Physics.OverlapSphere(transform.position, _enemyBaseInfo.DistanceSight, targetMask);
+        if(!commonMapData.IsDoneSetupMap || !commonMapData.IsCompleteCreateExplorer)
+            return;
 
-        if (rangeChecks.Length != 0)
+        Transform target = commonMapData.ExplorerTransform;
+
+        Vector3 directionToTarget = (target.position - transform.position).normalized;
+
+        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+
+        if(distanceToTarget <= _enemyBaseInfo.DistanceSight)
         {
-            Transform target = rangeChecks[0].transform;
-            Vector3 directionToTarget = (target.position - transform.position).normalized;
-
             if (Vector3.Angle(transform.forward, directionToTarget) < _enemyBaseInfo.AngleSight / 2)
             {
-                float distanceToTarget = Vector3.Distance(transform.position, target.position);
-
                 if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                 {
                     canSeePlayer = true;
@@ -64,11 +66,16 @@ public class FieldOfView : MonoBehaviour
                 }
             }
             else
+            {
                 canSeePlayer = false;
+                enemyStateManagement.IsSeeingPlayer = false;
+            }
         }
         else
         {
             canSeePlayer = false;
+            enemyStateManagement.IsSeeingPlayer = false;
         }
+        
     }
 }

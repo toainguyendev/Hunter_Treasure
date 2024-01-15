@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Mystica
   _hp: 100
-  _attack: 10
-  _rateAttack: 11
+  _attack: 60
+  _rateAttack: 0.3
   _defense: 12
-  _attackRange: 13
-  _moveSpeed: 14
-  jumpVelocity: 15
+  _attackRange: 3
+  _moveSpeed: 8
+  jumpVelocity: 2
   imageThumbnail: {fileID: 21300000, guid: 5bbdf56590b39304bbf427b318451a27, type: 3}
   skillData: {fileID: 11400000, guid: 6e8db4ebbeaeb3d4da3bf54b772a4e22, type: 2}
