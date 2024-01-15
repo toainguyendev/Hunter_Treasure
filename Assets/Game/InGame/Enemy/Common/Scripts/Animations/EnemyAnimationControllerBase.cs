@@ -76,7 +76,6 @@ public class EnemyAnimationControllerBase : MonoBehaviour
 
     public void PlayNormalAttack()
     {
-        ConsoleLog.Log("Play normal attack");
         _animancer.Play(_normalAttack);
     }
 

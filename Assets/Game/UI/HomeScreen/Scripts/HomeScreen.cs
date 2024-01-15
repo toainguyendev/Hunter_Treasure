@@ -53,7 +53,7 @@ public class HomeScreen : ModalBase
     public void OnClickPlay()
     {
         // Pass data
-        runtimeGlobalData.DataStartGamePlay = new DataStartGamePlay(1, ExplorerType.Bishop);
+        runtimeGlobalData.DataStartGamePlay = new DataStartGamePlay(1, ExplorerType.Barbarian);
 
         // Load scene
         LoadSceneController.Instance.LoadHomeToGame();

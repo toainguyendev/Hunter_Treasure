@@ -25,7 +25,6 @@ public class NormalAttack : MonoBehaviour
     {
         if (coolDownAttack <= 0)
         {
-            // them collider thu xem co duoc khong
             Vector3 castOrigin = _attackPoint.position;
             Collider[] hitColliders = Physics.OverlapSphere(castOrigin, _explorerBaseInfo.AttackRange);
 

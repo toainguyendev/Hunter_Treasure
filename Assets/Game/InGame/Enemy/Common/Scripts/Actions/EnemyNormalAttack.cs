@@ -51,6 +51,7 @@ public class EnemyNormalAttack : MonoBehaviour
     {
         // get component player health and decrease health
         var playerHealth = commonMapData.ExplorerTransform.GetComponent<HealthBase>();
+        ConsoleLog.Log($"{this.gameObject.name} attack {playerHealth}");
         playerHealth.TakeDamage(enemyBaseInfo.Attack);
     }
 }

@@ -25,7 +25,6 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     explorerBaseInfo: {fileID: 11400000, guid: e3d1a2eab274d7148bf4f38444382622, type: 2}
-    avatar: {fileID: 21300000, guid: fc5e1bb9ab8211d4684900ce5d001ff5, type: 3}
   - explorer: 2
     explorerPrefab:
       m_AssetGUID: 9a3d2a156de7a7e4b997397ce2a56f6a
@@ -38,17 +37,15 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     explorerBaseInfo: {fileID: 11400000, guid: 8cfb5e2e8647721448c818ac41ff100c, type: 2}
-    avatar: {fileID: 21300000, guid: 5bbdf56590b39304bbf427b318451a27, type: 3}
   - explorer: 3
     explorerPrefab:
-      m_AssetGUID: 859c3def7b0fdca4ba4a59bb97a3cb47
+      m_AssetGUID: 527e88e525c49dd48a89283ccbb7603c
       m_SubObjectName: 
       m_SubObjectType: 
-      m_EditorAssetChanged: 1
+      m_EditorAssetChanged: 0
     explorerDisplayPrefab:
       m_AssetGUID: 859c3def7b0fdca4ba4a59bb97a3cb47
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     explorerBaseInfo: {fileID: 11400000, guid: de5cab482ea0339488a9acb587871aeb, type: 2}
-    avatar: {fileID: 21300000, guid: 9eb1e46a6dc02ae4db7ad2e11fab1721, type: 3}

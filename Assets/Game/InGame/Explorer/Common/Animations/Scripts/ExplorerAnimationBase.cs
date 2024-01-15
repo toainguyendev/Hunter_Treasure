@@ -1,4 +1,5 @@
 using Animancer;
+using System;
 using UnityEngine;
 
 public class ExplorerAnimationBase : MonoBehaviour
@@ -11,12 +12,16 @@ public class ExplorerAnimationBase : MonoBehaviour
     [SerializeField] private ClipTransition _run;
     [SerializeField] private ClipTransition _normalAttack;
     [SerializeField] private ClipTransition _skill;
+    [SerializeField] private ClipTransition _death;
+
+    public Action onDeath;
 
     protected virtual void OnEnable()
     {
         _normalAttack.Events.OnEnd = OnNormalAttackEnd;
         _run.Events.OnEnd = OnRunEnd;
         _skill.Events.OnEnd = OnRotateSkillEnd;
+        _death.Events.OnEnd = OnDeathEnd;
 
         _animancer.Play(_idle);
     }
@@ -37,6 +42,11 @@ public class ExplorerAnimationBase : MonoBehaviour
     {
         _animancer.Play(_idle);
     }
+
+    private void OnDeathEnd()
+    {
+        onDeath?.Invoke();
+    }
     #endregion
 
 
@@ -53,6 +63,7 @@ public class ExplorerAnimationBase : MonoBehaviour
 
     public void PlayNormalAttack()
     {
+        _animancer.Stop();
         _animancer.Play(_normalAttack);
     }
 
@@ -60,5 +71,18 @@ public class ExplorerAnimationBase : MonoBehaviour
     {
         _animancer.Play(_skill);
     }
+
+    public void PlayDeath(Action onDeath)
+    {
+        this.onDeath = onDeath;
+        _animancer.Stop();
+        _animancer.Play(_death);
+    }
     #endregion
+
+
+    private void OnDestroy()
+    {
+        onDeath = null;
+    }
 }
