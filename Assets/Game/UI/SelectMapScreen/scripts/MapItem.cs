@@ -12,6 +12,10 @@ public class MapItem : MonoBehaviour
     [SerializeField] private Image mapThumbnail;
     [SerializeField] private Image treasure;
     [SerializeField] private GameObject infomationPopup;
+    [SerializeField] private Button playButton;
+
+    [Space(10), Header("Data")]
+    [SerializeField] private RuntimeGlobalData runtimeGlobalData;
 
     private LevelData levelData;
     private GameObject infomationPopupInstance = null;
@@ -30,6 +34,8 @@ public class MapItem : MonoBehaviour
         entry2.eventID = EventTriggerType.PointerExit;
         entry2.callback.AddListener((data) => { OnCursorExit(); });
         transform.GetComponent<EventTrigger>().triggers.Add(entry2);
+        
+        playButton.onClick.AddListener(OnClickPlay);
 
     }
 
@@ -84,6 +90,10 @@ public class MapItem : MonoBehaviour
         story.text = this.levelData.story;
         treasureImage.sprite = this.levelData.treasureData.avatar;
         treasureDescription.text = this.levelData.treasureData.description;
+        // set the vertical layout for the popup
+        this.infomationPopupInstance.GetComponent<VerticalLayoutGroup>().enabled = true;
+        //set the transform is the hightest in the parent
+        this.transform.SetAsLastSibling();
     }
 
     public void OnCursorExit()
@@ -98,6 +108,13 @@ public class MapItem : MonoBehaviour
         this.mapThumbnail.sprite = levelData.mapThumbnail;
         Sprite spriteTemp = levelData.treasureData.avatar;
     }
+    public void OnClickPlay()
+    {
+        // Pass data
+        runtimeGlobalData.DataStartGamePlay = new DataStartGamePlay(1, ExplorerType.Bishop);
 
+        // Load scene
+        LoadSceneController.Instance.LoadHomeToGame();
+    }
 
 }

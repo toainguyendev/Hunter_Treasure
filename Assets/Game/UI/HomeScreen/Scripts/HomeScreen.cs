@@ -52,11 +52,12 @@ public class HomeScreen : ModalBase
     // Load SceneGame when click button
     public void OnClickPlay()
     {
-        // Pass data
-        runtimeGlobalData.DataStartGamePlay = new DataStartGamePlay(1, ExplorerType.Bishop);
+        UIManager.Instance.ShowModal(ModalType.SELECT_LEVEL);
+        //// Pass data
+        //runtimeGlobalData.DataStartGamePlay = new DataStartGamePlay(1, ExplorerType.Bishop);
 
-        // Load scene
-        LoadSceneController.Instance.LoadHomeToGame();
+        //// Load scene
+        //LoadSceneController.Instance.LoadHomeToGame();
     }
 
     protected override void OnClose()
