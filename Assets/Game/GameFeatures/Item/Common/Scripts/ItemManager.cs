@@ -22,8 +22,11 @@ public class ItemManager : MonoBehaviour
 
     private List<ItemHolder> currentlyOwnedItems;
 
-    // public method upgrade item
-    public void UpgradeItem(ItemType itemType)
+	// getter for explorer holder data
+	public List<ItemHolderData> ItemHolderData { get => itemHoldersData; }
+
+	// public method upgrade item
+	public void UpgradeItem(ItemType itemType)
     {
         // upgrade level item in ItemDataAsset
         itemDataAsset.UpgradeLevelItem(itemType);

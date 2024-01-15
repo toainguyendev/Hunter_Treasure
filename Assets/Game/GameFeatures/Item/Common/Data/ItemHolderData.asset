@@ -13,10 +13,24 @@ MonoBehaviour:
   m_Name: ItemHolderData
   m_EditorClassIdentifier: 
   itemHolders:
-  - itemType: 0
+  - itemType: 1
     itemData: {fileID: 11400000, guid: 923cd0b29f435be4693b757a1a4e5067, type: 2}
     itemPrefab:
-      m_AssetGUID: 
+      m_AssetGUID: 3a73e26f88957b343af0490c9403c8f0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - itemType: 2
+    itemData: {fileID: 11400000, guid: 942f90c341dfe7142ada7d3a1109ee31, type: 2}
+    itemPrefab:
+      m_AssetGUID: df8b2e05e6bc70e4eb740280ce078f7f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - itemType: 7
+    itemData: {fileID: 11400000, guid: 7650236d94b9970488aec6ad4a8ce13e, type: 2}
+    itemPrefab:
+      m_AssetGUID: fb5a9652227c545d98a413cd73b80b69
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0

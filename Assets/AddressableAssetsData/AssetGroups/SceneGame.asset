@@ -57,6 +57,18 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a73e26f88957b343af0490c9403c8f0
+    m_Address: Assets/Game/GameFeatures/Item/Mine/Prefabs/at_mine_LOD0.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df8b2e05e6bc70e4eb740280ce078f7f
+    m_Address: Assets/Game/GameFeatures/Item/Flag/Prefabs/flag_med.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb5a9652227c545d98a413cd73b80b69
+    m_Address: Assets/Game/GameFeatures/Item/Blood/Prefabs/Potion_Health.prefab
   - m_GUID: 78dc14f9b052e1a49a24e62b3a99e9ee
     m_Address: Assets/Game/InGame/Explorer/Mystica/Skill/Prefabs/Flames.prefab
     m_ReadOnly: 0
