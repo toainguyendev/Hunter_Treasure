@@ -1,7 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ExplorerBaseInfo", menuName = "HunterTreasure/Explorer/Player/ExplorerBaseInfo")]
-public class ExplorerBaseInfo
+[CreateAssetMenu(fileName = "LevelUpData", menuName = "HunterTreasure/Explorer/Player/LevelUpData")]
+public class LevelUpData
     : ScriptableObject
 {
     // private properties: Name, HP, Attack, Rate Attack, Defense, Attack Range, Move Speed
@@ -13,8 +15,8 @@ public class ExplorerBaseInfo
     [SerializeField] private float _attackRange;
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float jumpVelocity;
-    [SerializeField] private Sprite imageThumbnail;
-    [SerializeField] private SkillData skillData;
+    [SerializeField] private int price;
+
 
     // public getters and setters for private properties
     public string Name { get => _name; set => _name = value; }
@@ -25,22 +27,5 @@ public class ExplorerBaseInfo
     public float AttackRange { get => _attackRange; set => _attackRange = value; }
     public float MoveSpeed { get => _moveSpeed; set => _moveSpeed = value; }
     public float JumpVelocity { get => jumpVelocity; set => jumpVelocity = value; }
-    public Sprite ImageThumbnail { get => imageThumbnail; set => imageThumbnail = value; }
-    public SkillData SkillData { get => skillData; set => skillData = value; }
-
-    public ExplorerBaseInfo Clone()
-    {
-        ExplorerBaseInfo result = new ExplorerBaseInfo();
-        result.Name = Name;
-        result.HP = HP;
-        result.Attack = Attack;
-        result.RateAttack = RateAttack;
-        result.Defense = Defense;
-        result.AttackRange = AttackRange;
-        result.MoveSpeed = MoveSpeed;
-        result.JumpVelocity = JumpVelocity;
-        result.ImageThumbnail = ImageThumbnail;
-        result.SkillData = SkillData;
-        return result;
-    }
+    public int Price { get => price; set => price = value; }
 }

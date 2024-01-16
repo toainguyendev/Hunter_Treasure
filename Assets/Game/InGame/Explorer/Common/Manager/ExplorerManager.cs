@@ -7,7 +7,7 @@ public enum ExplorerType
     None,
     Bishop,
     Mystica,
-    Barbarian
+    TheRock
 }
 
 [Serializable]
