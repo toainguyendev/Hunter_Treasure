@@ -69,6 +69,9 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fb5a9652227c545d98a413cd73b80b69
     m_Address: Assets/Game/GameFeatures/Item/Blood/Prefabs/Potion_Health.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 78dc14f9b052e1a49a24e62b3a99e9ee
     m_Address: Assets/Game/InGame/Explorer/Mystica/Skill/Prefabs/Flames.prefab
     m_ReadOnly: 0
@@ -81,6 +84,26 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: aa69c6c3f06fb1b4a9ef165e08aa609b
     m_Address: Assets/Game/InGame/Explorer/Barbarian/Skill/Prefabs/LavaSkill.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dfe95cadef9b1884187b27282c1f553d
+    m_Address: Assets/Game/GameFeatures/Item/Mine/Prefabs/mine_display.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 57680f892f0b313468c2445d136557b8
+    m_Address: Assets/Game/GameFeatures/Item/Flag/Prefabs/flag_display.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d70e84474d26f97409b3224999e93264
+    m_Address: Assets/Game/GameFeatures/Item/Blood/Prefabs/Display_Potion_Health.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b90fc293a0f60a148916bf70949ac99b
+    m_Address: Assets/Game/InGame/Explorer/Barbarian/Prefabs/Barbarian_Display_Model.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

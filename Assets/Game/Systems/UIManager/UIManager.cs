@@ -17,6 +17,7 @@ public enum ModalType
 public class UIManager : MonoSingleton<UIManager>
 {
     [SerializeField] private HolderDataModel _holderDataModel;
+    [SerializeField] private GameObject coinGroup;
 
     // dictionary for modal
     private Dictionary<ModalType, ModalBase> _modals = new Dictionary<ModalType, ModalBase>();
@@ -40,6 +41,8 @@ public class UIManager : MonoSingleton<UIManager>
 
         _currentModalOpened?.Close();
         _currentModalOpened = _modals[modalType];
+        // bring coin group to front
+        coinGroup.transform.SetAsLastSibling();
     }
 
     public void CloseModal(ModalType modalType)
