@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: BarbarianBaseInfo
   m_EditorClassIdentifier: 
   _name: Barbarien
-  _hp: 1500
-  _attack: 50
+  _hp: 1800
+  _attack: 40
   _rateAttack: 0.5
-  _defense: 1
+  _defense: 15
   _attackRange: 2
-  _moveSpeed: 5
-  jumpVelocity: 3
+  _moveSpeed: 4
+  jumpVelocity: 2
   imageThumbnail: {fileID: 21300000, guid: 9eb1e46a6dc02ae4db7ad2e11fab1721, type: 3}
-  skillData: {fileID: 11400000, guid: 6e8db4ebbeaeb3d4da3bf54b772a4e22, type: 2}
+  skillData: {fileID: 11400000, guid: 4f39d6801d9b8d1488dce552b07aaa85, type: 2}

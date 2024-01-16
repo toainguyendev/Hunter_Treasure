@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c907d25cf2888f4d9832e3a8c8e188e, type: 3}
   m_Name: ExplorerLevelUpData1
   m_EditorClassIdentifier: 
-  _name: lv2
-  _hp: 20
-  _attack: 30
-  _rateAttack: 12
-  _defense: 10
-  _attackRange: 10
-  _moveSpeed: 2
+  _name: lv1
+  _hp: 0
+  _attack: 0
+  _rateAttack: 0
+  _defense: 0
+  _attackRange: 0
+  _moveSpeed: 0
   jumpVelocity: 0
-  price: 500
+  price: 0
