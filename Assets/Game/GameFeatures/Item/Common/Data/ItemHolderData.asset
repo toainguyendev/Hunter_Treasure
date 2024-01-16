@@ -20,6 +20,8 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+    itemSkill: {fileID: 5137769997949803900, guid: 3a73e26f88957b343af0490c9403c8f0,
+      type: 3}
   - itemType: 2
     itemData: {fileID: 11400000, guid: 942f90c341dfe7142ada7d3a1109ee31, type: 2}
     itemPrefab:
@@ -27,6 +29,8 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+    itemSkill: {fileID: -1849177742305156266, guid: df8b2e05e6bc70e4eb740280ce078f7f,
+      type: 3}
   - itemType: 7
     itemData: {fileID: 11400000, guid: 7650236d94b9970488aec6ad4a8ce13e, type: 2}
     itemPrefab:
@@ -34,3 +38,5 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+    itemSkill: {fileID: 3966055488440398873, guid: fb5a9652227c545d98a413cd73b80b69,
+      type: 3}

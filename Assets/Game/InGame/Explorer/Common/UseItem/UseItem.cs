@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,17 +10,14 @@ public class UsingItem : MonoBehaviour
 	private InGameUI inGameUI;
 	private List<ItemHolder> itemList;
 
-	private Transform transform;
-
 	//Rigidbody
 	public float ItemDistance = 5.0f;
-	public float Push = 0.3f;
+	public float Push = 0.5f;
 
 	private void Awake()
 	{
 		inGameUI = InGameUI.Instance;
 		itemList = inGameUI.ItemList;
-		transform = GetComponent<Transform>();
 	}
 
 	void Start()
@@ -51,14 +48,19 @@ public class UsingItem : MonoBehaviour
 	{
 		var explorerPosition = transform.position;
 		var explorerForward = transform.forward;
-		Vector3 itemPos = explorerPosition;
-		itemPos.y += 1;
+
+		// Đặt vật phẩm trước mặt nhân vật, giả sử offset là (0, 1, 2)
+		Vector3 itemPos = explorerPosition + explorerForward * 2 + new Vector3(0, 1, 0);
+
 		GameObject item = Instantiate(itemList[index].ItemData.ItemPrefab, itemPos, Quaternion.identity);
 		Rigidbody Rb = item.GetComponent<Rigidbody>();
+
 		if (Rb != null)
 		{
-			Rb.AddForce(explorerForward * Push, ForceMode.Impulse);
 			Rb.useGravity = true;
 		}
+
+		//using
+		itemList[index].ItemSkill.Use();
 	}
 }
