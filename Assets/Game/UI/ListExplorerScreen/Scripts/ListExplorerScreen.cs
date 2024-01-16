@@ -14,6 +14,7 @@ public class ListExplorerScreen : ModalBase
     [SerializeField] private TMP_Text explorerName;
     [SerializeField] private Transform holderExplorer;
     [SerializeField] private Button btnBack;
+    [SerializeField] private Button btnUseExplorer;
 
     [Header("Explorer Sidebar List")]
     [SerializeField] private GameObject explorerItem;
@@ -23,7 +24,9 @@ public class ListExplorerScreen : ModalBase
     [SerializeField] private Button upgradeButton;
     [SerializeField] private GameObject UpgradePanel;
 
+    [Header("Data")]
     [SerializeReference] private LevelDataAsset levelDataAsset;
+    [SerializeField] private RuntimeGlobalData runtimeGlobalData;
 
     ExplorerHolderData[] explorerHolderDatas;
     private int currentExplorerIndex = 0;
@@ -58,7 +61,10 @@ public class ListExplorerScreen : ModalBase
             ShowUpgradePanal();
         });
 
-
+        btnUseExplorer.onClick.AddListener(() =>
+        {
+            runtimeGlobalData.SetChoseExplorer(explorerHolderDatas[currentExplorerIndex].explorer);
+        });
     }
 
     public void DisplayExplorer(ExplorerHolderData _explorer)

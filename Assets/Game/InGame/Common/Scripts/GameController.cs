@@ -10,16 +10,20 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private RuntimeGlobalData runtimeGlobalData;
 
+    private bool _isEndGame = false;
     private void Start()
     {
         Messenger.Default.Subscribe<EndGamePayload>(OnEndGame);
+        _isEndGame = false;
     }
 
     private void OnEndGame(EndGamePayload endgamePayload)
     {
-        runtimeGlobalData.DataEndGame = new DataEndGame(true, runtimeGlobalData.DataStartGamePlay.LevelId, runtimeGlobalData.DataStartGamePlay.Explorer);
+        if(_isEndGame)
+            return;
         InGameUI.Instance.Hide();
         UIManager.Instance.ShowModal(ModalType.RESULT);
+        _isEndGame = true;
     }
 
     private void OnDestroy()

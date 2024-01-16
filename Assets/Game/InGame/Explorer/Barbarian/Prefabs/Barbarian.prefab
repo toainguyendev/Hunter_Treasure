@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explorerBaseInfo: {fileID: 11400000, guid: de5cab482ea0339488a9acb587871aeb, type: 2}
+  runtimeGlobalData: {fileID: 11400000, guid: 5319794b66f61b54995908eb53177898, type: 2}
 --- !u!114 &1597825671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,10 +288,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba38eb9923b0c32498f33182b2fe1163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skillSpawnPoint: {fileID: 0}
-  _animationController: {fileID: 0}
-  _skillData: {fileID: 0}
-  _playerBaseInfo: {fileID: 0}
+  _skillSpawnPoint: {fileID: 1241805459}
+  _animationController: {fileID: 1597825671}
+  _skillData: {fileID: 11400000, guid: 4f39d6801d9b8d1488dce552b07aaa85, type: 2}
+  _playerBaseInfo: {fileID: 11400000, guid: de5cab482ea0339488a9acb587871aeb, type: 2}
 --- !u!1001 &1286801425
 PrefabInstance:
   m_ObjectHideFlags: 0

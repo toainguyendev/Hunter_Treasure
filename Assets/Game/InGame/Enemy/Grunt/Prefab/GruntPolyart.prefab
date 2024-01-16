@@ -293,7 +293,7 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 0}
+    _Clip: {fileID: 7400000, guid: 8cf19caeee9bb3c43a09d57a2a2ba09d, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
 --- !u!195 &-6554244459933555727
@@ -328,10 +328,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 1
+  m_Radius: 1.42
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0.85, z: 0}
+  m_Center: {x: 0, y: 0.85, z: 0.06}
 --- !u!114 &2464425709013858475
 MonoBehaviour:
   m_ObjectHideFlags: 0

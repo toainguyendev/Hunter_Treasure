@@ -33,29 +33,31 @@ MonoBehaviour:
     story: This is a story
     mapThumbnail: {fileID: 21300000, guid: 6150c76a9610c084e98dc9658e7f271a, type: 3}
     mapPrefabRef:
-      m_AssetGUID: e52235f1d83637842b91c93e3f02c714
+      m_AssetGUID: fceabcde89b81624d9a45b18b912335e
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    coinReward: 0
+    coinReward: 1500
     treasureData:
       treasureName: "Kho b\xE1u th\u01B0\u1EE3ng c\u1ED5"
       description: "1000x V\xE0ng, 200x Gem"
-      treasurePrefabRef: {fileID: 0}
+      treasurePrefabRef: {fileID: 8068261354190402373, guid: eb7cd4b5dc0139b469492fec1c982e48,
+        type: 3}
       avatar: {fileID: 21300000, guid: 4d6f83f4b4fc8c24481deb91b75e9a7e, type: 3}
   - levelName: Level 03
     story: This is a story
     mapThumbnail: {fileID: 21300000, guid: 29ed38cf8db47e848a851b47013410e4, type: 3}
     mapPrefabRef:
-      m_AssetGUID: e52235f1d83637842b91c93e3f02c714
+      m_AssetGUID: d36a8a4f9b830634d9bbf96b600e5e5d
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    coinReward: 0
+    coinReward: 2000
     treasureData:
       treasureName: "Kho b\xE1u th\u01B0\u1EE3ng c\u1ED5"
       description: "1000x V\xE0ng, 200x Gem"
-      treasurePrefabRef: {fileID: 0}
+      treasurePrefabRef: {fileID: 1691812848608287720, guid: 945da58caf3d39c479c7ee0ab8c46aa5,
+        type: 3}
       avatar: {fileID: 21300000, guid: 43a6c129435b4c847b9bb17a36d19526, type: 3}
   - levelName: Level 04
     story: This is a story

@@ -15,6 +15,7 @@ public class MapItem : MonoBehaviour
     [SerializeField] private Button playButton;
 
     [Space(10), Header("Data")]
+    [SerializeField] private int levelId;
     [SerializeField] private RuntimeGlobalData runtimeGlobalData;
 
     private LevelData levelData;
@@ -111,7 +112,7 @@ public class MapItem : MonoBehaviour
     public void OnClickPlay()
     {
         // Pass data
-        runtimeGlobalData.DataStartGamePlay = new DataStartGamePlay(1, ExplorerType.Bishop);
+        runtimeGlobalData.DataStartGamePlay = new DataStartGamePlay(levelId, runtimeGlobalData.DataInHome.explorer);
 
         // Load scene
         LoadSceneController.Instance.LoadHomeToGame();

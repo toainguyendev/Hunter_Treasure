@@ -15,6 +15,7 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
 
     protected override async UniTask OnBeforeLoad()
     {
+        ResetData();
         await base.OnBeforeLoad();
 
         LoadSceneController.loadingSceneHandler = Addressables.LoadSceneAsync(LoadSceneController.SCENE_LOADING, LoadSceneMode.Additive);
@@ -30,8 +31,6 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
         await base.OnLoad();
 
         await LoadSceneGame();
-        Messenger.Default.Publish(new LoadingProgressPayload() { progress = 0.2f });
-        ResetData();
         Messenger.Default.Publish(new LoadingProgressPayload() { progress = 0.4f });
 
         await CreateMap();
@@ -56,25 +55,25 @@ public sealed class LoadHomeToGameController : BaseLoadGameController
     private async UniTask LoadSceneGame()
     {
         // Load scene game
-        LoadSceneController.loadGameHandle = Addressables.LoadSceneAsync(LoadSceneController.SCENE_GAME, LoadSceneMode.Additive);
+        LoadSceneController.loadGameHandle = Addressables.LoadSceneAsync($"{LoadSceneController.SCENE_GAME}{runtimeGlobalData.DataStartGamePlay.LevelId}", LoadSceneMode.Additive);
         await UniTask.WaitUntil(() => LoadSceneController.loadGameHandle.IsDone);
         if (LoadSceneController.loadGameHandle.Status == AsyncOperationStatus.Succeeded)
         {
-            SceneManager.SetActiveScene(SceneManager.GetSceneByName(LoadSceneController.SCENE_GAME));
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName($"{LoadSceneController.SCENE_GAME}{runtimeGlobalData.DataStartGamePlay.LevelId}"));
         }
     }
 
     private async UniTask CreateMap()
     {
-        LevelData levelData = levelConfig.GetLevelData(runtimeGlobalData.DataStartGamePlay.LevelId);
-        AsyncOperationHandle<GameObject> handle = Addressables.InstantiateAsync(levelData.mapPrefabRef);
+        //LevelData levelData = levelConfig.GetLevelData(runtimeGlobalData.DataStartGamePlay.LevelId);
+        //AsyncOperationHandle<GameObject> handle = Addressables.InstantiateAsync(levelData.mapPrefabRef);
 
-        await UniTask.WaitUntil(() => handle.IsDone);
-        if (handle.Status == AsyncOperationStatus.Succeeded)
-        {
-            GameObject mapInstance = handle.Result;
-            //mapInstance.transform.position = Vector3.zero;
-        }
+        //await UniTask.WaitUntil(() => handle.IsDone);
+        //if (handle.Status == AsyncOperationStatus.Succeeded)
+        //{
+        //    GameObject mapInstance = handle.Result;
+        //    //mapInstance.transform.position = Vector3.zero;
+        //}
     }
 
     private async UniTask CreateExplorer()

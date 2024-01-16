@@ -46,18 +46,12 @@ public class HomeScreen : ModalBase
     private void OnClickSetting()
     {
         ConsoleLog.Log("Click setting");
-        //UIManager.Instance.ShowModal(ModalType.SETTING);
     }
 
     // Load SceneGame when click button
     public void OnClickPlay()
     {
         UIManager.Instance.ShowModal(ModalType.SELECT_LEVEL);
-        //// Pass data
-        //runtimeGlobalData.DataStartGamePlay = new DataStartGamePlay(1, ExplorerType.Bishop);
-
-        //// Load scene
-        //LoadSceneController.Instance.LoadHomeToGame();
     }
 
     protected override void OnClose()

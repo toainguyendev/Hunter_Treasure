@@ -27,11 +27,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: ecd833ff5a223e846a9f9c9177ca0bb7
-    m_Address: Game
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cb87fe692553eeb479415892763514c8
     m_Address: Assets/Game/UI/HomeScreen/ScriptableObjects/Weapons/New weapon.asset
     m_ReadOnly: 0
@@ -104,6 +99,16 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b90fc293a0f60a148916bf70949ac99b
     m_Address: Assets/Game/InGame/Explorer/Barbarian/Prefabs/Barbarian_Display_Model.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d36a8a4f9b830634d9bbf96b600e5e5d
+    m_Address: Assets/Game/InGame/Level/Level03/Prefabs/lv3WithEnemy.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fceabcde89b81624d9a45b18b912335e
+    m_Address: Assets/Game/InGame/Level/level02/lv2HWithEnemy.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
