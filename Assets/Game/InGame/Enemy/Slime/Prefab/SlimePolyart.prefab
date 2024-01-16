@@ -403,6 +403,7 @@ GameObject:
   - component: {fileID: -61685655631844906}
   - component: {fileID: -4172170221629835269}
   - component: {fileID: 5187318988664424657}
+  - component: {fileID: 8099660707540625247}
   m_Layer: 0
   m_Name: SlimePolyart
   m_TagString: Enemy
@@ -585,6 +586,7 @@ MonoBehaviour:
   _enemyHealthUIControll: {fileID: 6513943853276212998}
   _enemyAnimationControllerBase: {fileID: -4172170221629835269}
   _enemyStateManagement: {fileID: -4813234425968639588}
+  _conditionPass: {fileID: 8099660707540625247}
 --- !u!114 &-4172170221629835269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,6 +651,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &8099660707540625247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153141402127884706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e17785de020c74fa344e318256cf81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7446019047767849115
 GameObject:
   m_ObjectHideFlags: 0

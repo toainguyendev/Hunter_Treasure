@@ -8,6 +8,7 @@ public class EnemyHealthBase : MonoBehaviour, IHealth
     [SerializeField] private EnemyHealthUIControll _enemyHealthUIControll;
     [SerializeField] private EnemyAnimationControllerBase _enemyAnimationControllerBase;
     [SerializeField] private EnemyStateManagement _enemyStateManagement;
+    [SerializeField] private BaseCondition _conditionPass;
 
     private float _currentHP;
     public float CurrentHP
@@ -51,6 +52,7 @@ public class EnemyHealthBase : MonoBehaviour, IHealth
 
     private void Die()
     {
+        _conditionPass.IsPassCondition = true;
         _enemyAnimationControllerBase.StopAnimation();
         _enemyStateManagement.IsDead = true;
         _enemyAnimationControllerBase.PlayDead(() =>

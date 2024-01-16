@@ -84,6 +84,7 @@ GameObject:
   - component: {fileID: 5544884809960061442}
   - component: {fileID: -6554244459933555727}
   - component: {fileID: 443883909217397054}
+  - component: {fileID: 2464425709013858475}
   m_Layer: 0
   m_Name: GruntPolyart
   m_TagString: Enemy
@@ -244,6 +245,7 @@ MonoBehaviour:
   _enemyHealthUIControll: {fileID: 6717366351956110531}
   _enemyAnimationControllerBase: {fileID: 5544884809960061442}
   _enemyStateManagement: {fileID: 2284398491663632206}
+  _conditionPass: {fileID: 2464425709013858475}
 --- !u!114 &5544884809960061442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,6 +332,18 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0.85, z: 0}
+--- !u!114 &2464425709013858475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388476414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e17785de020c74fa344e318256cf81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &408409025
 GameObject:
   m_ObjectHideFlags: 0

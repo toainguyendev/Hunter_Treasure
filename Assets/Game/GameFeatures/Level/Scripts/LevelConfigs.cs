@@ -7,7 +7,7 @@ public struct TreasureData
 {
     public string treasureName;
     public string description;
-    public AssetReferenceT<GameObject> treasurePrefabRef;
+    public GameObject treasurePrefabRef;
     public Sprite avatar;
 }
 
@@ -20,7 +20,10 @@ public struct LevelData
 
     public AssetReferenceT<GameObject> mapPrefabRef;
 
-    [Space(10)]
+    [Space(5), Header("Reward")]
+    public int coinReward;
+
+    [Space(5), Header("Treasure")]
     public TreasureData treasureData;
 }
 

@@ -36,6 +36,13 @@ public class MapControllerBase : MonoBehaviour
         commonMapData.IsDoneSetupMap = true;
     }
 
+    private void Update()
+    {
+        if (CheckAllConditionWin())
+        {
+            ConsoleLog.Log("You Win");
+        }
+    }
 
     private bool CheckAllConditionWin()
     {

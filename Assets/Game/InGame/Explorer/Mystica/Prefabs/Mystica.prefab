@@ -622,7 +622,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1834241542246684661}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.82, z: 1.12}
+  m_LocalPosition: {x: 0, y: 0.8, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2314,7 +2314,7 @@ GameObject:
   - component: {fileID: 552375720822828341}
   m_Layer: 0
   m_Name: Mystica
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2456,6 +2456,15 @@ MonoBehaviour:
       _Callbacks: []
       _Names: []
     _Clip: {fileID: 1827226128182048838, guid: 9a6c3585df66f2e4782635fc7a23494c, type: 3}
+    _Speed: 1
+    _NormalizedStartTime: NaN
+  _death:
+    _FadeDuration: 0.25
+    _Events:
+      _NormalizedTimes: []
+      _Callbacks: []
+      _Names: []
+    _Clip: {fileID: 0}
     _Speed: 1
     _NormalizedStartTime: NaN
 --- !u!114 &3481423815257610850

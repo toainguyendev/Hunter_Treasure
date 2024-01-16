@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 3350962061904406804}
   - component: {fileID: 3350962061904406806}
   - component: {fileID: 3350962061904406807}
+  - component: {fileID: 5251758801959027552}
   m_Layer: 0
   m_Name: RockGolem
   m_TagString: Enemy
@@ -210,6 +211,7 @@ MonoBehaviour:
   _enemyHealthUIControll: {fileID: 2586958454772501344}
   _enemyAnimationControllerBase: {fileID: 3350962061904406807}
   _enemyStateManagement: {fileID: 531045249}
+  _conditionPass: {fileID: 5251758801959027552}
 --- !u!114 &3350962061904406807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +262,18 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: 8cf19caeee9bb3c43a09d57a2a2ba09d, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
+--- !u!114 &5251758801959027552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350962061650545582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e17785de020c74fa344e318256cf81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3350962061455397322
 PrefabInstance:
   m_ObjectHideFlags: 0
