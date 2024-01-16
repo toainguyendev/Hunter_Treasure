@@ -19,4 +19,6 @@ MonoBehaviour:
   range: 9
   damage: 0
   itemPrefab: {fileID: 1000014124467848, guid: df8b2e05e6bc70e4eb740280ce078f7f, type: 3}
+  itemEffect: {fileID: 985483039366664255, guid: 87db84da5fb480c4ea727cebdd71b2cc,
+    type: 3}
   flagItemDatas: []

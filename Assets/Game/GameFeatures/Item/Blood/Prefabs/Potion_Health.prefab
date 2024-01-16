@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 464830}
   - component: {fileID: 3397690}
   - component: {fileID: 2373498}
+  - component: {fileID: 3966055488440398873}
   m_Layer: 0
   m_Name: Potion_Health
   m_TagString: Untagged
@@ -83,3 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3966055488440398873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6b6bba8e82d0cf4ca475a25b8d52e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 173500}
+  itemEffect: {fileID: 5797428246745224015, guid: d7e703d4e50fc894f81efa66b49b6407,
+    type: 3}
+  plusNumber: 200

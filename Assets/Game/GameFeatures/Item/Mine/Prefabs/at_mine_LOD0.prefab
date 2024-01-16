@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2330356}
   - component: {fileID: -5922239065008818555}
   - component: {fileID: 1711870217582322497}
+  - component: {fileID: 5137769997949803900}
   m_Layer: 0
   m_Name: at_mine_LOD0
   m_TagString: Player
@@ -134,3 +135,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.326142, y: 0.09444399, z: 0.367784}
   m_Center: {x: 0, y: 0.0012139995, z: -0.010956988}
+--- !u!114 &5137769997949803900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1220982256d1c6a458108500425b70ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 119916}
+  itemEffect: {fileID: 6813416509558619124, guid: 3c469de05474f9b42b22f7044dc45606,
+    type: 3}
+  itemInfo: {fileID: 11400000, guid: 923cd0b29f435be4693b757a1a4e5067, type: 2}

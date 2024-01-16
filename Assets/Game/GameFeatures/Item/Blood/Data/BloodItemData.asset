@@ -19,4 +19,6 @@ MonoBehaviour:
   range: 0
   damage: 0
   itemPrefab: {fileID: 173500, guid: fb5a9652227c545d98a413cd73b80b69, type: 3}
+  itemEffect: {fileID: 6813416509558619124, guid: 3c469de05474f9b42b22f7044dc45606,
+    type: 3}
   bloodItemDatas: []
