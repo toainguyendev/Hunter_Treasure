@@ -1,8 +1,5 @@
-using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
 
 public class ResultScreen : ModalBase
@@ -18,6 +15,8 @@ public class ResultScreen : ModalBase
     [SerializeField] private LevelConfigs _levelConfig;
     [SerializeField] private ExplorerManager _explorerManager;
     [SerializeField] private RuntimeGlobalData _runtimeGlobalData;
+    [SerializeField] private InventoryDataAsset _inventoryDataAsset;
+    [SerializeField] private CommonUserDataAsset _commonUserDataAsset;
 
     private void Awake()
     {
@@ -29,10 +28,12 @@ public class ResultScreen : ModalBase
 
     private void OnEnable()
     {
-        SetupUI().Forget();
+        UpdateData();
+
+        SetupUI();
     }
 
-    public async UniTask SetupUI()
+    public void SetupUI()
     {
         if(_runtimeGlobalData.DataEndGame.IsWin)
         {
@@ -52,6 +53,16 @@ public class ResultScreen : ModalBase
 
         // setup gem
         _imgGem.sprite = _levelConfig.GetLevelData(_runtimeGlobalData.DataEndGame.LevelId).treasureData.avatar;
+    }
+
+    private void UpdateData()
+    {
+        _inventoryDataAsset.TryChangeCoin(_levelConfig.GetLevelData(_runtimeGlobalData.DataEndGame.LevelId).coinReward);
+
+        if(_runtimeGlobalData.DataEndGame.IsWin)
+        {
+            _commonUserDataAsset.UpdateLevel();
+        }
     }
 
     private void OnDestroy()
