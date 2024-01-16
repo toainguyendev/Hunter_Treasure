@@ -11,11 +11,13 @@ public enum ModalType
     LIST_EXPLORER,
     SELECT_LEVEL,
     SELECT_EXPLORER_AND_ITEM,
+    RESULT,
 }
 
 public class UIManager : MonoSingleton<UIManager>
 {
     [SerializeField] private HolderDataModel _holderDataModel;
+    [SerializeField] private GameObject coinGroup;
 
     // dictionary for modal
     private Dictionary<ModalType, ModalBase> _modals = new Dictionary<ModalType, ModalBase>();
@@ -39,6 +41,9 @@ public class UIManager : MonoSingleton<UIManager>
 
         _currentModalOpened?.Close();
         _currentModalOpened = _modals[modalType];
+        // bring coin group to front
+        if (coinGroup != null)
+            coinGroup.transform.SetAsLastSibling();
     }
 
     public void CloseModal(ModalType modalType)

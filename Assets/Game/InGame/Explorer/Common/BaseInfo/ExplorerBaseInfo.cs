@@ -27,4 +27,20 @@ public class ExplorerBaseInfo
     public float JumpVelocity { get => jumpVelocity; set => jumpVelocity = value; }
     public Sprite ImageThumbnail { get => imageThumbnail; set => imageThumbnail = value; }
     public SkillData SkillData { get => skillData; set => skillData = value; }
+
+    public ExplorerBaseInfo Clone()
+    {
+        ExplorerBaseInfo result = new ExplorerBaseInfo();
+        result.Name = Name;
+        result.HP = HP;
+        result.Attack = Attack;
+        result.RateAttack = RateAttack;
+        result.Defense = Defense;
+        result.AttackRange = AttackRange;
+        result.MoveSpeed = MoveSpeed;
+        result.JumpVelocity = JumpVelocity;
+        result.ImageThumbnail = ImageThumbnail;
+        result.SkillData = SkillData;
+        return result;
+    }
 }

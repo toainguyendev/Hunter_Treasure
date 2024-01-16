@@ -11,6 +11,7 @@ public class ItemHolder
     [SerializeField] private ItemBaseData itemData;
     [SerializeField] private AssetReferenceT<GameObject> itemPrefab;
     [SerializeField] private ItemBase itemSkill;
+    [SerializeField] private AssetReferenceT<GameObject> itemDisplayPrefab;
 
 	// public getter properties ItemType, ItemData, AssetReferenceT<GameObject> itemPrefab
 	public ItemType ItemType => itemType;
@@ -18,6 +19,8 @@ public class ItemHolder
     public AssetReferenceT<GameObject> ItemPrefab => itemPrefab;
     public ItemBase ItemSkill => itemSkill;
 
+
+    public AssetReferenceT<GameObject> ItemDisplayPrefab => itemDisplayPrefab;
 }
 
 [CreateAssetMenu(fileName = "ItemHolderData", menuName = "HunterTreasure/Item/ItemHolderData", order = 1)]

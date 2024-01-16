@@ -2480,6 +2480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explorerBaseInfo: {fileID: 11400000, guid: 8cfb5e2e8647721448c818ac41ff100c, type: 2}
+  runtimeGlobalData: {fileID: 11400000, guid: 5319794b66f61b54995908eb53177898, type: 2}
 --- !u!114 &8437647667831313999
 MonoBehaviour:
   m_ObjectHideFlags: 0

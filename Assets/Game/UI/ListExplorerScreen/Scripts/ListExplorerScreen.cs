@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -13,12 +14,19 @@ public class ListExplorerScreen : ModalBase
     [SerializeField] private TMP_Text explorerName;
     [SerializeField] private Transform holderExplorer;
     [SerializeField] private Button btnBack;
+    [SerializeField] private Button btnUseExplorer;
 
     [Header("Explorer Sidebar List")]
     [SerializeField] private GameObject explorerItem;
     [SerializeField] private GameObject listExplorerContainer;
 
+    [Header("Upgrade panel")]
+    [SerializeField] private Button upgradeButton;
+    [SerializeField] private GameObject UpgradePanel;
 
+    [Header("Data")]
+    [SerializeReference] private LevelDataAsset levelDataAsset;
+    [SerializeField] private RuntimeGlobalData runtimeGlobalData;
 
     ExplorerHolderData[] explorerHolderDatas;
     private int currentExplorerIndex = 0;
@@ -47,11 +55,22 @@ public class ListExplorerScreen : ModalBase
         {
             UIManager.Instance.ShowModal(ModalType.HOME);
         });
+
+        upgradeButton.onClick.AddListener(() =>
+        {
+            ShowUpgradePanal();
+        });
+
+        btnUseExplorer.onClick.AddListener(() =>
+        {
+            runtimeGlobalData.SetChoseExplorer(explorerHolderDatas[currentExplorerIndex].explorer);
+        });
     }
 
     public void DisplayExplorer(ExplorerHolderData _explorer)
     {
-        explorerName.text = _explorer.explorerBaseInfo.Name;
+        explorerName.text = _explorer.explorerBaseInfo.Name + " - Level " + 
+            levelDataAsset.getCurrentLevel(_explorer.explorer);
         foreach (Transform child in holderExplorer)
         {
             Destroy(child.gameObject);
@@ -85,7 +104,39 @@ public class ListExplorerScreen : ModalBase
 
     public ExplorerBaseInfo GetCurrentExplorerBaseInfo()
     {
-        return explorerHolderDatas[currentExplorerIndex].explorerBaseInfo;
+        ExplorerType explorerType = explorerHolderDatas[currentExplorerIndex].explorer;
+        return levelDataAsset.GetExplorerBaseInfoWithLevel(explorerType);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            ChangeExplorer(-1);
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            ChangeExplorer(1);
+        }
+        explorerName.text = explorerHolderDatas[currentExplorerIndex].explorerBaseInfo.Name + " - Level " +
+            levelDataAsset.getCurrentLevel(explorerHolderDatas[currentExplorerIndex].explorer);
+    }
+
+    public void ShowUpgradePanal()
+    {
+        ExplorerType explorerType = explorerHolderDatas[currentExplorerIndex].explorer;
+        int level = levelDataAsset.getCurrentLevel(explorerType);
+
+        if (level < 3)
+        {
+            UpgradePanel.GetComponent<UpgradeExplorerPopup>().SetData(explorerType, level);
+            holderExplorer.gameObject.SetActive(false);
+            UpgradePanel.SetActive(true);
+        }
+        else
+        {
+
+        }
     }
 
     protected override void OnClose()

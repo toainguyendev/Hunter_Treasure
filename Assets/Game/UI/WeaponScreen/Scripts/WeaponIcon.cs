@@ -8,14 +8,13 @@ public class WeaponIcon : MonoBehaviour
 	[SerializeField] private TMP_Text level;
 
 	private WeaponDisplay weaponDisplay;
-	private ItemBaseData itemData;
+	private ItemHolder item;
 
 	private Button button;
 
 	void handleClickItem()
 	{
-		Debug.Log("a");
-		weaponDisplay.DisplayItem(itemData);
+		weaponDisplay.DisplayItem(item);
 	}
 
 	void Start()
@@ -30,12 +29,12 @@ public class WeaponIcon : MonoBehaviour
         
     }
 
-	public void DisplayItem(ItemBaseData _item, WeaponDisplay _weaponDisplay)
+	public void DisplayItem(ItemHolder _item, WeaponDisplay _weaponDisplay)
 	{
-		level.text = "" + _item.Level;
-		image.sprite = _item.Icon;
+		level.text = "" + _item.ItemData.Level;
+		image.sprite = _item.ItemData.Icon;
 
-		itemData = _item;
+		item = _item;
 		weaponDisplay = _weaponDisplay;
 	}
 }

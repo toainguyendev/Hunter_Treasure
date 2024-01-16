@@ -1,5 +1,3 @@
-using Cysharp.Threading.Tasks;
-using System;
 using UnityEngine;
 
 public class EnemyHealthBase : MonoBehaviour, IHealth
@@ -55,9 +53,10 @@ public class EnemyHealthBase : MonoBehaviour, IHealth
         _conditionPass.IsPassCondition = true;
         _enemyAnimationControllerBase.StopAnimation();
         _enemyStateManagement.IsDead = true;
-        _enemyAnimationControllerBase.PlayDead(() =>
-        {
-            Destroy(gameObject);
-        });
+        Destroy(gameObject);
+        //_enemyAnimationControllerBase.PlayDead(() =>
+        //{
+        //    Destroy(gameObject);
+        //});
     }
 }

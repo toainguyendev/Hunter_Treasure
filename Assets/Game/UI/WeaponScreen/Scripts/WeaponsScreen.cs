@@ -24,7 +24,7 @@ public class WeaponsScreen : ModalBase
         itemHolders = itemHolderData.ItemHolders;
 
         //display first item
-        weaponDisplay.DisplayItem(itemHolders[0].ItemData);
+        weaponDisplay.DisplayItem(itemHolders[0]);
 		GenerateWeaponList();
 
 		btnBack.onClick.AddListener(() =>
@@ -48,7 +48,7 @@ public class WeaponsScreen : ModalBase
 			// Kiểm tra xem thành phần có tồn tại không
 			if (weaponIcon != null)
 			{
-				weaponIcon.DisplayItem(info.ItemData, weaponDisplay);
+				weaponIcon.DisplayItem(info, weaponDisplay);
 			}
 			else
 			{
