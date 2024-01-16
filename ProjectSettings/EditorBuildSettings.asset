@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Game/Scenes/Game.unity
     guid: ecd833ff5a223e846a9f9c9177ca0bb7
+  - enabled: 0
+    path: Assets/Game/Scenes/Result.unity
+    guid: 0006e35818ed9f84da14dc17a6bf90fa
   m_configObjects:
     addressableimportsettingslist: {fileID: 11400000, guid: 0fab936de7a736b4cb3ef0628a4d6457,
       type: 2}

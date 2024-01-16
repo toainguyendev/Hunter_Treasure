@@ -7,16 +7,8 @@ public class Treasure : MonoBehaviour
     [Space(12)]
     [SerializeField] private BaseCondition[] _conditionsToCollect;
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (CanCollect() && other.CompareTag("Player"))
-        {
-            // Do Animation
 
-            // set condition win
-            _baseConditionWin.IsPassCondition = true;
-        }
-    }
+    private bool _isCollected;
 
     private bool CanCollect()
     {
@@ -28,5 +20,22 @@ public class Treasure : MonoBehaviour
             }
         }
         return true;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (_isCollected)
+            return;
+
+        if (CanCollect() && other.CompareTag("Player"))
+        {
+            // Do Animation
+            ConsoleLog.Log("Treasure Collected");
+
+            // set condition win
+            _baseConditionWin.IsPassCondition = true;
+
+            _isCollected = true;
+        }
     }
 }

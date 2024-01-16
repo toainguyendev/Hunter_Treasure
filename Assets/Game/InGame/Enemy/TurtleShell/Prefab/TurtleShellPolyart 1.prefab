@@ -935,6 +935,7 @@ GameObject:
   - component: {fileID: 6312929238135775102}
   - component: {fileID: 8617227913610958744}
   - component: {fileID: -5122107383237756657}
+  - component: {fileID: 3865078865703886413}
   m_Layer: 0
   m_Name: TurtleShellPolyart 1
   m_TagString: Enemy
@@ -1101,6 +1102,7 @@ MonoBehaviour:
   _enemyHealthUIControll: {fileID: 5410820981239205362}
   _enemyAnimationControllerBase: {fileID: -5122107383237756657}
   _enemyStateManagement: {fileID: -3254743061061454779}
+  _conditionPass: {fileID: 3865078865703886413}
 --- !u!114 &8617227913610958744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1167,6 +1169,18 @@ MonoBehaviour:
     _Clip: {fileID: 7400000, guid: b5feebd3cb9a4b82aa44801bbe7548bb, type: 3}
     _Speed: 1
     _NormalizedStartTime: NaN
+--- !u!114 &3865078865703886413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753617674297473082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e17785de020c74fa344e318256cf81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6861681153245785469
 GameObject:
   m_ObjectHideFlags: 0
