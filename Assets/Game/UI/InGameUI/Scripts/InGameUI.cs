@@ -55,14 +55,15 @@ public class InGameUI : MonoSingleton<InGameUI>
         healthBar.value = explorerBaseInfo.HP;
 
         // setup Item UI
-        /*if (runtimeGlobalData.DataStartGamePlay.ItemsType != null)
-        {
-            var itemsType = runtimeGlobalData.DataStartGamePlay.ItemsType;
-            for (int i = 0; i < itemsType.Count; i++)
-            {
-                itemUI[i].SetupUI(itemsType[i].Key, itemHolderData.GetItemHolder(itemsType[i].Key).ItemData.Icon, itemsType[i].Value);
-            }
-        }*/
+        //if (runtimeGlobalData.DataStartGamePlay.ItemsType != null)
+        //{
+        //    var itemsType = runtimeGlobalData.DataStartGamePlay.ItemsType;
+        //    for (int i = 0; i < itemsType.Count; i++)
+        //    {
+        //        itemUI[i].SetupUI(itemsType[i].Key, itemHolderData.GetItemHolder(itemsType[i].Key).ItemData.Icon, itemsType[i].Value);
+        //    }
+        //}
+
         var itemHolder = itemHolderData.ItemHolders;
 		for (int i = 0; i < 3; i++)
 		{

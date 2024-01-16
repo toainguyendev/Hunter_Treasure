@@ -11,7 +11,6 @@ public abstract class ItemBaseData : ScriptableObject
 	[SerializeField] private int range;
 	[SerializeField] private int damage;
 	[SerializeField] private GameObject itemPrefab;
-	[SerializeField] private GameObject itemEffect;
 
 
 	//create public getter for name, description, icon
@@ -22,5 +21,4 @@ public abstract class ItemBaseData : ScriptableObject
 	public int Range => range;
 	public int Damage => damage;
 	public GameObject ItemPrefab => itemPrefab;
-	public GameObject ItemEffect => itemEffect;
 }

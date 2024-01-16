@@ -6,19 +6,19 @@ public struct DataStartGamePlay
 {
     private int levelId;
     private ExplorerType explorer;
-    private List<KeyValuePair<ItemType, int>> itemsType;
+    private List<KeyValuePair<ItemHolder, int>> itemsHolder;
 
-    public DataStartGamePlay(int levelId, ExplorerType explorer, List<KeyValuePair<ItemType, int>> itemsType = null)
+    public DataStartGamePlay(int levelId, ExplorerType explorer, List<KeyValuePair<ItemHolder, int>> _itemsHolder = null)
     {
         this.levelId = levelId;
         this.explorer = explorer;
-        this.itemsType = itemsType;
+        this.itemsHolder = _itemsHolder;
     }
 
     // public getters and setters for private properties
     public int LevelId { get => levelId; set => levelId = value; }
     public ExplorerType Explorer { get => explorer; set => explorer = value; }
-    public List<KeyValuePair<ItemType, int>> ItemsType { get => itemsType; set => itemsType = value; }
+    public List<KeyValuePair<ItemHolder, int>> ItemsType { get => itemsHolder; set => itemsHolder = value; }
 }
 
 public struct DataEndGame
