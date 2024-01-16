@@ -1,5 +1,6 @@
 using DG.Tweening;
 using SuperMaxim.Messaging;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,16 +20,19 @@ public class InGameUI : MonoSingleton<InGameUI>
     [SerializeField] private Image explorerAvatar;
     [SerializeField] private Slider healthBar;
 
-
-    [Header("Data")]
+	[Header("Data")]
     [SerializeField] private RuntimeGlobalData runtimeGlobalData;
     [SerializeField] private ExplorerManager explorerManager;
     [SerializeField] private ItemHolderData itemHolderData;
+    private List<ItemHolder> itemList;
 
-    protected override void Awake()
+    public List<ItemHolder> ItemList => itemList;
+
+	protected override void Awake()
     {
         base.Awake();
         Messenger.Default.Subscribe<ExplorerHealthPayload>(OnExplorerHealthChange);
+        itemList = new List<ItemHolder>();
     }
 
     private void OnExplorerHealthChange(ExplorerHealthPayload payload)
@@ -51,15 +55,23 @@ public class InGameUI : MonoSingleton<InGameUI>
         healthBar.value = explorerBaseInfo.HP;
 
         // setup Item UI
-        if (runtimeGlobalData.DataStartGamePlay.ItemsType != null)
+        /*if (runtimeGlobalData.DataStartGamePlay.ItemsType != null)
         {
             var itemsType = runtimeGlobalData.DataStartGamePlay.ItemsType;
             for (int i = 0; i < itemsType.Count; i++)
             {
                 itemUI[i].SetupUI(itemsType[i].Key, itemHolderData.GetItemHolder(itemsType[i].Key).ItemData.Icon, itemsType[i].Value);
             }
-        }
-    }
+        }*/
+        var itemHolder = itemHolderData.ItemHolders;
+		for (int i = 0; i < 3; i++)
+		{
+			Debug.Log(i + " : " + itemHolder[i]);
+			//itemUI[i].SetupUI(itemsType[i].Key, itemHolderData.GetItemHolder(itemsType[i].Key).ItemData.Icon, itemsType[i].Value);
+			itemUI[i].SetupUI(itemHolder[i].ItemType, itemHolder[i].ItemData.Icon, 5);
+            itemList.Add(itemHolder[i]);
+		}
+	}
 
     protected override void OnDestroy()
     {
