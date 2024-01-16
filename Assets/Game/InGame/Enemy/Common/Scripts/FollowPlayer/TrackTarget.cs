@@ -18,10 +18,13 @@ public class TrackTarget : MonoBehaviour
 
     private Vector3 _originPos;
     private float _countDownTimeForgetPlayer = 0f;
-    private void Awake()
+	public Vector3 _attractivePos { get; set; }
+	private void Awake()
     {
         _originPos = transform.position;
-    }
+        _attractivePos = _originPos;
+
+	}
 
     private void Update()
     {
@@ -42,7 +45,14 @@ public class TrackTarget : MonoBehaviour
 
         if (enemyStateManagement.IsAttackingPlayer)
         {
-            navmeshAgent.SetDestination(transform.position);
+			if (enemyStateManagement.IsAttractived)
+			{
+				navmeshAgent.SetDestination(_attractivePos);
+            }
+            else
+            {
+				navmeshAgent.SetDestination(transform.position);
+			}
         }
         else 
         {
@@ -58,6 +68,11 @@ public class TrackTarget : MonoBehaviour
                 enemyAnimationController.PlayIdle();
             }
         }
+
+        if (enemyStateManagement.IsAttractived)
+        {
+			navmeshAgent.SetDestination(_attractivePos);
+		}
 
         _countDownTimeForgetPlayer -= Time.deltaTime;
     }

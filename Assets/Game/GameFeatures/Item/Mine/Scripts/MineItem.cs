@@ -7,7 +7,7 @@ public class MineItem : ItemBase
 {
 	[SerializeField] private GameObject itemPrefab;
 	[SerializeField] private GameObject itemEffect;
-	[SerializeField] private ItemBaseData itemInfo;
+	[SerializeField] private MineItemData itemInfo;
 
 	public MineItem()
 	{
@@ -46,7 +46,7 @@ public class MineItem : ItemBase
 		}
 
 		//damage
-		Collider[] hitColliders = Physics.OverlapSphere(item.transform.position, itemInfo.Range/10*5);
+		Collider[] hitColliders = Physics.OverlapSphere(item.transform.position,5);
 		foreach (var hitCollider in hitColliders)
 		{
 			var enemyHealth = hitCollider.GetComponent<EnemyHealthBase>();
@@ -55,6 +55,7 @@ public class MineItem : ItemBase
 				enemyHealth.TakeDamage(100);
 			}
 		}
+
 
 		// Kích hoạt đối tượng trước khi bắt đầu coroutine
 		//StartCoroutine(ActivateEffectAndDealDamage(item, itemPrefab));
