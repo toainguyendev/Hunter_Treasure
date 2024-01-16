@@ -31,6 +31,7 @@ public abstract class BaseDataAsset<DataModel> : BaseDataAsset where DataModel :
     public override void SaveData()
     {
         string filePath = Application.persistentDataPath + "/" +fileName;
+
         if(!File.Exists(filePath))
         {
             dataModel = new DataModel();

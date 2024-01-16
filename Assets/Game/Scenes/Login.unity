@@ -248,6 +248,12 @@ MonoBehaviour:
     type: 2}
   loadingHomeToGameController: {fileID: 11400000, guid: eaabcdd98ab300447b124bcfcb043f23,
     type: 2}
+  loadingGameToRewardController: {fileID: 11400000, guid: cb442bcc61452284b87ebeee8d62869d,
+    type: 2}
+  loadingRewardToHomeController: {fileID: 11400000, guid: 91cb2bb191ed7e54fb17a870c4d04f8e,
+    type: 2}
+  loadingGameToHomeController: {fileID: 11400000, guid: 4242e00cd0b3e1f42ae4f942e59c2764,
+    type: 2}
 --- !u!114 &1471519282
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,9 @@ public class LoadSceneController : MonoSingleton<LoadSceneController>
 {
     [SerializeField] private BaseLoadGameController loadingStartToHomeController;
     [SerializeField] private BaseLoadGameController loadingHomeToGameController;
+    [SerializeField] private BaseLoadGameController loadingGameToRewardController;
+    [SerializeField] private BaseLoadGameController loadingRewardToHomeController;
+    [SerializeField] private BaseLoadGameController loadingGameToHomeController;
 
     public static string SCENE_START = "Login";
     public static string SCENE_LOADING = "LoadingScene";
@@ -16,6 +19,7 @@ public class LoadSceneController : MonoSingleton<LoadSceneController>
     public static AsyncOperationHandle<SceneInstance> loadingSceneHandler;
     public static AsyncOperationHandle<SceneInstance> homeHandler;
     public static AsyncOperationHandle<SceneInstance> loadGameHandle;
+    public static AsyncOperationHandle<SceneInstance> rewardHandler;    
 
     protected override void Awake()
     {
@@ -35,16 +39,16 @@ public class LoadSceneController : MonoSingleton<LoadSceneController>
 
     public async void LoadGameToReward()
     {
-        await loadingStartToHomeController.LoadGame();
+        await loadingGameToRewardController.LoadGame();
     }
 
     public async void LoadRewardToHome()
     {
-        await loadingStartToHomeController.LoadGame();
+        await loadingRewardToHomeController.LoadGame();
     }
 
     public async void LoadGameToHome()
     {
-        await loadingStartToHomeController.LoadGame();
+        await loadingGameToHomeController.LoadGame();
     }   
 }
