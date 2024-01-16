@@ -78,4 +78,9 @@ public class InGameUI : MonoSingleton<InGameUI>
         base.OnDestroy();
         Messenger.Default.Unsubscribe<ExplorerHealthPayload>(OnExplorerHealthChange);
     }
+
+    public void Hide()
+    {
+        this.gameObject.SetActive(false);
+    }
 }

@@ -5,8 +5,8 @@ using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.SceneManagement;
 
-[CreateAssetMenu(fileName = "LoadResultToHomeController", menuName = "HunterTreasure/LoadGame/LoadResultToHomeController")]
-public class LoadResultToHome : BaseLoadGameController
+[CreateAssetMenu(fileName = "LoadGameToHomeController", menuName = "HunterTreasure/LoadGame/LoadGameToHomeController")]
+public class LoadGameToHome : BaseLoadGameController
 {
     protected override async UniTask OnBeforeLoad()
     {
@@ -16,7 +16,7 @@ public class LoadResultToHome : BaseLoadGameController
         await UniTask.WaitUntil(() => LoadSceneController.loadingSceneHandler.IsDone);
         if (LoadSceneController.loadingSceneHandler.Status == AsyncOperationStatus.Succeeded)
         {
-            await Addressables.UnloadSceneAsync(LoadSceneController.rewardHandler);
+            await Addressables.UnloadSceneAsync(LoadSceneController.loadGameHandle);
         }
     }
 
@@ -30,6 +30,13 @@ public class LoadResultToHome : BaseLoadGameController
         Messenger.Default.Publish<LoadingProgressPayload>(new LoadingProgressPayload { progress = 0.8f });
         SetupUI();
         Messenger.Default.Publish<LoadingProgressPayload>(new LoadingProgressPayload { progress = 1f });
+    }
+
+    protected override async UniTask OnAfterLoad()
+    {
+        await base.OnAfterLoad();
+
+        await Addressables.UnloadSceneAsync(LoadSceneController.loadingSceneHandler);
     }
 
     private async UniTask LoadSceneHome()
