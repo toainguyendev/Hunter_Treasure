@@ -13,12 +13,11 @@ public class MineItem : ItemBase
 
     public override void Use()
     {
-		Debug.Log("using mine");
 		// Khi mìn nổ, kích hoạt hiệu ứng hạt
-		ParticleSystem explosionEffect = GetComponentInChildren<ParticleSystem>();
-		if (explosionEffect != null)
-		{
-			explosionEffect.Play();
-		}
+		//ParticleSystem explosionEffect = GetComponentInChildren<ParticleSystem>();
+		//if (explosionEffect != null)
+		//{
+		//	explosionEffect.Play();
+		//}
 	}
 }

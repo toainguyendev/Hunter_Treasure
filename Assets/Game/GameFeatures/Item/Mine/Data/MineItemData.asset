@@ -19,6 +19,8 @@ MonoBehaviour:
   range: 5
   damage: 0
   itemPrefab: {fileID: 119916, guid: 3a73e26f88957b343af0490c9403c8f0, type: 3}
+  itemEffect: {fileID: 6813416509558619124, guid: 3c469de05474f9b42b22f7044dc45606,
+    type: 3}
   mineItemDatas:
   - range: 5
     damage: 15

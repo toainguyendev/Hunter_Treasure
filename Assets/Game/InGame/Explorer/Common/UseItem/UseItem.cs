@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
+using static UnityEditor.Progress;
 
 public class UsingItem : MonoBehaviour
 {
@@ -62,5 +63,23 @@ public class UsingItem : MonoBehaviour
 
 		//using
 		itemList[index].ItemSkill.Use();
+		GameObject itemEffectPrefab = itemList[index].ItemData.ItemEffect;
+		if (itemEffectPrefab != null)
+		{
+			StartCoroutine(ActivateEffectAfterDelay(item, index));
+		}
 	}
+
+	private IEnumerator ActivateEffectAfterDelay(GameObject item, int index)
+	{
+		yield return new WaitForSeconds(2f); // Đợi 2 giây
+
+		GameObject itemEffect = Instantiate(itemList[index].ItemData.ItemEffect, item.transform.position, Quaternion.identity);
+		// Gắn hiệu ứng vào item
+		itemEffect.transform.parent = item.transform;
+		// Đặt vị trí và quay hiệu ứng theo item
+		itemEffect.transform.localPosition = Vector3.zero;
+		itemEffect.transform.localRotation = Quaternion.identity;
+	}
+
 }
