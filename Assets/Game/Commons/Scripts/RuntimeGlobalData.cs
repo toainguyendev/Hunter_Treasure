@@ -28,26 +28,19 @@ public struct DataEndGame
     // info explorer
     private int levelId;
     private ExplorerType explorer;
-    private List<KeyValuePair<ItemType, int>> itemsType;
 
-    // reward
-    private List<KeyValuePair<CurrencyType, int>> currenciesType;
 
-    public DataEndGame(bool isWin, int levelId, ExplorerType explorer, List<KeyValuePair<ItemType, int>> itemsType, List<KeyValuePair<CurrencyType, int>> currenciesType)
+    public DataEndGame(bool isWin, int levelId, ExplorerType explorer)
     {
         this.isWin = isWin;
         this.levelId = levelId;
         this.explorer = explorer;
-        this.itemsType = itemsType;
-        this.currenciesType = currenciesType;
     }
 
     // public getters and setters for private properties    
     public bool IsWin { get => isWin; set => isWin = value; }
     public int LevelId { get => levelId; set => levelId = value; }
     public ExplorerType Explorer { get => explorer; set => explorer = value; }
-    public List<KeyValuePair<ItemType, int>> ItemsType { get => itemsType; set => itemsType = value; }
-    public List<KeyValuePair<CurrencyType, int>> CurrenciesType { get => currenciesType; set => currenciesType = value; }
 }
 
 public struct DataInHome

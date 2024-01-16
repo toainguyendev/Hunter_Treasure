@@ -1,3 +1,4 @@
+using SuperMaxim.Messaging;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,6 +15,8 @@ public class MapControllerBase : MonoBehaviour
 
     [Header("Navmesh")]
     [SerializeField] private NavMeshData _navMeshSurface;
+
+
 
     private void Awake()
     {
@@ -38,9 +41,16 @@ public class MapControllerBase : MonoBehaviour
 
     private void Update()
     {
+#if UNITY_EDITOR
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            ConsoleLog.Log("Check win");
+            Messenger.Default.Publish<EndGamePayload>(new EndGamePayload() { isWin = true });
+        }
+#endif
         if (CheckAllConditionWin())
         {
-            ConsoleLog.Log("You Win");
+            Messenger.Default.Publish<EndGamePayload>(new EndGamePayload() { isWin = true });
         }
     }
 

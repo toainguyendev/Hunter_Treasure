@@ -29,3 +29,6 @@ MonoBehaviour:
   - modalType: 1
     modalPrefab: {fileID: 6034121576919019497, guid: 8202e028a912049419bc93a87a1b1335,
       type: 3}
+  - modalType: 6
+    modalPrefab: {fileID: 2513215218794928015, guid: bd07efe603d159b4a9c9234f6c7560a0,
+      type: 3}

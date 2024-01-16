@@ -11,6 +11,7 @@ public enum ModalType
     LIST_EXPLORER,
     SELECT_LEVEL,
     SELECT_EXPLORER_AND_ITEM,
+    RESULT,
 }
 
 public class UIManager : MonoSingleton<UIManager>
