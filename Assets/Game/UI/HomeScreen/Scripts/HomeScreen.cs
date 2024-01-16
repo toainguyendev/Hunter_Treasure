@@ -63,6 +63,11 @@ public class HomeScreen : ModalBase
         if(runtimeGlobalData.DataInHome.explorer == ExplorerType.None)
             runtimeGlobalData.SetChoseExplorer(ExplorerType.Bishop);
 
+        foreach (Transform child in holderExplorer)
+        {
+            Destroy(child.gameObject);
+        }
+
         var refExplorer = explorerManager.GetExplorerDisplay(runtimeGlobalData.DataInHome.explorer);
         Addressables.InstantiateAsync(refExplorer).Completed += (AsyncOperationHandle<GameObject> obj) =>
         {
