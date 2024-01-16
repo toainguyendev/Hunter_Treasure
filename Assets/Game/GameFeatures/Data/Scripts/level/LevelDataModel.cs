@@ -33,8 +33,17 @@ public struct LevelDataModel : IDataModel<LevelDataModel>
     }
 
     public void levelUp(ExplorerType explorer)
-    {
-        PlayerLevel playerLevel = playerLevels.Find(PlayerLevel => PlayerLevel.explorer == explorer);
-        playerLevel.level++;
+    {   
+        for (int i = 0; i < playerLevels.Count; i++)
+        {
+            if (playerLevels[i].explorer == explorer)
+            {
+                PlayerLevel playerLevel = new PlayerLevel();
+                playerLevel.explorer = explorer;
+                playerLevel.level = playerLevels[i].level + 1;
+                playerLevels[i] = playerLevel;
+                break;
+            }
+        }
     }
 }
