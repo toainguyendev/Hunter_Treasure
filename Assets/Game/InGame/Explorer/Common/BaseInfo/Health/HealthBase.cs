@@ -4,6 +4,7 @@ using UnityEngine;
 public class HealthBase : MonoBehaviour, IHealth
 {
     [SerializeField] protected ExplorerBaseInfo explorerBaseInfo;
+    [SerializeField] private RuntimeGlobalData runtimeGlobalData;
 
     // current health
     protected float _currentHP;
@@ -52,6 +53,8 @@ public class HealthBase : MonoBehaviour, IHealth
         if(CurrentHP <= 0)
         {
             Die();
+            runtimeGlobalData.DataEndGame = new DataEndGame(false, runtimeGlobalData.DataStartGamePlay.LevelId, runtimeGlobalData.DataStartGamePlay.Explorer);
+            ConsoleLog.Log("0" + runtimeGlobalData.GetInstanceID() + runtimeGlobalData.DataEndGame.IsWin);
             Messenger.Default.Publish(new EndGamePayload() { isWin = false });
         }
     }

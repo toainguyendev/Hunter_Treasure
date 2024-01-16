@@ -395,6 +395,8 @@ MonoBehaviour:
   _runtimeGlobalData: {fileID: 11400000, guid: 5319794b66f61b54995908eb53177898, type: 2}
   _inventoryDataAsset: {fileID: 11400000, guid: 46d07774f13739a4881b098ee2444e3d,
     type: 2}
+  _commonUserDataAsset: {fileID: 11400000, guid: 37eb1acb368d1a648938ef88358e5f1e,
+    type: 2}
 --- !u!1 &2513215219140659254
 GameObject:
   m_ObjectHideFlags: 0

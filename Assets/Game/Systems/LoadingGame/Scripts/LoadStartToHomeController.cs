@@ -59,7 +59,7 @@ public class LoadStartToHomeController : BaseLoadGameController
             await UniTask.WaitUntil(() => data.IsDoneLoadData);
 
             // TODO: remove this line
-            await UniTask.Delay(2000);
+            await UniTask.Delay(500);
             ConsoleLog.Log($"Load data {data.name} done");
         }
     }

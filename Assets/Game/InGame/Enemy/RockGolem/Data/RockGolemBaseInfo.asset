@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RockGolemBaseInfo
   m_EditorClassIdentifier: 
   _name: Rock Golem
-  _hp: 1500
+  _hp: 500
   _attack: 50
   _rateAttack: 1
   _defense: 150

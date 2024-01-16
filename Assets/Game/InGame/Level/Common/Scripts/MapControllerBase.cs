@@ -12,10 +12,7 @@ public class MapControllerBase : MonoBehaviour
 
     [Header("Data")]
     [SerializeField] private CommonMapData commonMapData;
-
-    [Header("Navmesh")]
-    [SerializeField] private NavMeshData _navMeshSurface;
-
+    [SerializeField] private RuntimeGlobalData runtimeGlobalData;
 
 
     private void Awake()
@@ -23,18 +20,10 @@ public class MapControllerBase : MonoBehaviour
         SetupGlobalMapData();
     }
 
-    private void OnEnable()
-    {
-        SetupGlobalMapData();
-    }
-
     private void SetupGlobalMapData()
     {
+        this.transform.position = Vector3.zero;
         commonMapData.PlayerSpawnPosition = _spawnExplorerPos.position;
-
-        // setup navmesh data for GameScene
-        NavMesh.RemoveAllNavMeshData();
-        NavMesh.AddNavMeshData(_navMeshSurface);
 
         commonMapData.IsDoneSetupMap = true;
     }
@@ -42,20 +31,24 @@ public class MapControllerBase : MonoBehaviour
     private void Update()
     {
 #if UNITY_EDITOR
-        if(Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            ConsoleLog.Log("Check win");
             Messenger.Default.Publish<EndGamePayload>(new EndGamePayload() { isWin = true });
         }
 #endif
         if (CheckAllConditionWin())
         {
+            runtimeGlobalData.DataEndGame = new DataEndGame(true, runtimeGlobalData.DataStartGamePlay.LevelId, runtimeGlobalData.DataStartGamePlay.Explorer);
             Messenger.Default.Publish<EndGamePayload>(new EndGamePayload() { isWin = true });
         }
     }
 
+    private bool _isEndGame = false;
     private bool CheckAllConditionWin()
     {
+        if (_isEndGame)
+            return false;
+
         foreach (var conditionWin in _conditionWins)
         {
             if (!conditionWin.IsPassCondition)
@@ -64,6 +57,7 @@ public class MapControllerBase : MonoBehaviour
             }
         }
 
+        _isEndGame = true;
         return true;
     }
 
