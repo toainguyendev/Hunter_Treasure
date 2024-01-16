@@ -11,10 +11,6 @@ GameObject:
   - component: {fileID: 5536178155666905852}
   - component: {fileID: 5525771723792748436}
   - component: {fileID: 5515773945341742648}
-  - component: {fileID: 5537810498109890010}
-  - component: {fileID: 5537810498109890011}
-  - component: {fileID: 5537810498109890008}
-  - component: {fileID: 1267591662643014415}
   m_Layer: 0
   m_Name: Treasure_level_1
   m_TagString: Untagged
@@ -87,69 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5537810498109890010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5537682409125852228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bba8c7136c8ab9b42a2a1addcdbe5f76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _baseConditionWin: {fileID: 5537810498109890011}
-  _conditionsToCollect: []
---- !u!114 &5537810498109890011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5537682409125852228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19e17785de020c74fa344e318256cf81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &5537810498109890008
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5537682409125852228}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5, y: 5, z: 5}
-  m_Center: {x: 0, y: 0.00000023841864, z: -0.31269112}
---- !u!114 &1267591662643014415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5537682409125852228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ff967b7ed48f2441bcf509edf6b889a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAnimated: 1
-  isRotating: 1
-  isFloating: 0
-  isScaling: 1
-  rotationAngle: {x: 0, y: 0, z: 10}
-  rotationSpeed: 10
-  floatSpeed: 0
-  floatRate: 0
-  startScale: {x: 1, y: 1, z: 1}
-  endScale: {x: 1.1, y: 1.1, z: 1.1}
-  scaleSpeed: 1
-  scaleRate: 0.5
 --- !u!1 &5537810498721879269
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,8 +92,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5537810498721879268}
+  - component: {fileID: 6237065097896265905}
+  - component: {fileID: 5287642273070996165}
+  - component: {fileID: 5533600074787418623}
+  - component: {fileID: 5243882861099676862}
   m_Layer: 0
-  m_Name: Treasure_Level_1
+  m_Name: Treasure_level_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,3 +119,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6237065097896265905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5537810498721879269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e17785de020c74fa344e318256cf81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5287642273070996165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5537810498721879269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff967b7ed48f2441bcf509edf6b889a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAnimated: 1
+  isRotating: 1
+  isFloating: 0
+  isScaling: 1
+  rotationAngle: {x: 0, y: 10, z: 0}
+  rotationSpeed: 10
+  floatSpeed: 0
+  floatRate: 0
+  startScale: {x: 1, y: 1, z: 1}
+  endScale: {x: 1.1, y: 1.1, z: 1.1}
+  scaleSpeed: 1
+  scaleRate: 0.5
+--- !u!114 &5533600074787418623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5537810498721879269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba8c7136c8ab9b42a2a1addcdbe5f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseConditionWin: {fileID: 6237065097896265905}
+  _conditionsToCollect: []
+--- !u!65 &5243882861099676862
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5537810498721879269}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5, z: 5}
+  m_Center: {x: 0, y: 0.00000023841864, z: -0.31269112}

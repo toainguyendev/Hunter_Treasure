@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 3350962061904406806}
   - component: {fileID: 3350962061904406807}
   - component: {fileID: 5251758801959027552}
+  - component: {fileID: 3875940183733849003}
   m_Layer: 0
   m_Name: RockGolem
   m_TagString: Enemy
@@ -259,7 +260,7 @@ MonoBehaviour:
       _NormalizedTimes: []
       _Callbacks: []
       _Names: []
-    _Clip: {fileID: 7400000, guid: 8cf19caeee9bb3c43a09d57a2a2ba09d, type: 2}
+    _Clip: {fileID: 7400000, guid: d3aad3207f5c7984a878d6d3e713003f, type: 2}
     _Speed: 1
     _NormalizedStartTime: NaN
 --- !u!114 &5251758801959027552
@@ -274,6 +275,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e17785de020c74fa344e318256cf81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &3875940183733849003
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3350962061650545582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.77, z: 0}
 --- !u!1001 &3350962061455397322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -387,6 +402,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431726500659083015, guid: 692a0929ab07ab3499898308610d4802,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4301158537200300093, guid: 692a0929ab07ab3499898308610d4802,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6127944435609694814, guid: 692a0929ab07ab3499898308610d4802,
         type: 3}

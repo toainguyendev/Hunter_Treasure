@@ -35,7 +35,8 @@ public class ResultScreen : ModalBase
 
     public void SetupUI()
     {
-        if(_runtimeGlobalData.DataEndGame.IsWin)
+        ConsoleLog.Log("1"+ _runtimeGlobalData.GetInstanceID() + _runtimeGlobalData.DataEndGame.IsWin);
+        if (_runtimeGlobalData.DataEndGame.IsWin)
         {
             _txtTitle.text = "You Win";
             _txtTitle.color = Color.green;
