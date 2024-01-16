@@ -42,7 +42,8 @@ public class UIManager : MonoSingleton<UIManager>
         _currentModalOpened?.Close();
         _currentModalOpened = _modals[modalType];
         // bring coin group to front
-        coinGroup.transform.SetAsLastSibling();
+        if (coinGroup != null)
+            coinGroup.transform.SetAsLastSibling();
     }
 
     public void CloseModal(ModalType modalType)

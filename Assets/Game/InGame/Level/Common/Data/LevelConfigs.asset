@@ -25,7 +25,7 @@ MonoBehaviour:
     coinReward: 1000
     treasureData:
       treasureName: "Kho b\xE1u th\u01B0\u1EE3ng c\u1ED5"
-      description: "1000x V\xE0ng, 200x Gem"
+      description: 1000x Coin, Random treasures
       treasurePrefabRef: {fileID: 5537810498721879269, guid: 0ed203d298c050b49bfabe788790e1c2,
         type: 3}
       avatar: {fileID: 21300000, guid: 38f89a21e3b1d8d4bb3848ffc6635e39, type: 3}
@@ -40,7 +40,7 @@ MonoBehaviour:
     coinReward: 1500
     treasureData:
       treasureName: "Kho b\xE1u th\u01B0\u1EE3ng c\u1ED5"
-      description: "1000x V\xE0ng, 200x Gem"
+      description: 1500x Coin, Random treasures
       treasurePrefabRef: {fileID: 8068261354190402373, guid: eb7cd4b5dc0139b469492fec1c982e48,
         type: 3}
       avatar: {fileID: 21300000, guid: 4d6f83f4b4fc8c24481deb91b75e9a7e, type: 3}
@@ -55,13 +55,13 @@ MonoBehaviour:
     coinReward: 2000
     treasureData:
       treasureName: "Kho b\xE1u th\u01B0\u1EE3ng c\u1ED5"
-      description: "1000x V\xE0ng, 200x Gem"
+      description: 2000x Coin, Random treasures
       treasurePrefabRef: {fileID: 1691812848608287720, guid: 945da58caf3d39c479c7ee0ab8c46aa5,
         type: 3}
       avatar: {fileID: 21300000, guid: 43a6c129435b4c847b9bb17a36d19526, type: 3}
   - levelName: Level 04
     story: This is a story
-    mapThumbnail: {fileID: 21300000, guid: 2012b20a800a09d45ab9a91be5c3eaa8, type: 3}
+    mapThumbnail: {fileID: 21300000, guid: 6e3b3403a9853fd48ab3f21dae5dedff, type: 3}
     mapPrefabRef:
       m_AssetGUID: e52235f1d83637842b91c93e3f02c714
       m_SubObjectName: 
@@ -70,12 +70,12 @@ MonoBehaviour:
     coinReward: 0
     treasureData:
       treasureName: "Kho b\xE1u th\u01B0\u1EE3ng c\u1ED5"
-      description: "1000x V\xE0ng, 200x Gem"
+      description: 1000x Coin, Random treasures
       treasurePrefabRef: {fileID: 0}
-      avatar: {fileID: 0}
+      avatar: {fileID: 1912824793, guid: a304a4d492f1e9b4cae12eeddfa6dad8, type: 3}
   - levelName: Level 05
     story: This is a story
-    mapThumbnail: {fileID: 21300000, guid: 2012b20a800a09d45ab9a91be5c3eaa8, type: 3}
+    mapThumbnail: {fileID: 21300000, guid: 6e3b3403a9853fd48ab3f21dae5dedff, type: 3}
     mapPrefabRef:
       m_AssetGUID: e52235f1d83637842b91c93e3f02c714
       m_SubObjectName: 
@@ -84,6 +84,6 @@ MonoBehaviour:
     coinReward: 0
     treasureData:
       treasureName: "Kho b\xE1u th\u01B0\u1EE3ng c\u1ED5"
-      description: "1000x V\xE0ng, 200x Gem"
+      description: 1000x Coin, Random treasures
       treasurePrefabRef: {fileID: 0}
-      avatar: {fileID: 0}
+      avatar: {fileID: 1912824793, guid: a304a4d492f1e9b4cae12eeddfa6dad8, type: 3}
