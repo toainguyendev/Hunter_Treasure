@@ -1,3 +1,4 @@
+using SuperMaxim.Messaging;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -85,6 +86,11 @@ public class MysticaSkillSpark : SkillBase, ISkill
         if (countDownTimeTriggerSkill > 0 && !skillPerforming)
         {
             countDownTimeTriggerSkill -= Time.deltaTime;
+        }
+
+        if (countDownTimeTriggerSkill > 0)
+        {
+            Messenger.Default.Publish<SkillPerformingMessage>(new SkillPerformingMessage() { TimeCountDown = countDownTimeTriggerSkill, PercentCountDown = (countDownTimeTriggerSkill / _skillData.CooldownTime) });
         }
     }
 }

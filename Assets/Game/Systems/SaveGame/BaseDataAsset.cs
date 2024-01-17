@@ -31,6 +31,7 @@ public abstract class BaseDataAsset<DataModel> : BaseDataAsset where DataModel :
     public override void SaveData()
     {
         string filePath = Application.persistentDataPath + "/" +fileName;
+        ConsoleLog.Log($"Save Game Service: Save to {filePath}");
 
         if(!File.Exists(filePath))
         {
@@ -63,7 +64,7 @@ public abstract class BaseDataAsset<DataModel> : BaseDataAsset where DataModel :
     public override void LoadData()
     {
         string filePath = Application.persistentDataPath + "/" + fileName;
-
+        ConsoleLog.Log($"Save Game Service: Save to {filePath}");
         try
         {
             if (!File.Exists(filePath))

@@ -9,11 +9,6 @@ public class MineItem : ItemBase
 	[SerializeField] private GameObject itemEffect;
 	[SerializeField] private MineItemData itemInfo;
 
-	public MineItem()
-	{
-
-	}
-
 	public override void Upgrade()
 	{
 		// Code của bạn cho việc nâng cấp
@@ -21,6 +16,7 @@ public class MineItem : ItemBase
 
 	public override async void Use(Transform explorerTransform)
 	{
+		ConsoleLog.Log("Use item: " + itemInfo.Name);
 		var explorerPosition = explorerTransform.position;
 		var explorerForward = explorerTransform.forward;
 
@@ -55,38 +51,6 @@ public class MineItem : ItemBase
 				enemyHealth.TakeDamage(100);
 			}
 		}
-
-
-		// Kích hoạt đối tượng trước khi bắt đầu coroutine
-		//StartCoroutine(ActivateEffectAndDealDamage(item, itemPrefab));
-		//ActivateEffectAndDealDamage(item);
-
+		gameObject.SetActive(false);
 	}
-	//async private void ActivateEffectAndDealDamage(GameObject item)
-	//{
-	//	float elapsedTime = 0f;
-
-	//	// Kích hoạt đối tượng trước khi kiểm tra va chạm
-	//	item.SetActive(true);
-
-	//	while (elapsedTime < 0.5f)
-	//	{
-	//		// Kiểm tra va chạm trong mỗi frame
-	//		Collider[] hitColliders = Physics.OverlapSphere(item.transform.position, 5);
-	//		foreach (var hitCollider in hitColliders)
-	//		{
-	//			var enemyHealth = hitCollider.GetComponent<EnemyHealthBase>();
-	//			if (enemyHealth != null)
-	//			{
-	//				enemyHealth.TakeDamage(100);
-	//			}
-	//		}
-	//		// Tăng thời gian đã trôi qua
-	//		elapsedTime += Time.deltaTime;
-	//	}
-
-	//	// Sau khi hoàn thành, vô hiệu hóa đối tượng
-	//	item.SetActive(false);
-	//}
-
 }

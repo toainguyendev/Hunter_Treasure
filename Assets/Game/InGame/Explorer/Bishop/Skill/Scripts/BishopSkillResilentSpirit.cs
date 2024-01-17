@@ -88,7 +88,6 @@ public class BishopSkillResilentSpirit : SkillBase, ISkill
                 skillPerforming = false;
                 countDownTimeRemainSkill = 0f;
             }
-            Messenger.Default.Publish<SkillPerformingMessage>(new SkillPerformingMessage() { PercentCountDown = (countDownTimeRemainSkill / _skillData.CooldownTime)});
         }
         else
         {
@@ -97,6 +96,11 @@ public class BishopSkillResilentSpirit : SkillBase, ISkill
             {
                 countDownTimeTriggerSkill = -1f;
             }
+        }
+
+        if (countDownTimeTriggerSkill > 0)
+        {
+            Messenger.Default.Publish<SkillPerformingMessage>(new SkillPerformingMessage() { TimeCountDown = countDownTimeTriggerSkill, PercentCountDown = (countDownTimeTriggerSkill / _skillData.CooldownTime) });
         }
     }
 

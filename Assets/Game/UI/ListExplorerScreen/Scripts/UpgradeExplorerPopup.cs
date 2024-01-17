@@ -1,9 +1,14 @@
+using SuperMaxim.Messaging;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
+public struct OnUpgradeExplorerPayload
+{
+}
 
 public class UpgradeExplorerPopup : MonoBehaviour
 {
@@ -25,6 +30,7 @@ public class UpgradeExplorerPopup : MonoBehaviour
             levelDataAsset.levelUp(this.currentExplorer);
             holderExplorer.gameObject.SetActive(true);
             transform.gameObject.SetActive(false);
+            Messenger.Default.Publish<OnUpgradeExplorerPayload>(new OnUpgradeExplorerPayload());
         });
         cancel.onClick.AddListener(() =>
         {
@@ -33,11 +39,6 @@ public class UpgradeExplorerPopup : MonoBehaviour
         });
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-    
     public void SetData(ExplorerType explorer, int level)
     {
         LevelUpData levelNextData = levelDataAsset.GetIncreateExplorerBaseInfoBetweenLevel(explorer);
