@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR;
-using static UnityEditor.Progress;
 
-public class UsingItem : MonoBehaviour
+public class UseItem : MonoBehaviour
 {
     //In Game UI
 	private InGameUI inGameUI;
@@ -20,11 +16,6 @@ public class UsingItem : MonoBehaviour
 		inGameUI = InGameUI.Instance;
 		itemList = inGameUI.ItemList;
 	}
-
-	void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

@@ -2312,6 +2312,7 @@ GameObject:
   - component: {fileID: 8437647667831313999}
   - component: {fileID: 5398302503472770875}
   - component: {fileID: 552375720822828341}
+  - component: {fileID: 6209656506942277884}
   m_Layer: 0
   m_Name: Mystica
   m_TagString: Player
@@ -2532,6 +2533,20 @@ MonoBehaviour:
   _animationController: {fileID: 8329280542447271379}
   _skillData: {fileID: 11400000, guid: a4f18a9b12b948c49974cc31175aa456, type: 2}
   _playerBaseInfo: {fileID: 11400000, guid: 8cfb5e2e8647721448c818ac41ff100c, type: 2}
+--- !u!114 &6209656506942277884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7647134206250791342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16fe0584d61a9f24588b71fc12b0fa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemDistance: 5
+  Push: 0.5
 --- !u!1 &7667767699941656935
 GameObject:
   m_ObjectHideFlags: 0

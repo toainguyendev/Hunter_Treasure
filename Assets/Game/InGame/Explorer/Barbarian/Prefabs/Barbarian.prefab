@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 1597825672}
   - component: {fileID: 1597825674}
   - component: {fileID: 7569954994240209881}
+  - component: {fileID: 7647364289376910998}
   m_Layer: 0
   m_Name: Barbarian
   m_TagString: Player
@@ -292,6 +293,20 @@ MonoBehaviour:
   _animationController: {fileID: 1597825671}
   _skillData: {fileID: 11400000, guid: 4f39d6801d9b8d1488dce552b07aaa85, type: 2}
   _playerBaseInfo: {fileID: 11400000, guid: de5cab482ea0339488a9acb587871aeb, type: 2}
+--- !u!114 &7647364289376910998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374952271273463044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16fe0584d61a9f24588b71fc12b0fa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemDistance: 5
+  Push: 0.5
 --- !u!1001 &1286801425
 PrefabInstance:
   m_ObjectHideFlags: 0

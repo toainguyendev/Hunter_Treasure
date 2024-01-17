@@ -1,3 +1,4 @@
+using SuperMaxim.Messaging;
 using UnityEngine;
 
 public class BishopSkillResilentSpirit : SkillBase, ISkill
@@ -87,6 +88,7 @@ public class BishopSkillResilentSpirit : SkillBase, ISkill
                 skillPerforming = false;
                 countDownTimeRemainSkill = 0f;
             }
+            Messenger.Default.Publish<SkillPerformingMessage>(new SkillPerformingMessage() { PercentCountDown = (countDownTimeRemainSkill / _skillData.CooldownTime)});
         }
         else
         {
