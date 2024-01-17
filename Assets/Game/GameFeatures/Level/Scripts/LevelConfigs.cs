@@ -41,7 +41,7 @@ public class LevelConfigs : ScriptableObject
         }
         catch (Exception e)
         {
-            ConsoleLog.LogError($"LevelConfigs.GetLevelData: {e.Message}");
+            ConsoleLog.LogError($"LevelConfigs.GetLevelData: {e.Message}   {levelId}");
             return levelDatas[0];
         }
     }

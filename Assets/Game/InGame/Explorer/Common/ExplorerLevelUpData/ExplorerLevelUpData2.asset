@@ -20,4 +20,4 @@ MonoBehaviour:
   _attackRange: 10
   _moveSpeed: 2
   jumpVelocity: 0
-  price: 500
+  price: 1000

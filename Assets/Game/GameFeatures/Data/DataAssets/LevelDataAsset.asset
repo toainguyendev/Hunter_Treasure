@@ -17,12 +17,15 @@ MonoBehaviour:
     - explorer: 0
       level: 1
     - explorer: 1
-      level: 1
+      level: 2
     - explorer: 2
       level: 1
     - explorer: 3
       level: 1
   fileName: level
   binaryFormat: 0
-  levelUpDatas: []
+  levelUpDatas:
+  - {fileID: 11400000, guid: a0203460000787b459cd17745e7a5472, type: 2}
+  - {fileID: 11400000, guid: cf5b111b3bdbe724fbeeaa56843a1f19, type: 2}
+  - {fileID: 11400000, guid: ed9b6ae0c975b1f418a0718d4756f7e3, type: 2}
   explorerManager: {fileID: 11400000, guid: 8afc6c24e7ae0a5478519c21fffcb226, type: 2}

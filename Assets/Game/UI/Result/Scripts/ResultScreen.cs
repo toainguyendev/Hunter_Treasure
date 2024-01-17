@@ -58,10 +58,10 @@ public class ResultScreen : ModalBase
 
     private void UpdateData()
     {
-        _inventoryDataAsset.TryChangeCoin(_levelConfig.GetLevelData(_runtimeGlobalData.DataEndGame.LevelId).coinReward);
 
         if(_runtimeGlobalData.DataEndGame.IsWin)
         {
+            _inventoryDataAsset.TryChangeCoin(_levelConfig.GetLevelData(_runtimeGlobalData.DataEndGame.LevelId).coinReward);
             _commonUserDataAsset.UpdateLevel();
         }
     }

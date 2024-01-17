@@ -33,7 +33,8 @@ public class MapControllerBase : MonoBehaviour
 #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Messenger.Default.Publish<EndGamePayload>(new EndGamePayload() { isWin = true });
+            runtimeGlobalData.DataEndGame = new DataEndGame(true, runtimeGlobalData.DataStartGamePlay.LevelId, runtimeGlobalData.DataStartGamePlay.Explorer);
+            Messenger.Default.Publish<EndGamePayload>(new EndGamePayload() { isWin = true});
         }
 #endif
         if (CheckAllConditionWin())
