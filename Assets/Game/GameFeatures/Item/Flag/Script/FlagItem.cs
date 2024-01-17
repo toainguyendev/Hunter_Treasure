@@ -35,29 +35,32 @@ public class FlagItem : ItemBase
 
 	}
 
-	async private void ActivateItem(GameObject item)
-	{
+    async private void ActivateItem(GameObject item)
+    {
 
-		// Kích hoạt đối tượng trước khi kiểm tra va chạm
-		//item.SetActive(true);
+        // Kích hoạt đối tượng trước khi kiểm tra va chạm
+        //item.SetActive(true);
 
-		// Kiểm tra va chạm trong mỗi frame
-		Collider[] hitColliders = Physics.OverlapSphere(item.transform.position, 5);
-		foreach (var hitCollider in hitColliders)
-		{
-			var enemySM = hitCollider.GetComponent<EnemyStateManagement>();
-			var trackTarget = hitCollider.GetComponent<TrackTarget>();
-			if (enemySM != null)
-			{
-				//enemyHealth.TakeDamage(100);
-				trackTarget._attractivePos = item.transform.position;
-				enemySM.IsAttractived = true;
-				await Task.Delay(3000);
-				enemySM.IsAttractived = false;
-			}
-		}
+        // Kiểm tra va chạm trong mỗi frame
+        Collider[] hitColliders = Physics.OverlapSphere(item.transform.position, 5);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider)
+            {
+                var enemySM = hitCollider.GetComponent<EnemyStateManagement>();
+                var trackTarget = hitCollider.GetComponent<TrackTarget>();
+                if (enemySM != null && trackTarget != null)
+                {
+                    //enemyHealth.TakeDamage(100);
+                    trackTarget._attractivePos = item.transform.position;
+                    enemySM.IsAttractived = true;
+                    await Task.Delay(3000);
+                    enemySM.IsAttractived = false;
+                }
+            }
+        }
 
-		// Sau khi hoàn thành, vô hiệu hóa đối tượng
-		//item.SetActive(false);
-	}
+        await Task.Delay(500);
+        DestroyImmediate(item);
+    }
 }
